@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "HoudiniEngineRuntime/Public/HoudiniStaticMeshComponent.h"
+#include "HoudiniEngineRuntime/Private/HoudiniStaticMeshComponent.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -20,11 +20,12 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniStaticMeshComponent() {}
 	HOUDINIENGINERUNTIME_API UClass* Z_Construct_UClass_UHoudiniStaticMesh_NoRegister();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FBox();
 // End Cross Module References
-	DEFINE_FUNCTION(UHoudiniStaticMeshComponent::execGetMesh)
+	DEFINE_FUNCTION(UHoudiniStaticMeshComponent::execSetHoudiniIconVisible)
 	{
+		P_GET_UBOOL(Z_Param_bInHoudiniIconVisible);
 		P_FINISH;
 		P_NATIVE_BEGIN;
-		*(UHoudiniStaticMesh**)Z_Param__Result=P_THIS->GetMesh();
+		P_THIS->SetHoudiniIconVisible(Z_Param_bInHoudiniIconVisible);
 		P_NATIVE_END;
 	}
 	DEFINE_FUNCTION(UHoudiniStaticMeshComponent::execIsHoudiniIconVisible)
@@ -41,12 +42,11 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniStaticMeshComponent() {}
 		P_THIS->NotifyMeshUpdated();
 		P_NATIVE_END;
 	}
-	DEFINE_FUNCTION(UHoudiniStaticMeshComponent::execSetHoudiniIconVisible)
+	DEFINE_FUNCTION(UHoudiniStaticMeshComponent::execGetMesh)
 	{
-		P_GET_UBOOL(Z_Param_bInHoudiniIconVisible);
 		P_FINISH;
 		P_NATIVE_BEGIN;
-		P_THIS->SetHoudiniIconVisible(Z_Param_bInHoudiniIconVisible);
+		*(UHoudiniStaticMesh**)Z_Param__Result=P_THIS->GetMesh();
 		P_NATIVE_END;
 	}
 	DEFINE_FUNCTION(UHoudiniStaticMeshComponent::execSetMesh)
@@ -88,7 +88,7 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniStaticMeshComponent() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UHoudiniStaticMeshComponent_GetMesh_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Public/HoudiniStaticMeshComponent.h" },
+		{ "ModuleRelativePath", "Private/HoudiniStaticMeshComponent.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UHoudiniStaticMeshComponent_GetMesh_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UHoudiniStaticMeshComponent, nullptr, "GetMesh", nullptr, nullptr, sizeof(HoudiniStaticMeshComponent_eventGetMesh_Parms), Z_Construct_UFunction_UHoudiniStaticMeshComponent_GetMesh_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UHoudiniStaticMeshComponent_GetMesh_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UHoudiniStaticMeshComponent_GetMesh_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UHoudiniStaticMeshComponent_GetMesh_Statics::Function_MetaDataParams)) };
@@ -125,7 +125,7 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniStaticMeshComponent() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UHoudiniStaticMeshComponent_IsHoudiniIconVisible_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Public/HoudiniStaticMeshComponent.h" },
+		{ "ModuleRelativePath", "Private/HoudiniStaticMeshComponent.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UHoudiniStaticMeshComponent_IsHoudiniIconVisible_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UHoudiniStaticMeshComponent, nullptr, "IsHoudiniIconVisible", nullptr, nullptr, sizeof(HoudiniStaticMeshComponent_eventIsHoudiniIconVisible_Parms), Z_Construct_UFunction_UHoudiniStaticMeshComponent_IsHoudiniIconVisible_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UHoudiniStaticMeshComponent_IsHoudiniIconVisible_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x40020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UHoudiniStaticMeshComponent_IsHoudiniIconVisible_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UHoudiniStaticMeshComponent_IsHoudiniIconVisible_Statics::Function_MetaDataParams)) };
@@ -147,7 +147,9 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniStaticMeshComponent() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UHoudiniStaticMeshComponent_NotifyMeshUpdated_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Public/HoudiniStaticMeshComponent.h" },
+		{ "Comment", "// Call this if the mesh updated (outside of calling SetMesh).\n" },
+		{ "ModuleRelativePath", "Private/HoudiniStaticMeshComponent.h" },
+		{ "ToolTip", "Call this if the mesh updated (outside of calling SetMesh)." },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UHoudiniStaticMeshComponent_NotifyMeshUpdated_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UHoudiniStaticMeshComponent, nullptr, "NotifyMeshUpdated", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UHoudiniStaticMeshComponent_NotifyMeshUpdated_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UHoudiniStaticMeshComponent_NotifyMeshUpdated_Statics::Function_MetaDataParams)) };
@@ -184,7 +186,7 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniStaticMeshComponent() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UHoudiniStaticMeshComponent_SetHoudiniIconVisible_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Public/HoudiniStaticMeshComponent.h" },
+		{ "ModuleRelativePath", "Private/HoudiniStaticMeshComponent.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UHoudiniStaticMeshComponent_SetHoudiniIconVisible_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UHoudiniStaticMeshComponent, nullptr, "SetHoudiniIconVisible", nullptr, nullptr, sizeof(HoudiniStaticMeshComponent_eventSetHoudiniIconVisible_Parms), Z_Construct_UFunction_UHoudiniStaticMeshComponent_SetHoudiniIconVisible_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UHoudiniStaticMeshComponent_SetHoudiniIconVisible_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UHoudiniStaticMeshComponent_SetHoudiniIconVisible_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UHoudiniStaticMeshComponent_SetHoudiniIconVisible_Statics::Function_MetaDataParams)) };
@@ -216,7 +218,7 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniStaticMeshComponent() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UHoudiniStaticMeshComponent_SetMesh_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Public/HoudiniStaticMeshComponent.h" },
+		{ "ModuleRelativePath", "Private/HoudiniStaticMeshComponent.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UHoudiniStaticMeshComponent_SetMesh_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UHoudiniStaticMeshComponent, nullptr, "SetMesh", nullptr, nullptr, sizeof(HoudiniStaticMeshComponent_eventSetMesh_Parms), Z_Construct_UFunction_UHoudiniStaticMeshComponent_SetMesh_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UHoudiniStaticMeshComponent_SetMesh_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UHoudiniStaticMeshComponent_SetMesh_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UHoudiniStaticMeshComponent_SetMesh_Statics::Function_MetaDataParams)) };
@@ -262,38 +264,42 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniStaticMeshComponent() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_HoudiniEngineRuntime,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UHoudiniStaticMeshComponent_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_UHoudiniStaticMeshComponent_GetMesh, "GetMesh" }, // 1013897353
-		{ &Z_Construct_UFunction_UHoudiniStaticMeshComponent_IsHoudiniIconVisible, "IsHoudiniIconVisible" }, // 1045716639
-		{ &Z_Construct_UFunction_UHoudiniStaticMeshComponent_NotifyMeshUpdated, "NotifyMeshUpdated" }, // 1686281578
-		{ &Z_Construct_UFunction_UHoudiniStaticMeshComponent_SetHoudiniIconVisible, "SetHoudiniIconVisible" }, // 2453913597
-		{ &Z_Construct_UFunction_UHoudiniStaticMeshComponent_SetMesh, "SetMesh" }, // 1326790953
+		{ &Z_Construct_UFunction_UHoudiniStaticMeshComponent_GetMesh, "GetMesh" }, // 2766388976
+		{ &Z_Construct_UFunction_UHoudiniStaticMeshComponent_IsHoudiniIconVisible, "IsHoudiniIconVisible" }, // 4143894295
+		{ &Z_Construct_UFunction_UHoudiniStaticMeshComponent_NotifyMeshUpdated, "NotifyMeshUpdated" }, // 1904992431
+		{ &Z_Construct_UFunction_UHoudiniStaticMeshComponent_SetHoudiniIconVisible, "SetHoudiniIconVisible" }, // 3193714774
+		{ &Z_Construct_UFunction_UHoudiniStaticMeshComponent_SetMesh, "SetMesh" }, // 3752970157
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniStaticMeshComponent_Statics::Class_MetaDataParams[] = {
-		{ "BlueprintSpawnableComponent", "" },
-		{ "ClassGroupNames", "Custom" },
+		{ "ClassGroupNames", "Houdini Engine | Rendering" },
 		{ "HideCategories", "Mobility Trigger" },
 		{ "IncludePath", "HoudiniStaticMeshComponent.h" },
-		{ "ModuleRelativePath", "Public/HoudiniStaticMeshComponent.h" },
+		{ "ModuleRelativePath", "Private/HoudiniStaticMeshComponent.h" },
+		{ "ObjectInitializerConstructorDeclared", "" },
 	};
 #endif
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniStaticMeshComponent_Statics::NewProp_Mesh_MetaData[] = {
-		{ "Category", "HoudiniStaticMeshComponent" },
-		{ "ModuleRelativePath", "Public/HoudiniStaticMeshComponent.h" },
+		{ "Category", "Mesh" },
+		{ "Comment", "/** The mesh. */" },
+		{ "ModuleRelativePath", "Private/HoudiniStaticMeshComponent.h" },
+		{ "ToolTip", "The mesh." },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UHoudiniStaticMeshComponent_Statics::NewProp_Mesh = { "Mesh", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UHoudiniStaticMeshComponent, Mesh), Z_Construct_UClass_UHoudiniStaticMesh_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UHoudiniStaticMeshComponent_Statics::NewProp_Mesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHoudiniStaticMeshComponent_Statics::NewProp_Mesh_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniStaticMeshComponent_Statics::NewProp_LocalBounds_MetaData[] = {
-		{ "ModuleRelativePath", "Public/HoudiniStaticMeshComponent.h" },
+		{ "Comment", "/** Local space bounds of mesh. */" },
+		{ "ModuleRelativePath", "Private/HoudiniStaticMeshComponent.h" },
+		{ "ToolTip", "Local space bounds of mesh." },
 	};
 #endif
 	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_UHoudiniStaticMeshComponent_Statics::NewProp_LocalBounds = { "LocalBounds", nullptr, (EPropertyFlags)0x0020080000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UHoudiniStaticMeshComponent, LocalBounds), Z_Construct_UScriptStruct_FBox, METADATA_PARAMS(Z_Construct_UClass_UHoudiniStaticMeshComponent_Statics::NewProp_LocalBounds_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHoudiniStaticMeshComponent_Statics::NewProp_LocalBounds_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniStaticMeshComponent_Statics::NewProp_bHoudiniIconVisible_MetaData[] = {
-		{ "Category", "HoudiniStaticMeshComponent" },
-		{ "ModuleRelativePath", "Public/HoudiniStaticMeshComponent.h" },
+		{ "Category", "Icons" },
+		{ "ModuleRelativePath", "Private/HoudiniStaticMeshComponent.h" },
 	};
 #endif
 	void Z_Construct_UClass_UHoudiniStaticMeshComponent_Statics::NewProp_bHoudiniIconVisible_SetBit(void* Obj)
@@ -333,7 +339,7 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniStaticMeshComponent() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UHoudiniStaticMeshComponent, 1503510561);
+	IMPLEMENT_CLASS(UHoudiniStaticMeshComponent, 2206187406);
 	template<> HOUDINIENGINERUNTIME_API UClass* StaticClass<UHoudiniStaticMeshComponent>()
 	{
 		return UHoudiniStaticMeshComponent::StaticClass();

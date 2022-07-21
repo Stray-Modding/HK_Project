@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "HoudiniEngineRuntime/Public/HoudiniParameterOperatorPath.h"
+#include "HoudiniEngineRuntime/Private/HoudiniParameterOperatorPath.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -47,12 +47,12 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniParameterOperatorPath() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterOperatorPath_Statics::Class_MetaDataParams[] = {
 		{ "IncludePath", "HoudiniParameterOperatorPath.h" },
-		{ "ModuleRelativePath", "Public/HoudiniParameterOperatorPath.h" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterOperatorPath.h" },
 	};
 #endif
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterOperatorPath_Statics::NewProp_HoudiniInput_MetaData[] = {
-		{ "ModuleRelativePath", "Public/HoudiniParameterOperatorPath.h" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterOperatorPath.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FWeakObjectPropertyParams Z_Construct_UClass_UHoudiniParameterOperatorPath_Statics::NewProp_HoudiniInput = { "HoudiniInput", nullptr, (EPropertyFlags)0x0014000000000000, UE4CodeGen_Private::EPropertyGenFlags::WeakObject, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UHoudiniParameterOperatorPath, HoudiniInput), Z_Construct_UClass_UHoudiniInput_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UHoudiniParameterOperatorPath_Statics::NewProp_HoudiniInput_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHoudiniParameterOperatorPath_Statics::NewProp_HoudiniInput_MetaData)) };
@@ -86,7 +86,7 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniParameterOperatorPath() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UHoudiniParameterOperatorPath, 1158375696);
+	IMPLEMENT_CLASS(UHoudiniParameterOperatorPath, 296964808);
 	template<> HOUDINIENGINERUNTIME_API UClass* StaticClass<UHoudiniParameterOperatorPath>()
 	{
 		return UHoudiniParameterOperatorPath::StaticClass();

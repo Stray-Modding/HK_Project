@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "HoudiniEngineRuntime/Public/HoudiniParameterColor.h"
+#include "HoudiniEngineRuntime/Private/HoudiniParameterColor.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -56,24 +56,28 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniParameterColor() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterColor_Statics::Class_MetaDataParams[] = {
 		{ "IncludePath", "HoudiniParameterColor.h" },
-		{ "ModuleRelativePath", "Public/HoudiniParameterColor.h" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterColor.h" },
 	};
 #endif
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterColor_Statics::NewProp_Color_MetaData[] = {
-		{ "ModuleRelativePath", "Public/HoudiniParameterColor.h" },
+		{ "Comment", "// Color for this property.\n" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterColor.h" },
+		{ "ToolTip", "Color for this property." },
 	};
 #endif
 	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_UHoudiniParameterColor_Statics::NewProp_Color = { "Color", nullptr, (EPropertyFlags)0x0020080000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UHoudiniParameterColor, Color), Z_Construct_UScriptStruct_FLinearColor, METADATA_PARAMS(Z_Construct_UClass_UHoudiniParameterColor_Statics::NewProp_Color_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHoudiniParameterColor_Statics::NewProp_Color_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterColor_Statics::NewProp_DefaultColor_MetaData[] = {
-		{ "ModuleRelativePath", "Public/HoudiniParameterColor.h" },
+		{ "Comment", "// Default color for this property\n" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterColor.h" },
+		{ "ToolTip", "Default color for this property" },
 	};
 #endif
 	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_UHoudiniParameterColor_Statics::NewProp_DefaultColor = { "DefaultColor", nullptr, (EPropertyFlags)0x0020080000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UHoudiniParameterColor, DefaultColor), Z_Construct_UScriptStruct_FLinearColor, METADATA_PARAMS(Z_Construct_UClass_UHoudiniParameterColor_Statics::NewProp_DefaultColor_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHoudiniParameterColor_Statics::NewProp_DefaultColor_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterColor_Statics::NewProp_bIsChildOfRamp_MetaData[] = {
-		{ "ModuleRelativePath", "Public/HoudiniParameterColor.h" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterColor.h" },
 	};
 #endif
 	void Z_Construct_UClass_UHoudiniParameterColor_Statics::NewProp_bIsChildOfRamp_SetBit(void* Obj)
@@ -113,7 +117,7 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniParameterColor() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UHoudiniParameterColor, 2837092569);
+	IMPLEMENT_CLASS(UHoudiniParameterColor, 3855906185);
 	template<> HOUDINIENGINERUNTIME_API UClass* StaticClass<UHoudiniParameterColor>()
 	{
 		return UHoudiniParameterColor::StaticClass();

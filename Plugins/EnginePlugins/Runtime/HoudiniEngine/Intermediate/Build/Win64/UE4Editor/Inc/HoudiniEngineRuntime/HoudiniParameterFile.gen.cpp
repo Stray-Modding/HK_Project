@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "HoudiniEngineRuntime/Public/HoudiniParameterFile.h"
+#include "HoudiniEngineRuntime/Private/HoudiniParameterFile.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -61,32 +61,38 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniParameterFile() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterFile_Statics::Class_MetaDataParams[] = {
 		{ "IncludePath", "HoudiniParameterFile.h" },
-		{ "ModuleRelativePath", "Public/HoudiniParameterFile.h" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterFile.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FStrPropertyParams Z_Construct_UClass_UHoudiniParameterFile_Statics::NewProp_Values_Inner = { "Values", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterFile_Statics::NewProp_Values_MetaData[] = {
-		{ "ModuleRelativePath", "Public/HoudiniParameterFile.h" },
+		{ "Comment", "// Values of this property.\n" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterFile.h" },
+		{ "ToolTip", "Values of this property." },
 	};
 #endif
 	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UHoudiniParameterFile_Statics::NewProp_Values = { "Values", nullptr, (EPropertyFlags)0x0020080000000000, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UHoudiniParameterFile, Values), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_UHoudiniParameterFile_Statics::NewProp_Values_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHoudiniParameterFile_Statics::NewProp_Values_MetaData)) };
 	const UE4CodeGen_Private::FStrPropertyParams Z_Construct_UClass_UHoudiniParameterFile_Statics::NewProp_DefaultValues_Inner = { "DefaultValues", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterFile_Statics::NewProp_DefaultValues_MetaData[] = {
-		{ "ModuleRelativePath", "Public/HoudiniParameterFile.h" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterFile.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UHoudiniParameterFile_Statics::NewProp_DefaultValues = { "DefaultValues", nullptr, (EPropertyFlags)0x0020080000000000, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UHoudiniParameterFile, DefaultValues), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_UHoudiniParameterFile_Statics::NewProp_DefaultValues_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHoudiniParameterFile_Statics::NewProp_DefaultValues_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterFile_Statics::NewProp_Filters_MetaData[] = {
-		{ "ModuleRelativePath", "Public/HoudiniParameterFile.h" },
+		{ "Comment", "// Filters of this property.\n" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterFile.h" },
+		{ "ToolTip", "Filters of this property." },
 	};
 #endif
 	const UE4CodeGen_Private::FStrPropertyParams Z_Construct_UClass_UHoudiniParameterFile_Statics::NewProp_Filters = { "Filters", nullptr, (EPropertyFlags)0x0020080000000000, UE4CodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UHoudiniParameterFile, Filters), METADATA_PARAMS(Z_Construct_UClass_UHoudiniParameterFile_Statics::NewProp_Filters_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHoudiniParameterFile_Statics::NewProp_Filters_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterFile_Statics::NewProp_bIsReadOnly_MetaData[] = {
-		{ "ModuleRelativePath", "Public/HoudiniParameterFile.h" },
+		{ "Comment", "// Is the file parameter read-only?\n" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterFile.h" },
+		{ "ToolTip", "Is the file parameter read-only?" },
 	};
 #endif
 	void Z_Construct_UClass_UHoudiniParameterFile_Statics::NewProp_bIsReadOnly_SetBit(void* Obj)
@@ -129,7 +135,7 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniParameterFile() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UHoudiniParameterFile, 551433842);
+	IMPLEMENT_CLASS(UHoudiniParameterFile, 2167569600);
 	template<> HOUDINIENGINERUNTIME_API UClass* StaticClass<UHoudiniParameterFile>()
 	{
 		return UHoudiniParameterFile::StaticClass();

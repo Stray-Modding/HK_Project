@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "HoudiniEngineRuntime/Public/HoudiniParameterFolder.h"
+#include "HoudiniEngineRuntime/Private/HoudiniParameterFolder.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -13,12 +13,73 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeHoudiniParameterFolder() {}
 // Cross Module References
+	HOUDINIENGINERUNTIME_API UEnum* Z_Construct_UEnum_HoudiniEngineRuntime_EHoudiniFolderParameterType();
+	UPackage* Z_Construct_UPackage__Script_HoudiniEngineRuntime();
 	HOUDINIENGINERUNTIME_API UClass* Z_Construct_UClass_UHoudiniParameterFolder_NoRegister();
 	HOUDINIENGINERUNTIME_API UClass* Z_Construct_UClass_UHoudiniParameterFolder();
 	HOUDINIENGINERUNTIME_API UClass* Z_Construct_UClass_UHoudiniParameter();
-	UPackage* Z_Construct_UPackage__Script_HoudiniEngineRuntime();
-	HOUDINIENGINERUNTIME_API UEnum* Z_Construct_UEnum_HoudiniEngineRuntime_EHoudiniFolderParameterType();
 // End Cross Module References
+	static UEnum* EHoudiniFolderParameterType_StaticEnum()
+	{
+		static UEnum* Singleton = nullptr;
+		if (!Singleton)
+		{
+			Singleton = GetStaticEnum(Z_Construct_UEnum_HoudiniEngineRuntime_EHoudiniFolderParameterType, Z_Construct_UPackage__Script_HoudiniEngineRuntime(), TEXT("EHoudiniFolderParameterType"));
+		}
+		return Singleton;
+	}
+	template<> HOUDINIENGINERUNTIME_API UEnum* StaticEnum<EHoudiniFolderParameterType>()
+	{
+		return EHoudiniFolderParameterType_StaticEnum();
+	}
+	static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_EHoudiniFolderParameterType(EHoudiniFolderParameterType_StaticEnum, TEXT("/Script/HoudiniEngineRuntime"), TEXT("EHoudiniFolderParameterType"), false, nullptr, nullptr);
+	uint32 Get_Z_Construct_UEnum_HoudiniEngineRuntime_EHoudiniFolderParameterType_Hash() { return 1803532089U; }
+	UEnum* Z_Construct_UEnum_HoudiniEngineRuntime_EHoudiniFolderParameterType()
+	{
+#if WITH_HOT_RELOAD
+		UPackage* Outer = Z_Construct_UPackage__Script_HoudiniEngineRuntime();
+		static UEnum* ReturnEnum = FindExistingEnumIfHotReloadOrDynamic(Outer, TEXT("EHoudiniFolderParameterType"), 0, Get_Z_Construct_UEnum_HoudiniEngineRuntime_EHoudiniFolderParameterType_Hash(), false);
+#else
+		static UEnum* ReturnEnum = nullptr;
+#endif // WITH_HOT_RELOAD
+		if (!ReturnEnum)
+		{
+			static const UE4CodeGen_Private::FEnumeratorParam Enumerators[] = {
+				{ "EHoudiniFolderParameterType::Invalid", (int64)EHoudiniFolderParameterType::Invalid },
+				{ "EHoudiniFolderParameterType::Collapsible", (int64)EHoudiniFolderParameterType::Collapsible },
+				{ "EHoudiniFolderParameterType::Simple", (int64)EHoudiniFolderParameterType::Simple },
+				{ "EHoudiniFolderParameterType::Tabs", (int64)EHoudiniFolderParameterType::Tabs },
+				{ "EHoudiniFolderParameterType::Radio", (int64)EHoudiniFolderParameterType::Radio },
+				{ "EHoudiniFolderParameterType::Other", (int64)EHoudiniFolderParameterType::Other },
+			};
+#if WITH_METADATA
+			const UE4CodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[] = {
+				{ "Collapsible.Name", "EHoudiniFolderParameterType::Collapsible" },
+				{ "Invalid.Name", "EHoudiniFolderParameterType::Invalid" },
+				{ "ModuleRelativePath", "Private/HoudiniParameterFolder.h" },
+				{ "Other.Name", "EHoudiniFolderParameterType::Other" },
+				{ "Radio.Name", "EHoudiniFolderParameterType::Radio" },
+				{ "Simple.Name", "EHoudiniFolderParameterType::Simple" },
+				{ "Tabs.Name", "EHoudiniFolderParameterType::Tabs" },
+			};
+#endif
+			static const UE4CodeGen_Private::FEnumParams EnumParams = {
+				(UObject*(*)())Z_Construct_UPackage__Script_HoudiniEngineRuntime,
+				nullptr,
+				"EHoudiniFolderParameterType",
+				"EHoudiniFolderParameterType",
+				Enumerators,
+				UE_ARRAY_COUNT(Enumerators),
+				RF_Public|RF_Transient|RF_MarkAsNative,
+				EEnumFlags::None,
+				UE4CodeGen_Private::EDynamicType::NotDynamic,
+				(uint8)UEnum::ECppForm::EnumClass,
+				METADATA_PARAMS(Enum_MetaDataParams, UE_ARRAY_COUNT(Enum_MetaDataParams))
+			};
+			UE4CodeGen_Private::ConstructUEnum(ReturnEnum, EnumParams);
+		}
+		return ReturnEnum;
+	}
 	void UHoudiniParameterFolder::StaticRegisterNativesUHoudiniParameterFolder()
 	{
 	}
@@ -67,19 +128,19 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniParameterFolder() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterFolder_Statics::Class_MetaDataParams[] = {
 		{ "IncludePath", "HoudiniParameterFolder.h" },
-		{ "ModuleRelativePath", "Public/HoudiniParameterFolder.h" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterFolder.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UClass_UHoudiniParameterFolder_Statics::NewProp_FolderType_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterFolder_Statics::NewProp_FolderType_MetaData[] = {
-		{ "ModuleRelativePath", "Public/HoudiniParameterFolder.h" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterFolder.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UClass_UHoudiniParameterFolder_Statics::NewProp_FolderType = { "FolderType", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UHoudiniParameterFolder, FolderType), Z_Construct_UEnum_HoudiniEngineRuntime_EHoudiniFolderParameterType, METADATA_PARAMS(Z_Construct_UClass_UHoudiniParameterFolder_Statics::NewProp_FolderType_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHoudiniParameterFolder_Statics::NewProp_FolderType_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterFolder_Statics::NewProp_bExpanded_MetaData[] = {
-		{ "ModuleRelativePath", "Public/HoudiniParameterFolder.h" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterFolder.h" },
 	};
 #endif
 	void Z_Construct_UClass_UHoudiniParameterFolder_Statics::NewProp_bExpanded_SetBit(void* Obj)
@@ -89,7 +150,7 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniParameterFolder() {}
 	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UHoudiniParameterFolder_Statics::NewProp_bExpanded = { "bExpanded", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(UHoudiniParameterFolder), &Z_Construct_UClass_UHoudiniParameterFolder_Statics::NewProp_bExpanded_SetBit, METADATA_PARAMS(Z_Construct_UClass_UHoudiniParameterFolder_Statics::NewProp_bExpanded_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHoudiniParameterFolder_Statics::NewProp_bExpanded_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterFolder_Statics::NewProp_bChosen_MetaData[] = {
-		{ "ModuleRelativePath", "Public/HoudiniParameterFolder.h" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterFolder.h" },
 	};
 #endif
 	void Z_Construct_UClass_UHoudiniParameterFolder_Statics::NewProp_bChosen_SetBit(void* Obj)
@@ -99,13 +160,13 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniParameterFolder() {}
 	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UHoudiniParameterFolder_Statics::NewProp_bChosen = { "bChosen", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(UHoudiniParameterFolder), &Z_Construct_UClass_UHoudiniParameterFolder_Statics::NewProp_bChosen_SetBit, METADATA_PARAMS(Z_Construct_UClass_UHoudiniParameterFolder_Statics::NewProp_bChosen_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHoudiniParameterFolder_Statics::NewProp_bChosen_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterFolder_Statics::NewProp_ChildCounter_MetaData[] = {
-		{ "ModuleRelativePath", "Public/HoudiniParameterFolder.h" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterFolder.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_UHoudiniParameterFolder_Statics::NewProp_ChildCounter = { "ChildCounter", nullptr, (EPropertyFlags)0x0040000000000000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UHoudiniParameterFolder, ChildCounter), METADATA_PARAMS(Z_Construct_UClass_UHoudiniParameterFolder_Statics::NewProp_ChildCounter_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHoudiniParameterFolder_Statics::NewProp_ChildCounter_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterFolder_Statics::NewProp_bIsContentShown_MetaData[] = {
-		{ "ModuleRelativePath", "Public/HoudiniParameterFolder.h" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterFolder.h" },
 	};
 #endif
 	void Z_Construct_UClass_UHoudiniParameterFolder_Statics::NewProp_bIsContentShown_SetBit(void* Obj)
@@ -148,7 +209,7 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniParameterFolder() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UHoudiniParameterFolder, 261964421);
+	IMPLEMENT_CLASS(UHoudiniParameterFolder, 4245307001);
 	template<> HOUDINIENGINERUNTIME_API UClass* StaticClass<UHoudiniParameterFolder>()
 	{
 		return UHoudiniParameterFolder::StaticClass();

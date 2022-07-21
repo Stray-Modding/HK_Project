@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "HoudiniEngineRuntime/Public/HoudiniParameterToggle.h"
+#include "HoudiniEngineRuntime/Private/HoudiniParameterToggle.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -52,20 +52,22 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniParameterToggle() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterToggle_Statics::Class_MetaDataParams[] = {
 		{ "IncludePath", "HoudiniParameterToggle.h" },
-		{ "ModuleRelativePath", "Public/HoudiniParameterToggle.h" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterToggle.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_UHoudiniParameterToggle_Statics::NewProp_Values_Inner = { "Values", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterToggle_Statics::NewProp_Values_MetaData[] = {
-		{ "ModuleRelativePath", "Public/HoudiniParameterToggle.h" },
+		{ "Comment", "// Values of this property.\n" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterToggle.h" },
+		{ "ToolTip", "Values of this property." },
 	};
 #endif
 	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UHoudiniParameterToggle_Statics::NewProp_Values = { "Values", nullptr, (EPropertyFlags)0x0020080000000000, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UHoudiniParameterToggle, Values), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_UHoudiniParameterToggle_Statics::NewProp_Values_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHoudiniParameterToggle_Statics::NewProp_Values_MetaData)) };
 	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_UHoudiniParameterToggle_Statics::NewProp_DefaultValues_Inner = { "DefaultValues", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterToggle_Statics::NewProp_DefaultValues_MetaData[] = {
-		{ "ModuleRelativePath", "Public/HoudiniParameterToggle.h" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterToggle.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UHoudiniParameterToggle_Statics::NewProp_DefaultValues = { "DefaultValues", nullptr, (EPropertyFlags)0x0020080000000000, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UHoudiniParameterToggle, DefaultValues), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_UHoudiniParameterToggle_Statics::NewProp_DefaultValues_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHoudiniParameterToggle_Statics::NewProp_DefaultValues_MetaData)) };
@@ -102,7 +104,7 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniParameterToggle() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UHoudiniParameterToggle, 2420041195);
+	IMPLEMENT_CLASS(UHoudiniParameterToggle, 2507949257);
 	template<> HOUDINIENGINERUNTIME_API UClass* StaticClass<UHoudiniParameterToggle>()
 	{
 		return UHoudiniParameterToggle::StaticClass();

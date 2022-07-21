@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "HoudiniEngineRuntime/Public/HoudiniParameterButton.h"
+#include "HoudiniEngineRuntime/Private/HoudiniParameterButton.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -41,7 +41,7 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniParameterButton() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterButton_Statics::Class_MetaDataParams[] = {
 		{ "IncludePath", "HoudiniParameterButton.h" },
-		{ "ModuleRelativePath", "Public/HoudiniParameterButton.h" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterButton.h" },
 	};
 #endif
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UHoudiniParameterButton_Statics::StaticCppClassTypeInfo = {
@@ -71,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniParameterButton() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UHoudiniParameterButton, 1260137713);
+	IMPLEMENT_CLASS(UHoudiniParameterButton, 113833211);
 	template<> HOUDINIENGINERUNTIME_API UClass* StaticClass<UHoudiniParameterButton>()
 	{
 		return UHoudiniParameterButton::StaticClass();

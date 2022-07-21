@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "HoudiniEngineRuntime/Public/HoudiniEngineCopyPropertiesInterface.h"
+#include "HoudiniEngineRuntime/Private/HoudiniEngineCopyPropertiesInterface.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -40,7 +40,8 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniEngineCopyPropertiesInterface() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniEngineCopyPropertiesInterface_Statics::Class_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Public/HoudiniEngineCopyPropertiesInterface.h" },
+		{ "CannotImplementInterfaceInBlueprint", "" },
+		{ "ModuleRelativePath", "Private/HoudiniEngineCopyPropertiesInterface.h" },
 	};
 #endif
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UHoudiniEngineCopyPropertiesInterface_Statics::StaticCppClassTypeInfo = {
@@ -70,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniEngineCopyPropertiesInterface() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UHoudiniEngineCopyPropertiesInterface, 3103248997);
+	IMPLEMENT_CLASS(UHoudiniEngineCopyPropertiesInterface, 3082346601);
 	template<> HOUDINIENGINERUNTIME_API UClass* StaticClass<UHoudiniEngineCopyPropertiesInterface>()
 	{
 		return UHoudiniEngineCopyPropertiesInterface::StaticClass();

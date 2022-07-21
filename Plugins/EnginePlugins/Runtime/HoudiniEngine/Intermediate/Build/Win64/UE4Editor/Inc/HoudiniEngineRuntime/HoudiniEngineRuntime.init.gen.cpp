@@ -21,8 +21,8 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniEngineRuntime_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0x663C885B,
-				0x451239DE,
+				0x604583A4,
+				0xDB0CF94D,
 				METADATA_PARAMS(nullptr, 0)
 			};
 			UE4CodeGen_Private::ConstructUPackage(ReturnPackage, PackageParams);

@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "HoudiniEngineRuntime/Public/HoudiniParameterButtonStrip.h"
+#include "HoudiniEngineRuntime/Private/HoudiniParameterButtonStrip.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -56,26 +56,26 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniParameterButtonStrip() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterButtonStrip_Statics::Class_MetaDataParams[] = {
 		{ "IncludePath", "HoudiniParameterButtonStrip.h" },
-		{ "ModuleRelativePath", "Public/HoudiniParameterButtonStrip.h" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterButtonStrip.h" },
 	};
 #endif
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterButtonStrip_Statics::NewProp_Count_MetaData[] = {
-		{ "ModuleRelativePath", "Public/HoudiniParameterButtonStrip.h" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterButtonStrip.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_UHoudiniParameterButtonStrip_Statics::NewProp_Count = { "Count", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UHoudiniParameterButtonStrip, Count), METADATA_PARAMS(Z_Construct_UClass_UHoudiniParameterButtonStrip_Statics::NewProp_Count_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHoudiniParameterButtonStrip_Statics::NewProp_Count_MetaData)) };
 	const UE4CodeGen_Private::FStrPropertyParams Z_Construct_UClass_UHoudiniParameterButtonStrip_Statics::NewProp_Labels_Inner = { "Labels", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterButtonStrip_Statics::NewProp_Labels_MetaData[] = {
-		{ "ModuleRelativePath", "Public/HoudiniParameterButtonStrip.h" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterButtonStrip.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UHoudiniParameterButtonStrip_Statics::NewProp_Labels = { "Labels", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UHoudiniParameterButtonStrip, Labels), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_UHoudiniParameterButtonStrip_Statics::NewProp_Labels_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHoudiniParameterButtonStrip_Statics::NewProp_Labels_MetaData)) };
 	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_UHoudiniParameterButtonStrip_Statics::NewProp_Values_Inner = { "Values", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterButtonStrip_Statics::NewProp_Values_MetaData[] = {
-		{ "ModuleRelativePath", "Public/HoudiniParameterButtonStrip.h" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterButtonStrip.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UHoudiniParameterButtonStrip_Statics::NewProp_Values = { "Values", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UHoudiniParameterButtonStrip, Values), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_UHoudiniParameterButtonStrip_Statics::NewProp_Values_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHoudiniParameterButtonStrip_Statics::NewProp_Values_MetaData)) };
@@ -113,7 +113,7 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniParameterButtonStrip() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UHoudiniParameterButtonStrip, 1693055638);
+	IMPLEMENT_CLASS(UHoudiniParameterButtonStrip, 2225542696);
 	template<> HOUDINIENGINERUNTIME_API UClass* StaticClass<UHoudiniParameterButtonStrip>()
 	{
 		return UHoudiniParameterButtonStrip::StaticClass();

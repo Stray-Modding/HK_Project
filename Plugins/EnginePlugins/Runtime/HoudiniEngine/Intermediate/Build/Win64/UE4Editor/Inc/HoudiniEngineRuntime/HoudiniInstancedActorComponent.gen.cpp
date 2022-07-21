@@ -5,7 +5,8 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "HoudiniEngineRuntime/Public/HoudiniInstancedActorComponent.h"
+#include "HoudiniEngineRuntime/Private/HoudiniInstancedActorComponent.h"
+#include "Serialization/ArchiveUObjectFromStructuredArchive.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -52,25 +53,23 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniInstancedActorComponent() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniInstancedActorComponent_Statics::Class_MetaDataParams[] = {
-		{ "BlueprintSpawnableComponent", "" },
-		{ "ClassGroupNames", "Custom" },
 		{ "HideCategories", "Trigger PhysicsVolume" },
 		{ "IncludePath", "HoudiniInstancedActorComponent.h" },
-		{ "ModuleRelativePath", "Public/HoudiniInstancedActorComponent.h" },
+		{ "ModuleRelativePath", "Private/HoudiniInstancedActorComponent.h" },
 	};
 #endif
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniInstancedActorComponent_Statics::NewProp_InstancedObject_MetaData[] = {
-		{ "Category", "HoudiniInstancedActorComponent" },
-		{ "ModuleRelativePath", "Public/HoudiniInstancedActorComponent.h" },
+		{ "Category", "Instances" },
+		{ "ModuleRelativePath", "Private/HoudiniInstancedActorComponent.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UHoudiniInstancedActorComponent_Statics::NewProp_InstancedObject = { "InstancedObject", nullptr, (EPropertyFlags)0x0040000000020001, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UHoudiniInstancedActorComponent, InstancedObject), Z_Construct_UClass_UObject_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UHoudiniInstancedActorComponent_Statics::NewProp_InstancedObject_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHoudiniInstancedActorComponent_Statics::NewProp_InstancedObject_MetaData)) };
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UHoudiniInstancedActorComponent_Statics::NewProp_InstancedActors_Inner = { "InstancedActors", nullptr, (EPropertyFlags)0x0000000000020000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniInstancedActorComponent_Statics::NewProp_InstancedActors_MetaData[] = {
-		{ "Category", "HoudiniInstancedActorComponent" },
-		{ "ModuleRelativePath", "Public/HoudiniInstancedActorComponent.h" },
+		{ "Category", "Instances" },
+		{ "ModuleRelativePath", "Private/HoudiniInstancedActorComponent.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UHoudiniInstancedActorComponent_Statics::NewProp_InstancedActors = { "InstancedActors", nullptr, (EPropertyFlags)0x0040000000020801, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UHoudiniInstancedActorComponent, InstancedActors), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_UHoudiniInstancedActorComponent_Statics::NewProp_InstancedActors_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHoudiniInstancedActorComponent_Statics::NewProp_InstancedActors_MetaData)) };
@@ -106,13 +105,14 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniInstancedActorComponent() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UHoudiniInstancedActorComponent, 2846606127);
+	IMPLEMENT_CLASS(UHoudiniInstancedActorComponent, 3437739716);
 	template<> HOUDINIENGINERUNTIME_API UClass* StaticClass<UHoudiniInstancedActorComponent>()
 	{
 		return UHoudiniInstancedActorComponent::StaticClass();
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_UHoudiniInstancedActorComponent(Z_Construct_UClass_UHoudiniInstancedActorComponent, &UHoudiniInstancedActorComponent::StaticClass, TEXT("/Script/HoudiniEngineRuntime"), TEXT("UHoudiniInstancedActorComponent"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UHoudiniInstancedActorComponent);
+	IMPLEMENT_FSTRUCTUREDARCHIVE_SERIALIZER(UHoudiniInstancedActorComponent)
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 #ifdef _MSC_VER
 #pragma warning (pop)

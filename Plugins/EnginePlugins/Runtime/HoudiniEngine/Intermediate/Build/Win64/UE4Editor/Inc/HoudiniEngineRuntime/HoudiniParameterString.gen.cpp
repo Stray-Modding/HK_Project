@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "HoudiniEngineRuntime/Public/HoudiniParameterString.h"
+#include "HoudiniEngineRuntime/Private/HoudiniParameterString.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -63,33 +63,37 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniParameterString() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterString_Statics::Class_MetaDataParams[] = {
 		{ "IncludePath", "HoudiniParameterString.h" },
-		{ "ModuleRelativePath", "Public/HoudiniParameterString.h" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterString.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FStrPropertyParams Z_Construct_UClass_UHoudiniParameterString_Statics::NewProp_Values_Inner = { "Values", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterString_Statics::NewProp_Values_MetaData[] = {
-		{ "ModuleRelativePath", "Public/HoudiniParameterString.h" },
+		{ "Comment", "// Values of this property.\n" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterString.h" },
+		{ "ToolTip", "Values of this property." },
 	};
 #endif
 	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UHoudiniParameterString_Statics::NewProp_Values = { "Values", nullptr, (EPropertyFlags)0x0020080000000000, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UHoudiniParameterString, Values), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_UHoudiniParameterString_Statics::NewProp_Values_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHoudiniParameterString_Statics::NewProp_Values_MetaData)) };
 	const UE4CodeGen_Private::FStrPropertyParams Z_Construct_UClass_UHoudiniParameterString_Statics::NewProp_DefaultValues_Inner = { "DefaultValues", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterString_Statics::NewProp_DefaultValues_MetaData[] = {
-		{ "ModuleRelativePath", "Public/HoudiniParameterString.h" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterString.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UHoudiniParameterString_Statics::NewProp_DefaultValues = { "DefaultValues", nullptr, (EPropertyFlags)0x0020080000000000, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UHoudiniParameterString, DefaultValues), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_UHoudiniParameterString_Statics::NewProp_DefaultValues_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHoudiniParameterString_Statics::NewProp_DefaultValues_MetaData)) };
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UHoudiniParameterString_Statics::NewProp_ChosenAssets_Inner = { "ChosenAssets", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_UObject_NoRegister, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterString_Statics::NewProp_ChosenAssets_MetaData[] = {
-		{ "ModuleRelativePath", "Public/HoudiniParameterString.h" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterString.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UHoudiniParameterString_Statics::NewProp_ChosenAssets = { "ChosenAssets", nullptr, (EPropertyFlags)0x0020080000000000, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UHoudiniParameterString, ChosenAssets), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_UHoudiniParameterString_Statics::NewProp_ChosenAssets_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHoudiniParameterString_Statics::NewProp_ChosenAssets_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterString_Statics::NewProp_bIsAssetRef_MetaData[] = {
-		{ "ModuleRelativePath", "Public/HoudiniParameterString.h" },
+		{ "Comment", "// Indicates this string parameter should be treated as an asset reference\n// and display an object picker\n" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterString.h" },
+		{ "ToolTip", "Indicates this string parameter should be treated as an asset reference\nand display an object picker" },
 	};
 #endif
 	void Z_Construct_UClass_UHoudiniParameterString_Statics::NewProp_bIsAssetRef_SetBit(void* Obj)
@@ -133,7 +137,7 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniParameterString() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UHoudiniParameterString, 902458074);
+	IMPLEMENT_CLASS(UHoudiniParameterString, 4060322725);
 	template<> HOUDINIENGINERUNTIME_API UClass* StaticClass<UHoudiniParameterString>()
 	{
 		return UHoudiniParameterString::StaticClass();

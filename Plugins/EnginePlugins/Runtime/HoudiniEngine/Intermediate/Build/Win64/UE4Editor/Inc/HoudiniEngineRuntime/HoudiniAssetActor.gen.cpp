@@ -46,15 +46,23 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniAssetActor() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AHoudiniAssetActor_Statics::Class_MetaDataParams[] = {
+		{ "BlueprintType", "true" },
+		{ "ChildCanTick", "" },
+		{ "HideCategories", "Input" },
 		{ "IncludePath", "HoudiniAssetActor.h" },
+		{ "IsBlueprintBase", "true" },
+		{ "IsConversionRoot", "true" },
 		{ "ModuleRelativePath", "Public/HoudiniAssetActor.h" },
 	};
 #endif
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AHoudiniAssetActor_Statics::NewProp_HoudiniAssetComponent_MetaData[] = {
 		{ "Category", "HoudiniAssetActor" },
+		{ "Comment", "/*, AllowPrivateAccess = \"true\"*/" },
 		{ "EditInline", "true" },
+		{ "ExposeFunctionCategories", "Mesh,Rendering,Physics,Components|HoudiniEngine" },
 		{ "ModuleRelativePath", "Public/HoudiniAssetActor.h" },
+		{ "ToolTip", ", AllowPrivateAccess = \"true\"" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AHoudiniAssetActor_Statics::NewProp_HoudiniAssetComponent = { "HoudiniAssetComponent", nullptr, (EPropertyFlags)0x00100000000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AHoudiniAssetActor, HoudiniAssetComponent), Z_Construct_UClass_UHoudiniAssetComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AHoudiniAssetActor_Statics::NewProp_HoudiniAssetComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AHoudiniAssetActor_Statics::NewProp_HoudiniAssetComponent_MetaData)) };
@@ -88,7 +96,7 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniAssetActor() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AHoudiniAssetActor, 270206378);
+	IMPLEMENT_CLASS(AHoudiniAssetActor, 1795598386);
 	template<> HOUDINIENGINERUNTIME_API UClass* StaticClass<AHoudiniAssetActor>()
 	{
 		return AHoudiniAssetActor::StaticClass();

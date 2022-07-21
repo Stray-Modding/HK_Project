@@ -5,7 +5,8 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "HoudiniEngineRuntime/Public/HoudiniMeshSplitInstancerComponent.h"
+#include "HoudiniEngineRuntime/Private/HoudiniMeshSplitInstancerComponent.h"
+#include "Serialization/ArchiveUObjectFromStructuredArchive.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -58,34 +59,34 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniMeshSplitInstancerComponent() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniMeshSplitInstancerComponent_Statics::Class_MetaDataParams[] = {
-		{ "BlueprintSpawnableComponent", "" },
-		{ "ClassGroupNames", "Custom" },
+		{ "Comment", "/**\n* UHoudiniMeshSplitInstancerComponent is used to manage a single static mesh being\n* 'instanced' multiple times by multiple UStaticMeshComponents.  This is as opposed to the\n* UInstancedStaticMeshComponent wherein a single mesh is instanced multiple times by one component.\n*/" },
 		{ "HideCategories", "Trigger PhysicsVolume" },
 		{ "IncludePath", "HoudiniMeshSplitInstancerComponent.h" },
-		{ "ModuleRelativePath", "Public/HoudiniMeshSplitInstancerComponent.h" },
+		{ "ModuleRelativePath", "Private/HoudiniMeshSplitInstancerComponent.h" },
+		{ "ToolTip", "UHoudiniMeshSplitInstancerComponent is used to manage a single static mesh being\n'instanced' multiple times by multiple UStaticMeshComponents.  This is as opposed to the\nUInstancedStaticMeshComponent wherein a single mesh is instanced multiple times by one component." },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UHoudiniMeshSplitInstancerComponent_Statics::NewProp_Instances_Inner = { "Instances", nullptr, (EPropertyFlags)0x00000000000a0008, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniMeshSplitInstancerComponent_Statics::NewProp_Instances_MetaData[] = {
-		{ "Category", "HoudiniMeshSplitInstancerComponent" },
+		{ "Category", "Instances" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "Public/HoudiniMeshSplitInstancerComponent.h" },
+		{ "ModuleRelativePath", "Private/HoudiniMeshSplitInstancerComponent.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UHoudiniMeshSplitInstancerComponent_Statics::NewProp_Instances = { "Instances", nullptr, (EPropertyFlags)0x0040008000020809, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UHoudiniMeshSplitInstancerComponent, Instances), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_UHoudiniMeshSplitInstancerComponent_Statics::NewProp_Instances_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHoudiniMeshSplitInstancerComponent_Statics::NewProp_Instances_MetaData)) };
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UHoudiniMeshSplitInstancerComponent_Statics::NewProp_OverrideMaterials_Inner = { "OverrideMaterials", nullptr, (EPropertyFlags)0x0000000000020000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_UMaterialInterface_NoRegister, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniMeshSplitInstancerComponent_Statics::NewProp_OverrideMaterials_MetaData[] = {
-		{ "Category", "HoudiniMeshSplitInstancerComponent" },
-		{ "ModuleRelativePath", "Public/HoudiniMeshSplitInstancerComponent.h" },
+		{ "Category", "Instances" },
+		{ "ModuleRelativePath", "Private/HoudiniMeshSplitInstancerComponent.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UHoudiniMeshSplitInstancerComponent_Statics::NewProp_OverrideMaterials = { "OverrideMaterials", nullptr, (EPropertyFlags)0x0040000000020801, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UHoudiniMeshSplitInstancerComponent, OverrideMaterials), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_UHoudiniMeshSplitInstancerComponent_Statics::NewProp_OverrideMaterials_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHoudiniMeshSplitInstancerComponent_Statics::NewProp_OverrideMaterials_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniMeshSplitInstancerComponent_Statics::NewProp_InstancedMesh_MetaData[] = {
-		{ "Category", "HoudiniMeshSplitInstancerComponent" },
-		{ "ModuleRelativePath", "Public/HoudiniMeshSplitInstancerComponent.h" },
+		{ "Category", "Instances" },
+		{ "ModuleRelativePath", "Private/HoudiniMeshSplitInstancerComponent.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UHoudiniMeshSplitInstancerComponent_Statics::NewProp_InstancedMesh = { "InstancedMesh", nullptr, (EPropertyFlags)0x0040000000020001, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UHoudiniMeshSplitInstancerComponent, InstancedMesh), Z_Construct_UClass_UStaticMesh_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UHoudiniMeshSplitInstancerComponent_Statics::NewProp_InstancedMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHoudiniMeshSplitInstancerComponent_Statics::NewProp_InstancedMesh_MetaData)) };
@@ -123,13 +124,14 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniMeshSplitInstancerComponent() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UHoudiniMeshSplitInstancerComponent, 3162740720);
+	IMPLEMENT_CLASS(UHoudiniMeshSplitInstancerComponent, 1579299517);
 	template<> HOUDINIENGINERUNTIME_API UClass* StaticClass<UHoudiniMeshSplitInstancerComponent>()
 	{
 		return UHoudiniMeshSplitInstancerComponent::StaticClass();
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_UHoudiniMeshSplitInstancerComponent(Z_Construct_UClass_UHoudiniMeshSplitInstancerComponent, &UHoudiniMeshSplitInstancerComponent::StaticClass, TEXT("/Script/HoudiniEngineRuntime"), TEXT("UHoudiniMeshSplitInstancerComponent"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UHoudiniMeshSplitInstancerComponent);
+	IMPLEMENT_FSTRUCTUREDARCHIVE_SERIALIZER(UHoudiniMeshSplitInstancerComponent)
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 #ifdef _MSC_VER
 #pragma warning (pop)

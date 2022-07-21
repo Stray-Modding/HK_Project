@@ -13,32 +13,38 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define HOUDINIENGINERUNTIME_HoudiniAssetComponent_generated_h
 
-#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniAssetComponent_h_28_SPARSE_DATA
-#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniAssetComponent_h_28_RPC_WRAPPERS
-#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniAssetComponent_h_28_RPC_WRAPPERS_NO_PURE_DECLS
-#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniAssetComponent_h_28_INCLASS_NO_PURE_DECLS \
+#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniAssetComponent_h_74_SPARSE_DATA
+#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniAssetComponent_h_74_RPC_WRAPPERS
+#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniAssetComponent_h_74_RPC_WRAPPERS_NO_PURE_DECLS
+#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniAssetComponent_h_74_ARCHIVESERIALIZER \
+	DECLARE_FSTRUCTUREDARCHIVE_SERIALIZER(UHoudiniAssetComponent, NO_API)
+
+
+#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniAssetComponent_h_74_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUHoudiniAssetComponent(); \
 	friend struct Z_Construct_UClass_UHoudiniAssetComponent_Statics; \
 public: \
 	DECLARE_CLASS(UHoudiniAssetComponent, UPrimitiveComponent, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/HoudiniEngineRuntime"), NO_API) \
 	DECLARE_SERIALIZER(UHoudiniAssetComponent) \
+	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniAssetComponent_h_74_ARCHIVESERIALIZER \
 	virtual UObject* _getUObject() const override { return const_cast<UHoudiniAssetComponent*>(this); }
 
 
-#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniAssetComponent_h_28_INCLASS \
+#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniAssetComponent_h_74_INCLASS \
 private: \
 	static void StaticRegisterNativesUHoudiniAssetComponent(); \
 	friend struct Z_Construct_UClass_UHoudiniAssetComponent_Statics; \
 public: \
 	DECLARE_CLASS(UHoudiniAssetComponent, UPrimitiveComponent, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/HoudiniEngineRuntime"), NO_API) \
 	DECLARE_SERIALIZER(UHoudiniAssetComponent) \
+	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniAssetComponent_h_74_ARCHIVESERIALIZER \
 	virtual UObject* _getUObject() const override { return const_cast<UHoudiniAssetComponent*>(this); }
 
 
-#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniAssetComponent_h_28_STANDARD_CONSTRUCTORS \
+#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniAssetComponent_h_74_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API UHoudiniAssetComponent(const FObjectInitializer& ObjectInitializer); \
+	NO_API UHoudiniAssetComponent(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UHoudiniAssetComponent) \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UHoudiniAssetComponent); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UHoudiniAssetComponent); \
@@ -49,7 +55,9 @@ private: \
 public:
 
 
-#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniAssetComponent_h_28_ENHANCED_CONSTRUCTORS \
+#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniAssetComponent_h_74_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API UHoudiniAssetComponent(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API UHoudiniAssetComponent(UHoudiniAssetComponent&&); \
@@ -57,10 +65,10 @@ private: \
 public: \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UHoudiniAssetComponent); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UHoudiniAssetComponent); \
-	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UHoudiniAssetComponent)
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UHoudiniAssetComponent)
 
 
-#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniAssetComponent_h_28_PRIVATE_PROPERTY_OFFSET \
+#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniAssetComponent_h_74_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__AssetId() { return STRUCT_OFFSET(UHoudiniAssetComponent, AssetId); } \
 	FORCEINLINE static uint32 __PPO__NodeIdsToCook() { return STRUCT_OFFSET(UHoudiniAssetComponent, NodeIdsToCook); } \
 	FORCEINLINE static uint32 __PPO__OutputNodeCookCounts() { return STRUCT_OFFSET(UHoudiniAssetComponent, OutputNodeCookCounts); } \
@@ -71,6 +79,7 @@ public: \
 	FORCEINLINE static uint32 __PPO__AssetState() { return STRUCT_OFFSET(UHoudiniAssetComponent, AssetState); } \
 	FORCEINLINE static uint32 __PPO__DebugLastAssetState() { return STRUCT_OFFSET(UHoudiniAssetComponent, DebugLastAssetState); } \
 	FORCEINLINE static uint32 __PPO__AssetStateResult() { return STRUCT_OFFSET(UHoudiniAssetComponent, AssetStateResult); } \
+	FORCEINLINE static uint32 __PPO__LastComponentTransform() { return STRUCT_OFFSET(UHoudiniAssetComponent, LastComponentTransform); } \
 	FORCEINLINE static uint32 __PPO__SubAssetIndex() { return STRUCT_OFFSET(UHoudiniAssetComponent, SubAssetIndex); } \
 	FORCEINLINE static uint32 __PPO__AssetCookCount() { return STRUCT_OFFSET(UHoudiniAssetComponent, AssetCookCount); } \
 	FORCEINLINE static uint32 __PPO__bHasBeenLoaded() { return STRUCT_OFFSET(UHoudiniAssetComponent, bHasBeenLoaded); } \
@@ -87,6 +96,7 @@ public: \
 	FORCEINLINE static uint32 __PPO__Parameters() { return STRUCT_OFFSET(UHoudiniAssetComponent, Parameters); } \
 	FORCEINLINE static uint32 __PPO__Inputs() { return STRUCT_OFFSET(UHoudiniAssetComponent, Inputs); } \
 	FORCEINLINE static uint32 __PPO__Outputs() { return STRUCT_OFFSET(UHoudiniAssetComponent, Outputs); } \
+	FORCEINLINE static uint32 __PPO__BakedOutputs() { return STRUCT_OFFSET(UHoudiniAssetComponent, BakedOutputs); } \
 	FORCEINLINE static uint32 __PPO__UntrackedOutputs() { return STRUCT_OFFSET(UHoudiniAssetComponent, UntrackedOutputs); } \
 	FORCEINLINE static uint32 __PPO__HandleComponents() { return STRUCT_OFFSET(UHoudiniAssetComponent, HandleComponents); } \
 	FORCEINLINE static uint32 __PPO__bHasComponentTransformChanged() { return STRUCT_OFFSET(UHoudiniAssetComponent, bHasComponentTransformChanged); } \
@@ -100,35 +110,43 @@ public: \
 	FORCEINLINE static uint32 __PPO__LastTickTime() { return STRUCT_OFFSET(UHoudiniAssetComponent, LastTickTime); }
 
 
-#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniAssetComponent_h_26_PROLOG
-#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniAssetComponent_h_28_GENERATED_BODY_LEGACY \
+#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniAssetComponent_h_71_PROLOG
+#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniAssetComponent_h_74_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniAssetComponent_h_28_PRIVATE_PROPERTY_OFFSET \
-	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniAssetComponent_h_28_SPARSE_DATA \
-	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniAssetComponent_h_28_RPC_WRAPPERS \
-	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniAssetComponent_h_28_INCLASS \
-	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniAssetComponent_h_28_STANDARD_CONSTRUCTORS \
+	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniAssetComponent_h_74_PRIVATE_PROPERTY_OFFSET \
+	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniAssetComponent_h_74_SPARSE_DATA \
+	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniAssetComponent_h_74_RPC_WRAPPERS \
+	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniAssetComponent_h_74_INCLASS \
+	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniAssetComponent_h_74_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniAssetComponent_h_28_GENERATED_BODY \
+#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniAssetComponent_h_74_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniAssetComponent_h_28_PRIVATE_PROPERTY_OFFSET \
-	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniAssetComponent_h_28_SPARSE_DATA \
-	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniAssetComponent_h_28_RPC_WRAPPERS_NO_PURE_DECLS \
-	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniAssetComponent_h_28_INCLASS_NO_PURE_DECLS \
-	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniAssetComponent_h_28_ENHANCED_CONSTRUCTORS \
-private: \
+	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniAssetComponent_h_74_PRIVATE_PROPERTY_OFFSET \
+	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniAssetComponent_h_74_SPARSE_DATA \
+	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniAssetComponent_h_74_RPC_WRAPPERS_NO_PURE_DECLS \
+	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniAssetComponent_h_74_INCLASS_NO_PURE_DECLS \
+	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniAssetComponent_h_74_ENHANCED_CONSTRUCTORS \
+static_assert(false, "Unknown access specifier for GENERATED_BODY() macro in class HoudiniAssetComponent."); \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
 template<> HOUDINIENGINERUNTIME_API UClass* StaticClass<class UHoudiniAssetComponent>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniAssetComponent_h
+#define CURRENT_FILE_ID Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniAssetComponent_h
 
+
+#define FOREACH_ENUM_EHOUDINISTATICMESHMETHOD(op) \
+	op(EHoudiniStaticMeshMethod::RawMesh) \
+	op(EHoudiniStaticMeshMethod::FMeshDescription) \
+	op(EHoudiniStaticMeshMethod::UHoudiniStaticMesh) 
+
+enum class EHoudiniStaticMeshMethod : uint8;
+template<> HOUDINIENGINERUNTIME_API UEnum* StaticEnum<EHoudiniStaticMeshMethod>();
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

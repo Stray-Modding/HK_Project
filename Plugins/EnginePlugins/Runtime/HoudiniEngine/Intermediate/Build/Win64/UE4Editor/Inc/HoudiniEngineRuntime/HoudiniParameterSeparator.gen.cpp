@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "HoudiniEngineRuntime/Public/HoudiniParameterSeparator.h"
+#include "HoudiniEngineRuntime/Private/HoudiniParameterSeparator.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -41,7 +41,7 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniParameterSeparator() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterSeparator_Statics::Class_MetaDataParams[] = {
 		{ "IncludePath", "HoudiniParameterSeparator.h" },
-		{ "ModuleRelativePath", "Public/HoudiniParameterSeparator.h" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterSeparator.h" },
 	};
 #endif
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UHoudiniParameterSeparator_Statics::StaticCppClassTypeInfo = {
@@ -71,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniParameterSeparator() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UHoudiniParameterSeparator, 3229815188);
+	IMPLEMENT_CLASS(UHoudiniParameterSeparator, 1327405780);
 	template<> HOUDINIENGINERUNTIME_API UClass* StaticClass<UHoudiniParameterSeparator>()
 	{
 		return UHoudiniParameterSeparator::StaticClass();

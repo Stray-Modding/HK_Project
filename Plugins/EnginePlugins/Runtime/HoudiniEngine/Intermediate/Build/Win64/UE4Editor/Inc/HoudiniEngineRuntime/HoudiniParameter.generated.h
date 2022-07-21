@@ -13,10 +13,10 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define HOUDINIENGINERUNTIME_HoudiniParameter_generated_h
 
-#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniParameter_h_9_SPARSE_DATA
-#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniParameter_h_9_RPC_WRAPPERS
-#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniParameter_h_9_RPC_WRAPPERS_NO_PURE_DECLS
-#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniParameter_h_9_INCLASS_NO_PURE_DECLS \
+#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniParameter_h_73_SPARSE_DATA
+#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniParameter_h_73_RPC_WRAPPERS
+#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniParameter_h_73_RPC_WRAPPERS_NO_PURE_DECLS
+#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniParameter_h_73_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUHoudiniParameter(); \
 	friend struct Z_Construct_UClass_UHoudiniParameter_Statics; \
@@ -25,7 +25,7 @@ public: \
 	DECLARE_SERIALIZER(UHoudiniParameter)
 
 
-#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniParameter_h_9_INCLASS \
+#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniParameter_h_73_INCLASS \
 private: \
 	static void StaticRegisterNativesUHoudiniParameter(); \
 	friend struct Z_Construct_UClass_UHoudiniParameter_Statics; \
@@ -34,9 +34,9 @@ public: \
 	DECLARE_SERIALIZER(UHoudiniParameter)
 
 
-#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniParameter_h_9_STANDARD_CONSTRUCTORS \
+#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniParameter_h_73_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API UHoudiniParameter(const FObjectInitializer& ObjectInitializer); \
+	NO_API UHoudiniParameter(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UHoudiniParameter) \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UHoudiniParameter); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UHoudiniParameter); \
@@ -47,7 +47,9 @@ private: \
 public:
 
 
-#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniParameter_h_9_ENHANCED_CONSTRUCTORS \
+#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniParameter_h_73_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API UHoudiniParameter(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API UHoudiniParameter(UHoudiniParameter&&); \
@@ -55,10 +57,10 @@ private: \
 public: \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UHoudiniParameter); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UHoudiniParameter); \
-	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UHoudiniParameter)
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UHoudiniParameter)
 
 
-#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniParameter_h_9_PRIVATE_PROPERTY_OFFSET \
+#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniParameter_h_73_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__Name() { return STRUCT_OFFSET(UHoudiniParameter, Name); } \
 	FORCEINLINE static uint32 __PPO__Label() { return STRUCT_OFFSET(UHoudiniParameter, Label); } \
 	FORCEINLINE static uint32 __PPO__ParmType() { return STRUCT_OFFSET(UHoudiniParameter, ParmType); } \
@@ -89,35 +91,63 @@ public: \
 	FORCEINLINE static uint32 __PPO__bAutoUpdate() { return STRUCT_OFFSET(UHoudiniParameter, bAutoUpdate); }
 
 
-#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniParameter_h_7_PROLOG
-#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniParameter_h_9_GENERATED_BODY_LEGACY \
+#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniParameter_h_67_PROLOG
+#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniParameter_h_73_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniParameter_h_9_PRIVATE_PROPERTY_OFFSET \
-	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniParameter_h_9_SPARSE_DATA \
-	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniParameter_h_9_RPC_WRAPPERS \
-	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniParameter_h_9_INCLASS \
-	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniParameter_h_9_STANDARD_CONSTRUCTORS \
+	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniParameter_h_73_PRIVATE_PROPERTY_OFFSET \
+	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniParameter_h_73_SPARSE_DATA \
+	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniParameter_h_73_RPC_WRAPPERS \
+	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniParameter_h_73_INCLASS \
+	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniParameter_h_73_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniParameter_h_9_GENERATED_BODY \
+#define Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniParameter_h_73_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniParameter_h_9_PRIVATE_PROPERTY_OFFSET \
-	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniParameter_h_9_SPARSE_DATA \
-	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniParameter_h_9_RPC_WRAPPERS_NO_PURE_DECLS \
-	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniParameter_h_9_INCLASS_NO_PURE_DECLS \
-	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniParameter_h_9_ENHANCED_CONSTRUCTORS \
-private: \
+	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniParameter_h_73_PRIVATE_PROPERTY_OFFSET \
+	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniParameter_h_73_SPARSE_DATA \
+	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniParameter_h_73_RPC_WRAPPERS_NO_PURE_DECLS \
+	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniParameter_h_73_INCLASS_NO_PURE_DECLS \
+	Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniParameter_h_73_ENHANCED_CONSTRUCTORS \
+static_assert(false, "Unknown access specifier for GENERATED_BODY() macro in class HoudiniParameter."); \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
 template<> HOUDINIENGINERUNTIME_API UClass* StaticClass<class UHoudiniParameter>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Public_HoudiniParameter_h
+#define CURRENT_FILE_ID Stray_Plugins_EnginePlugins_Runtime_HoudiniEngine_Source_HoudiniEngineRuntime_Private_HoudiniParameter_h
 
+
+#define FOREACH_ENUM_EHOUDINIPARAMETERTYPE(op) \
+	op(EHoudiniParameterType::Invalid) \
+	op(EHoudiniParameterType::Button) \
+	op(EHoudiniParameterType::ButtonStrip) \
+	op(EHoudiniParameterType::Color) \
+	op(EHoudiniParameterType::ColorRamp) \
+	op(EHoudiniParameterType::File) \
+	op(EHoudiniParameterType::FileDir) \
+	op(EHoudiniParameterType::FileGeo) \
+	op(EHoudiniParameterType::FileImage) \
+	op(EHoudiniParameterType::Float) \
+	op(EHoudiniParameterType::FloatRamp) \
+	op(EHoudiniParameterType::Folder) \
+	op(EHoudiniParameterType::FolderList) \
+	op(EHoudiniParameterType::Input) \
+	op(EHoudiniParameterType::Int) \
+	op(EHoudiniParameterType::IntChoice) \
+	op(EHoudiniParameterType::Label) \
+	op(EHoudiniParameterType::MultiParm) \
+	op(EHoudiniParameterType::Separator) \
+	op(EHoudiniParameterType::String) \
+	op(EHoudiniParameterType::StringChoice) \
+	op(EHoudiniParameterType::StringAssetRef) \
+	op(EHoudiniParameterType::Toggle) 
+
+enum class EHoudiniParameterType : uint8;
+template<> HOUDINIENGINERUNTIME_API UEnum* StaticEnum<EHoudiniParameterType>();
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

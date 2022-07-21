@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "HoudiniEngineRuntime/Public/HoudiniParameterLabel.h"
+#include "HoudiniEngineRuntime/Private/HoudiniParameterLabel.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -47,13 +47,13 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniParameterLabel() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterLabel_Statics::Class_MetaDataParams[] = {
 		{ "IncludePath", "HoudiniParameterLabel.h" },
-		{ "ModuleRelativePath", "Public/HoudiniParameterLabel.h" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterLabel.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FStrPropertyParams Z_Construct_UClass_UHoudiniParameterLabel_Statics::NewProp_LabelStrings_Inner = { "LabelStrings", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterLabel_Statics::NewProp_LabelStrings_MetaData[] = {
-		{ "ModuleRelativePath", "Public/HoudiniParameterLabel.h" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterLabel.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UHoudiniParameterLabel_Statics::NewProp_LabelStrings = { "LabelStrings", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UHoudiniParameterLabel, LabelStrings), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_UHoudiniParameterLabel_Statics::NewProp_LabelStrings_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHoudiniParameterLabel_Statics::NewProp_LabelStrings_MetaData)) };
@@ -88,7 +88,7 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniParameterLabel() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UHoudiniParameterLabel, 210873308);
+	IMPLEMENT_CLASS(UHoudiniParameterLabel, 1102491972);
 	template<> HOUDINIENGINERUNTIME_API UClass* StaticClass<UHoudiniParameterLabel>()
 	{
 		return UHoudiniParameterLabel::StaticClass();

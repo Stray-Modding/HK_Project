@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "HoudiniEngineRuntime/Public/HoudiniParameterInt.h"
+#include "HoudiniEngineRuntime/Private/HoudiniParameterInt.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -97,32 +97,38 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniParameterInt() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterInt_Statics::Class_MetaDataParams[] = {
 		{ "IncludePath", "HoudiniParameterInt.h" },
-		{ "ModuleRelativePath", "Public/HoudiniParameterInt.h" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterInt.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_Values_Inner = { "Values", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_Values_MetaData[] = {
-		{ "ModuleRelativePath", "Public/HoudiniParameterInt.h" },
+		{ "Comment", "// Int Values\n" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterInt.h" },
+		{ "ToolTip", "Int Values" },
 	};
 #endif
 	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_Values = { "Values", nullptr, (EPropertyFlags)0x0020080000000000, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UHoudiniParameterInt, Values), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_Values_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_Values_MetaData)) };
 	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_DefaultValues_Inner = { "DefaultValues", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_DefaultValues_MetaData[] = {
-		{ "ModuleRelativePath", "Public/HoudiniParameterInt.h" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterInt.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_DefaultValues = { "DefaultValues", nullptr, (EPropertyFlags)0x0020080000000000, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UHoudiniParameterInt, DefaultValues), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_DefaultValues_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_DefaultValues_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_Unit_MetaData[] = {
-		{ "ModuleRelativePath", "Public/HoudiniParameterInt.h" },
+		{ "Comment", "// Unit for this property\n" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterInt.h" },
+		{ "ToolTip", "Unit for this property" },
 	};
 #endif
 	const UE4CodeGen_Private::FStrPropertyParams Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_Unit = { "Unit", nullptr, (EPropertyFlags)0x0020080000000000, UE4CodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UHoudiniParameterInt, Unit), METADATA_PARAMS(Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_Unit_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_Unit_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_bHasMin_MetaData[] = {
-		{ "ModuleRelativePath", "Public/HoudiniParameterInt.h" },
+		{ "Comment", "// Indicates we have a min/max value\n" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterInt.h" },
+		{ "ToolTip", "Indicates we have a min/max value" },
 	};
 #endif
 	void Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_bHasMin_SetBit(void* Obj)
@@ -132,7 +138,8 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniParameterInt() {}
 	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_bHasMin = { "bHasMin", nullptr, (EPropertyFlags)0x0020080000000000, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(UHoudiniParameterInt), &Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_bHasMin_SetBit, METADATA_PARAMS(Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_bHasMin_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_bHasMin_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_bHasMax_MetaData[] = {
-		{ "ModuleRelativePath", "Public/HoudiniParameterInt.h" },
+		{ "Comment", "// \n" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterInt.h" },
 	};
 #endif
 	void Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_bHasMax_SetBit(void* Obj)
@@ -142,7 +149,9 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniParameterInt() {}
 	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_bHasMax = { "bHasMax", nullptr, (EPropertyFlags)0x0020080000000000, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(UHoudiniParameterInt), &Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_bHasMax_SetBit, METADATA_PARAMS(Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_bHasMax_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_bHasMax_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_bHasUIMin_MetaData[] = {
-		{ "ModuleRelativePath", "Public/HoudiniParameterInt.h" },
+		{ "Comment", "// Indicates we have a UI min/max\n" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterInt.h" },
+		{ "ToolTip", "Indicates we have a UI min/max" },
 	};
 #endif
 	void Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_bHasUIMin_SetBit(void* Obj)
@@ -152,7 +161,8 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniParameterInt() {}
 	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_bHasUIMin = { "bHasUIMin", nullptr, (EPropertyFlags)0x0020080000000000, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(UHoudiniParameterInt), &Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_bHasUIMin_SetBit, METADATA_PARAMS(Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_bHasUIMin_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_bHasUIMin_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_bHasUIMax_MetaData[] = {
-		{ "ModuleRelativePath", "Public/HoudiniParameterInt.h" },
+		{ "Comment", "// \n" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterInt.h" },
 	};
 #endif
 	void Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_bHasUIMax_SetBit(void* Obj)
@@ -162,7 +172,7 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniParameterInt() {}
 	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_bHasUIMax = { "bHasUIMax", nullptr, (EPropertyFlags)0x0020080000000000, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(UHoudiniParameterInt), &Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_bHasUIMax_SetBit, METADATA_PARAMS(Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_bHasUIMax_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_bHasUIMax_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_bIsLogarithmic_MetaData[] = {
-		{ "ModuleRelativePath", "Public/HoudiniParameterInt.h" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterInt.h" },
 	};
 #endif
 	void Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_bIsLogarithmic_SetBit(void* Obj)
@@ -172,25 +182,31 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniParameterInt() {}
 	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_bIsLogarithmic = { "bIsLogarithmic", nullptr, (EPropertyFlags)0x0020080000000000, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(UHoudiniParameterInt), &Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_bIsLogarithmic_SetBit, METADATA_PARAMS(Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_bIsLogarithmic_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_bIsLogarithmic_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_Min_MetaData[] = {
-		{ "ModuleRelativePath", "Public/HoudiniParameterInt.h" },
+		{ "Comment", "// Min and Max values for this property.\n" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterInt.h" },
+		{ "ToolTip", "Min and Max values for this property." },
 	};
 #endif
 	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_Min = { "Min", nullptr, (EPropertyFlags)0x0020080000000000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UHoudiniParameterInt, Min), METADATA_PARAMS(Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_Min_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_Min_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_Max_MetaData[] = {
-		{ "ModuleRelativePath", "Public/HoudiniParameterInt.h" },
+		{ "Comment", "// \n" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterInt.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_Max = { "Max", nullptr, (EPropertyFlags)0x0020080000000000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UHoudiniParameterInt, Max), METADATA_PARAMS(Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_Max_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_Max_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_UIMin_MetaData[] = {
-		{ "ModuleRelativePath", "Public/HoudiniParameterInt.h" },
+		{ "Comment", "// Min and Max values of this property for slider UI\n" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterInt.h" },
+		{ "ToolTip", "Min and Max values of this property for slider UI" },
 	};
 #endif
 	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_UIMin = { "UIMin", nullptr, (EPropertyFlags)0x0020080000000000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UHoudiniParameterInt, UIMin), METADATA_PARAMS(Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_UIMin_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_UIMin_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_UIMax_MetaData[] = {
-		{ "ModuleRelativePath", "Public/HoudiniParameterInt.h" },
+		{ "Comment", "// \n" },
+		{ "ModuleRelativePath", "Private/HoudiniParameterInt.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_UIMax = { "UIMax", nullptr, (EPropertyFlags)0x0020080000000000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UHoudiniParameterInt, UIMax), METADATA_PARAMS(Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_UIMax_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHoudiniParameterInt_Statics::NewProp_UIMax_MetaData)) };
@@ -237,7 +253,7 @@ void EmptyLinkFunctionForGeneratedCodeHoudiniParameterInt() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UHoudiniParameterInt, 3567155048);
+	IMPLEMENT_CLASS(UHoudiniParameterInt, 3323170611);
 	template<> HOUDINIENGINERUNTIME_API UClass* StaticClass<UHoudiniParameterInt>()
 	{
 		return UHoudiniParameterInt::StaticClass();
