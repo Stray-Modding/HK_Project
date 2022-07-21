@@ -2,117 +2,117 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "Manager.h"
+#include "SlaveKillRequest.h"
 #include "LightToSlaveTrace.h"
 #include "LightToLightableTrace.h"
 #include "SlaveTick.h"
 #include "SlaveSpawnRequest.h"
 #include "LeaderTick.h"
-#include "SlaveKillRequest.h"
 #include "ZurgManager.generated.h"
 
 class UHKGameInstance;
+class ARecastNavMesh;
+class UAntiZurgSpotlightComponent;
+class AZurgPawnSlave;
 class AZurgPawnLeader;
 class ACatPawn;
-class AZurgPawnSlave;
-class ARecastNavMesh;
 class UAnimationSharingManager;
 class UAnimationSharingSetup;
-class UAntiZurgSpotlightComponent;
 class UAntiZurgLightableComponent;
 
-UCLASS(Abstract, Blueprintable)
+UCLASS(Abstract)
 class HK_PROJECT_API AZurgManager : public AManager {
     GENERATED_BODY()
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FZurgManagerSlaveDelegate, AZurgPawnSlave*, _newZurg);
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FZurgManagerLeaderDelegate, AZurgPawnLeader*, _zurgLeader);
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
     float m_leaderDeactivationDistance;
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable)
     FZurgManagerLeaderDelegate OnZurgLeaderSpawnedDelegate;
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable)
     FZurgManagerLeaderDelegate OnZurgLeaderDestroyedDelegate;
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable)
     FZurgManagerLeaderDelegate OnZurgLeaderActivatedDelegate;
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable)
     FZurgManagerLeaderDelegate OnZurgLeaderDeactivatedDelegate;
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable)
     FZurgManagerSlaveDelegate OnZurgSlaveSpawnedDelegate;
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable)
     FZurgManagerSlaveDelegate OnZurgSlaveDestroyedDelegate;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadOnly, EditAnywhere)
     TSubclassOf<AZurgPawnSlave> m_slaveBP;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
     int32 m_maxSlaveTicksPerFrame;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
     float m_slaveLODDistanceScale;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadOnly, EditAnywhere)
     int32 m_slavePoolInitialSize;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
     int32 m_maxActivatedZurgCount;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
     int32 m_maxSlaveSpawnPerFrame;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
     int32 m_maxLeaderTicksPerFrame;
     
 private:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float m_deactivationDistanceHysteresis;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     ARecastNavMesh* m_navMesh;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     UHKGameInstance* m_hkGameInstance;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     ACatPawn* m_catPawn;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     UAnimationSharingManager* m_animationSharingManager;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     UAnimationSharingSetup* m_animationSharingSetup;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Export, Transient)
     TArray<UAntiZurgSpotlightComponent*> m_antiZurgLights;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Export, Transient)
     TArray<UAntiZurgLightableComponent*> m_antiZurgLightables;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Transient)
     TArray<FLightToSlaveTrace> m_lightToSlaveTraces;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Transient)
     TArray<FLightToLightableTrace> m_lightToLightableTraces;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Transient)
     TArray<FSlaveTick> m_slaveTickList;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Transient)
     TArray<FLeaderTick> m_leaderTickList;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Transient)
     TArray<AZurgPawnSlave*> m_slavePool;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Transient)
     TArray<FSlaveSpawnRequest> m_slaveSpawnRequestQueue;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Transient)
     TArray<FSlaveKillRequest> m_slaveKillQueue;
     
 public:
@@ -120,43 +120,43 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetMaxActivatedZurgCount(int32 _newMaxCount);
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void OnZurgSpawnedEvent(AZurgPawnSlave* _zurgSlave);
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void OnZurgSlaveDeactivatedEvent(AZurgPawnSlave* _zurgSlave);
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void OnZurgSlaveActivatedEvent(AZurgPawnSlave* _zurgSlave);
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void OnZurgLeaderSpawnedEvent(AZurgPawnLeader* _zurgLeader);
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void OnZurgLeaderDestroyedEvent(AZurgPawnLeader* _zurgLeader);
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void OnZurgLeaderDeactivatedEvent(AZurgPawnLeader* _zurgLeader);
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void OnZurgLeaderActivatedEvent(AZurgPawnLeader* _zurgLeader);
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void OnZurgDestroyedEvent(AZurgPawnSlave* _zurgSlave);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     ARecastNavMesh* GetZurgsNavMesh() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     int32 GetZurgSlaveCount() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     int32 GetMaxActivatedZurgCount() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     TArray<AZurgPawnLeader*> GetLeaders() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     int32 GetActivatedZurgSlaveCount() const;
     
 };

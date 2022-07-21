@@ -5,17 +5,17 @@
 #include "UObject/NoExportTypes.h"
 #include "HoudiniSplineComponentInstanceData.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FHoudiniSplineComponentInstanceData : public FActorComponentInstanceData {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     TArray<FTransform> CurvePoints;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     TArray<FVector> DisplayPoints;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     TArray<int32> DisplayPointIndexDivider;
     
     HOUDINIENGINERUNTIME_API FHoudiniSplineComponentInstanceData();

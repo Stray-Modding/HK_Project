@@ -3,12 +3,12 @@
 #include "JoyInterpolator.h"
 #include "JoyCurveInterpolator.generated.h"
 
-class UObject;
 class UJoyCurveInterpolator;
+class UObject;
 class UJoyEasingInterpolator;
 class UCurveFloat;
 
-UCLASS(Blueprintable)
+UCLASS()
 class JOYLIBRARYRUNTIME_API UJoyCurveInterpolator : public UJoyInterpolator {
     GENERATED_BODY()
 public:

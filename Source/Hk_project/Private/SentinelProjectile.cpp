@@ -1,6 +1,6 @@
 #include "SentinelProjectile.h"
-#include "Components/SphereComponent.h"
 #include "GameFramework/ProjectileMovementComponent.h"
+#include "Components/SphereComponent.h"
 
 void ASentinelProjectile::Shoot(FVector _direction) {
 }

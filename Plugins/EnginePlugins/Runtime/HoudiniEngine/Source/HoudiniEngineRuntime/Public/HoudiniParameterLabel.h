@@ -3,11 +3,11 @@
 #include "HoudiniParameter.h"
 #include "HoudiniParameterLabel.generated.h"
 
-UCLASS(Blueprintable)
+UCLASS()
 class HOUDINIENGINERUNTIME_API UHoudiniParameterLabel : public UHoudiniParameter {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     TArray<FString> LabelStrings;
     
     UHoudiniParameterLabel();

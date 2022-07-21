@@ -6,7 +6,7 @@
 class ULootableComponent;
 class UTexture;
 
-UCLASS(Blueprintable, EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+UCLASS(EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class HK_PROJECT_API ULootableComponent : public UDroneUsableComponent {
     GENERATED_BODY()
 public:
@@ -15,20 +15,20 @@ public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE(FLootableInteractionEndSignature);
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FLootableDropedSignature, ULootableComponent*, _lootable);
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable)
     FLootableLootedSignature OnLooted;
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable)
     FLootableDropedSignature OnDroped;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
     UTexture* Icon;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadOnly, EditAnywhere)
     FName ID;
     
     ULootableComponent();
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     bool HasID(FName _id) const;
     
 };

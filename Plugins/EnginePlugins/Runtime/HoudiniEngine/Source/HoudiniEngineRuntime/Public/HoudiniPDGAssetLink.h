@@ -6,62 +6,62 @@
 #include "Engine/EngineTypes.h"
 #include "HoudiniPDGAssetLink.generated.h"
 
-class UTOPNetwork;
 class AActor;
+class UTOPNetwork;
 
-UCLASS(Blueprintable)
+UCLASS()
 class HOUDINIENGINERUNTIME_API UHoudiniPDGAssetLink : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, DuplicateTransient, EditAnywhere, NonTransactional, meta=(AllowPrivateAccess=true))
+    UPROPERTY(DuplicateTransient, NonTransactional)
     FString AssetName;
     
-    UPROPERTY(BlueprintReadWrite, DuplicateTransient, EditAnywhere, NonTransactional, meta=(AllowPrivateAccess=true))
+    UPROPERTY(DuplicateTransient, NonTransactional)
     FString AssetNodePath;
     
-    UPROPERTY(BlueprintReadWrite, DuplicateTransient, EditAnywhere, NonTransactional, meta=(AllowPrivateAccess=true))
+    UPROPERTY(DuplicateTransient, NonTransactional)
     int32 AssetId;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     TArray<UTOPNetwork*> AllTOPNetworks;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     int32 SelectedTOPNetworkIndex;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, NonTransactional, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(NonTransactional, Transient)
     EPDGLinkState LinkState;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     bool bAutoCook;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     bool bUseTOPNodeFilter;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     bool bUseTOPOutputFilter;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     FString TOPNodeFilter;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     FString TOPOutputFilter;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, NonTransactional, meta=(AllowPrivateAccess=true))
+    UPROPERTY(NonTransactional)
     int32 NumWorkitems;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, NonTransactional, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(NonTransactional, Transient)
     FAggregatedWorkItemTally WorkItemTally;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     FString OutputCachePath;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Transient)
     bool bNeedsUIRefresh;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     AActor* OutputParentActor;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     FDirectoryPath BakeFolder;
     
     UHoudiniPDGAssetLink();

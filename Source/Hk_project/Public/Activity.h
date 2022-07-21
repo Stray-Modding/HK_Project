@@ -1,21 +1,21 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "EObjective.h"
-#include "EChapter.h"
 #include "EActivity.h"
+#include "EChapter.h"
 #include "Activity.generated.h"
 
 USTRUCT(BlueprintType)
 struct FActivity {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditDefaultsOnly)
     EActivity ID;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditDefaultsOnly)
     EChapter Chapter;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditDefaultsOnly)
     TArray<EObjective> Objectives;
     
     HK_PROJECT_API FActivity();

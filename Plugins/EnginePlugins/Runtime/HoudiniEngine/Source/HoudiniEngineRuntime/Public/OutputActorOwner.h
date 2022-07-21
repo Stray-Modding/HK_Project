@@ -9,7 +9,7 @@ struct HOUDINIENGINERUNTIME_API FOutputActorOwner {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, NonTransactional, meta=(AllowPrivateAccess=true))
+    UPROPERTY(NonTransactional)
     AActor* OutputActor;
     
 public:

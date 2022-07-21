@@ -6,239 +6,239 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ShouldEndState -FallbackName=ShouldEndState
 #include "HKGameInstance.generated.h"
 
+class ADrone;
 class ABackpack;
+class ACatPawn;
+class UHKSaveInstance;
 class UWorld;
 class AManager;
-class ACatPawn;
 class AInteractionFeedback;
-class ADrone;
-class UHKSubsystemSettings;
-class UHKSaveInstance;
 class UHKChapters;
 class AActor;
 class UActivityData;
 class UB12Memories;
-class UAudioComponent;
 class UDebugMenuEntry;
 class UHKGameSubsystem;
+class UHKSubsystemSettings;
+class UAudioComponent;
 class ULevelStreaming;
 
-UCLASS(Blueprintable, NonTransient)
+UCLASS(NonTransient)
 class HK_PROJECT_API UHKGameInstance : public UJoyGameInstance {
     GENERATED_BODY()
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FOnLoadComplete, float, _loadTime, const FString&, _mapName, UWorld*, _world);
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable)
     FOnLoadComplete LoadCompleted;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TArray<TSubclassOf<AManager>> ManagerBlueprintClasses;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TSubclassOf<ACatPawn> CatClass;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TSubclassOf<ABackpack> BackpackClass;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TSubclassOf<ADrone> DroneClass;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TSubclassOf<AInteractionFeedback> InteractionFeedbackClass;
     
 private:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     UHKSaveInstance* m_saveInstance;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TSubclassOf<UHKSaveInstance> m_saveInstanceClass;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     UHKChapters* m_chapters;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TArray<TSubclassOf<AActor>> m_debugLootablesList;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     UActivityData* m_activityData;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     UB12Memories* m_b12MemoriesData;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     UDebugMenuEntry* m_rootDebugMenuEntry;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     UDebugMenuEntry* m_chaptersDebugMenuEntry;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     UDebugMenuEntry* m_loadSaveDebugMenuEntry;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     UDebugMenuEntry* m_loadSaveSlotsDebugMenuEntry;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     UDebugMenuEntry* m_loadSaveFoldersDebugMenuEntry;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     UDebugMenuEntry* m_quickSaveDebugMenuEntry;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     UDebugMenuEntry* m_quickLoadDebugMenuEntry;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     UDebugMenuEntry* m_cheatDebugMenuEntry;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     UDebugMenuEntry* m_languageDebugMenuEntry;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     UDebugMenuEntry* m_debugDebugMenuEntry;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditDefaultsOnly)
     TMap<TSubclassOf<UHKGameSubsystem>, TSubclassOf<UHKSubsystemSettings>> m_subsystemToSettingsClassMap;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     TSoftObjectPtr<UWorld> m_zoneToLoad;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Export, Transient)
     TMap<FName, UAudioComponent*> m_persistentAudioComponents;
     
 public:
     UHKGameInstance();
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void SetAdventureState(int32 _chapterId, int32 _stateId);
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void OnStartPlayInEditorGameInstance(bool _simulateInEditor);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     UHKSaveInstance* GetSaveInstance() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     UDebugMenuEntry* GetRootDebugMenuEntry() const;
     
     UFUNCTION(BlueprintPure)
     TEnumAsByte<EWorldInitializationMode> GetInitializationMode() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     int32 GetCurrentAdventureChapterState(int32 _chapter) const;
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     int32 GetCurrentAdventureChapter() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     UB12Memories* GetB12MemoriesData() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     TArray<FString> GetAdventureChapterStates(int32 _chapter) const;
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     TArray<FString> GetAdventureChapters() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     UActivityData* GetActivityData() const;
     
 private:
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _SaveLoadSlotsEntry_OnYPressed(UDebugMenuEntry* _entry);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _SaveLoadSlotsEntry_OnXPressed(UDebugMenuEntry* _entry);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _SaveLoadSlotsEntry_OnAPressed(UDebugMenuEntry* _entry);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _SaveLoadSlotEntry_OnUpdate(UDebugMenuEntry* _entry);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _SaveLoadFoldersEntry_OnYPressed(UDebugMenuEntry* _entry);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _SaveLoadFoldersEntry_OnXPressed(UDebugMenuEntry* _entry);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _SaveLoadFoldersEntry_OnUpdate(UDebugMenuEntry* _entry);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _SaveLoadFoldersEntry_OnAPressed(UDebugMenuEntry* _entry);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _QuickSaveDebugMenuEntry_OnAPressed(UDebugMenuEntry* _entry);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _QuickLoadDebugMenuEntry_OnAPressed(UDebugMenuEntry* _entry);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _OnFullSaveSlotsDone(UHKSaveInstance* _saveInstance);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _OnFullSaveFoldersDone(UHKSaveInstance* _saveInstance);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _NewSaveEntry_OnAPressed(UDebugMenuEntry* _entry);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _LanguageDebugMenuEntry_OnUpdate(UDebugMenuEntry* _entry);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _LanguageDebugMenu_Language_OnAPressed(UDebugMenuEntry* _entry);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _DebugDebugMenuEntry_OnUpdate(UDebugMenuEntry* _entry);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _DebugDebugMenuEntry_ForceStreaming_OnAPressed(UDebugMenuEntry* _entry);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _DebugDebugMenuEntry_ClearQuickStartLocation_OnAPressed(UDebugMenuEntry* _entry);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _CheatSetAdventureStateEntry_OnUpdate(UDebugMenuEntry* _entry);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _CheatSetAdventureStateEntry_OnAPressed(UDebugMenuEntry* _entry);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _CheatSetAdventureStateChildEntry_OnUpdate(UDebugMenuEntry* _entry);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _CheatDebugMenuEntry_TorchLight_OnAPressed(UDebugMenuEntry* _entry);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _CheatDebugMenuEntry_OnUpdate(UDebugMenuEntry* _entry);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _CheatDebugMenuEntry_GodMode_OnAPressed(UDebugMenuEntry* _entry);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _CheatDebugMenuEntry_Backpack_OnAPressed(UDebugMenuEntry* _entry);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _CheatDebugMenuEntry_B12Memories_OnXPressed(UDebugMenuEntry* _entry);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _CheatDebugMenuEntry_B12Memories_OnAPressed(UDebugMenuEntry* _entry);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _CheatAddItemToIventoryListEntry_OnUpdate(UDebugMenuEntry* _entry);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _CheatAddItemToIventoryEntry_OnAPressed(UDebugMenuEntry* _entry);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _ChaptersEntry_OnAPressed(UDebugMenuEntry* _entry);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _ChaptersDebugMenuEntry_OnUpdate(UDebugMenuEntry* _entry);
     
-    UFUNCTION(BlueprintCallable)
+    /*UFUNCTION()
     void _BeforeStreamOut(ULevelStreaming* _levelStreaming, FShouldEndState& _shouldEndState);
     
-    UFUNCTION(BlueprintCallable)
-    void _BeforeStreamIn(ULevelStreaming* _levelStreaming, FShouldEndState& _shouldEndState);
+    UFUNCTION()
+    void _BeforeStreamIn(ULevelStreaming* _levelStreaming, FShouldEndState& _shouldEndState);*/
     
 };
 

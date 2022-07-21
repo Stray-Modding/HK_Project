@@ -6,10 +6,10 @@ USTRUCT(BlueprintType)
 struct FDroneMoveToParams {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite)
     float Speed;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite)
     float RotationTimeTo90;
     
     HK_PROJECT_API FDroneMoveToParams();

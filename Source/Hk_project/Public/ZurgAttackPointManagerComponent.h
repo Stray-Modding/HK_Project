@@ -6,15 +6,15 @@
 
 class AActor;
 class UZurgAttackPointComponent;
-class AZurgPawnSlave;
 class ULifeComponent;
+class AZurgPawnSlave;
 
-UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+UCLASS(BlueprintType, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class HK_PROJECT_API UZurgAttackPointManagerComponent : public UActorComponent {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     FInt32Range m_zurgCountDamageMultiplicator;
     
 public:
@@ -22,17 +22,17 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetAttackPointsActive(bool _active);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void OnZurgDetached(UZurgAttackPointComponent* _zurgAttackPoint, AZurgPawnSlave* _zurg);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void OnZurgAttached(UZurgAttackPointComponent* _zurgAttackPoint, AZurgPawnSlave* _zurg);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     bool IsAttackPointsActive();
     
 private:
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _OnLifeComponentKilled(ULifeComponent* _lifeComponent, AActor* _killer);
     
 };

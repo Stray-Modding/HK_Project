@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EEasingFunction.h"
 #include "JoyInterpolator.h"
+#include "EEasingFunction.h"
 #include "JoyEasingInterpolator.generated.h"
 
 class UJoyEasingInterpolator;
 class UObject;
 
-UCLASS(Blueprintable)
+UCLASS()
 class JOYLIBRARYRUNTIME_API UJoyEasingInterpolator : public UJoyInterpolator {
     GENERATED_BODY()
 public:

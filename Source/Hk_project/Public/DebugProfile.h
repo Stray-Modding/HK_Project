@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "StartData.h"
 #include "UObject/NoExportTypes.h"
+#include "StartData.h"
 #include "DebugProfile.generated.h"
 
 class AHKPlayerStart;
@@ -11,25 +11,25 @@ USTRUCT(BlueprintType)
 struct FDebugProfile {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     FString StartupSaveName;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     AHKPlayerStart* PlayerStart;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     bool UseQuickStartTransform;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     FTransform QuickStartTransform;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     FStartData StartData;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     UAnimSequence* JumpAnimationOverride;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     bool StreamingDebugModeEnabled;
     
     HK_PROJECT_API FDebugProfile();

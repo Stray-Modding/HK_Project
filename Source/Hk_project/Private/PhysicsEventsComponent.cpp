@@ -25,8 +25,8 @@ void UPhysicsEventsComponent::OnMeshWake(UPrimitiveComponent* _wakingComponent, 
 void UPhysicsEventsComponent::OnMeshSleep(UPrimitiveComponent* _wakingComponent, FName _boneName) {
 }
 
-void UPhysicsEventsComponent::OnImpact_Implementation(FVector _location, float _amplitude, TEnumAsByte<EPhysicalSurface> _surfaceType) {
-}
+/*void UPhysicsEventsComponent::OnImpact_Implementation(FVector _location, float _amplitude, TEnumAsByte<EPhysicalSurface> _surfaceType) {
+}*/
 
 bool UPhysicsEventsComponent::IsSurfaceMoving() const {
     return false;

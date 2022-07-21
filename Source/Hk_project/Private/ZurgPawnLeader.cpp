@@ -4,10 +4,10 @@
 #include "NoisableComponent.h"
 #include "SaveComponent.h"
 
-class AZurgPawnSlave;
-class AActor;
-class UPrimitiveComponent;
 class UAntiZurgSpotlightComponent;
+class AZurgPawnSlave;
+class UPrimitiveComponent;
+class AActor;
 class UCanvas;
 class UBoxComponent;
 class AZurgManager;

@@ -7,25 +7,25 @@
 class ACatPawn;
 class UHierarchicalStateMachine;
 
-UCLASS(Blueprintable)
+UCLASS()
 class HK_PROJECT_API ACatRemoteController : public AActor {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
     TArray<FCatRemoteAction> m_actions;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
     bool m_autoStart;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
     bool m_loopSequence;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
     ACatPawn* m_controlledCat;
     
 private:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Transient)
     UHierarchicalStateMachine* m_stateMachine;
     
 public:
@@ -37,10 +37,10 @@ public:
     void StartSequence();
     
 private:
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _OnJumpEnd(ACatPawn* _cat);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _OnFollowSplineEndReached(ACatPawn* _cat);
     
 };

@@ -1,9 +1,9 @@
 #include "CameraTools.h"
 
-class AActor;
 class APlayerController;
 class UPrimitiveComponent;
 class UObject;
+class AActor;
 
 void UCameraTools::RemovePlayerControllerHiddenPrimitiveComponent(APlayerController* _playerController, UPrimitiveComponent* _component) {
 }

@@ -1,75 +1,75 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
+#include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
+#include "EJoyImageFormats.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "VictoryInput.h"
-#include "UObject/NoExportTypes.h"
+#include "VictoryInputAxis.h"
 #include "UObject/NoExportTypes.h"
 #include "InputCoreTypes.h"
 #include "Engine/EngineBaseTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "Engine/EngineTypes.h"
 #include "UObject/NoExportTypes.h"
-#include "VictoryInputAxis.h"
-#include "Input/Events.h"
-#include "EJoyImageFormats.h"
-#include "Navigation/PathFollowingComponent.h"
 #include "UObject/NoExportTypes.h"
+#include "Engine/EngineTypes.h"
+#include "Navigation/PathFollowingComponent.h"
+#include "Input/Events.h"
 #include "UObject/NoExportTypes.h"
 #include "LevelStreamInstanceInfo.h"
 #include "UObject/NoExportTypes.h"
 #include "Engine/EngineTypes.h"
 #include "Engine/EngineTypes.h"
 #include "EJoyGraphicsFullScreen.h"
-#include "UObject/NoExportTypes.h"
-#include "Engine/EngineTypes.h"
 #include "VictoryBPFunctionLibrary.generated.h"
 
+class USoundWave;
+class AActor;
 class UObject;
 class UWidget;
-class APlayerController;
-class USoundAttenuation;
-class UStaticMeshComponent;
-class AActor;
 class UUserWidget;
-class USoundClass;
-class UDestructibleComponent;
+class UAudioComponent;
+class APlayerController;
 class AStaticMeshActor;
-class URamaVictoryPluginCreateProcessPipe;
+class UTexture2D;
+class USoundClass;
+class ACharacter;
+class USoundAttenuation;
+class ULevelStreamingDynamic;
 class UPrimitiveComponent;
 class ULevelStreaming;
 class AVictoryISM;
+class USceneCaptureComponent2D;
+class UDestructibleComponent;
+class URamaVictoryPluginCreateProcessPipe;
 class APawn;
-class UTexture2D;
 class UNavigationQueryFilter;
-class ULevelStreamingDynamic;
 class USkeletalMeshComponent;
-class UTextureRenderTarget2D;
 class UActorComponent;
 class APostProcessVolume;
-class UAudioComponent;
+class UTextureRenderTarget2D;
 class USceneComponent;
 class UPanelSlot;
-class USceneCaptureComponent2D;
-class ASceneCapture2D;
-class USoundWave;
+class UStaticMeshComponent;
 class APlayerStart;
-class ACharacter;
 class UMaterialInterface;
 class UMeshComponent;
+class ASceneCapture2D;
 
-UCLASS(Blueprintable)
+UCLASS(BlueprintType)
 class VICTORYBPLIBRARY_API UVictoryBPFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UVictoryBPFunctionLibrary();
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool WorldType__InPIEWorld(UObject* WorldContextObject);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool WorldType__InGameInstanceWorld(UObject* WorldContextObject);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool WorldType__InEditorWorld(UObject* WorldContextObject);
     
     UFUNCTION(BlueprintCallable, BlueprintCosmetic)
@@ -93,10 +93,10 @@ public:
     UFUNCTION(BlueprintCallable)
     static bool Viewport__SetMousePosition(const APlayerController* ThePC, const float& PosX, const float& PosY);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool Viewport__GetMousePosition(const APlayerController* ThePC, float& PosX, float& PosY);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool Viewport__GetCenterOfViewport(const APlayerController* ThePC, float& PosX, float& PosY);
     
     UFUNCTION(BlueprintCallable)
@@ -156,37 +156,37 @@ public:
     UFUNCTION(BlueprintCallable)
     static bool VictoryPhysics_UpdateAngularDamping(UPrimitiveComponent* CompToUpdate, float NewAngularDamping);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FString VictoryPaths__WindowsNoEditorDir();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FString VictoryPaths__Win64Dir_BinaryLocation();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FString VictoryPaths__ScreenShotsDir();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FString VictoryPaths__SavedDir();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FString VictoryPaths__LogsDir();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FString VictoryPaths__GameRootDirectory();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FString VictoryPaths__ConfigDir();
     
     UFUNCTION(BlueprintCallable)
     static ULevelStreaming* VictoryLoadLevelInstance(UObject* WorldContextObject, const FString& MapFolderOffOfContent, const FString& LevelName, int32 InstanceNumber, FVector Location, FRotator Rotation, bool& Success);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static void VictoryISM_GetAllVictoryISMActors(UObject* WorldContextObject, TArray<AVictoryISM*>& Out);
     
     UFUNCTION(BlueprintCallable)
     static void VictoryISM_ConvertToVictoryISMActors(UObject* WorldContextObject, TSubclassOf<AActor> ActorClass, TArray<AVictoryISM*>& CreatedISMActors, bool DestroyOriginalActors, int32 MinCountToCreateISM);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool VictoryIsApplicationRunning(int32 ProcessId);
     
     UFUNCTION(BlueprintCallable)
@@ -195,49 +195,49 @@ public:
     UFUNCTION(BlueprintCallable)
     static void VictoryIntMinusEquals(UPARAM(Ref) int32& Int, int32 Sub, int32& IntOut);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FVictoryInputAxis VictoryGetVictoryInputAxis(const FKeyEvent& KeyEvent);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FVictoryInput VictoryGetVictoryInput(const FKeyEvent& KeyEvent);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float VictoryGetSoundVolume(USoundClass* SoundClassObject);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FVector2D VictoryGetCustomConfigVar_Vector2D(const FString& SectionName, const FString& VariableName, bool& IsValid);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FVector VictoryGetCustomConfigVar_Vector(const FString& SectionName, const FString& VariableName, bool& IsValid);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FString VictoryGetCustomConfigVar_String(const FString& SectionName, const FString& VariableName, bool& IsValid);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FRotator VictoryGetCustomConfigVar_Rotator(const FString& SectionName, const FString& VariableName, bool& IsValid);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static int32 VictoryGetCustomConfigVar_Int(const FString& SectionName, const FString& VariableName, bool& IsValid);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float VictoryGetCustomConfigVar_Float(const FString& SectionName, const FString& VariableName, bool& IsValid);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FLinearColor VictoryGetCustomConfigVar_Color(const FString& SectionName, const FString& VariableName, bool& IsValid);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool VictoryGetCustomConfigVar_Bool(const FString& SectionName, const FString& VariableName, bool& IsValid);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FString VictoryGetApplicationName(int32 ProcessId);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static void VictoryGetAllAxisKeyBindings(TArray<FVictoryInputAxis>& Bindings);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static void VictoryGetAllAxisAndActionMappingsForKey(FKey Key, TArray<FVictoryInput>& ActionBindings, TArray<FVictoryInputAxis>& AxisBindings);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static void VictoryGetAllActionKeyBindings(TArray<FVictoryInput>& Bindings);
     
     UFUNCTION(BlueprintCallable)
@@ -255,7 +255,7 @@ public:
     UFUNCTION(BlueprintCallable)
     static void VictoryAppendInline(UPARAM(Ref) FString& String, const FString& ToAppend, FString& Result, bool AppendNewline);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FString Victory_SecondsToHoursMinutesSeconds(float Seconds, bool TrimZeroes);
     
     UFUNCTION(BlueprintCallable)
@@ -264,13 +264,13 @@ public:
     UFUNCTION(BlueprintCallable)
     static bool Victory_SavePixels(const FString& FullFilePath, int32 Width, int32 Height, const TArray<FLinearColor>& ImagePixels, bool SaveAsBMP, bool sRGB, FString& ErrorString);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static UTexture2D* Victory_LoadTexture2D_FromFile_Pixels(const FString& FullFilePath, EJoyImageFormats ImageFormat, bool& IsValid, int32& Width, int32& Height, TArray<FLinearColor>& OutPixels);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static UTexture2D* Victory_LoadTexture2D_FromFile(const FString& FullFilePath, EJoyImageFormats ImageFormat, bool& IsValid, int32& Width, int32& Height);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static void Victory_GetStringFromOSClipboard(FString& FromClipboard);
     
     UFUNCTION(BlueprintCallable)
@@ -279,40 +279,40 @@ public:
     UFUNCTION(BlueprintCallable)
     static bool Victory_GetPixelFromT2D(UTexture2D* T2D, int32 X, int32 Y, FLinearColor& PixelColor);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FString Victory_GetGRHIAdapterName();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static void Victory_GetGPUInfo(FString& DeviceDescription, FString& Provider, FString& DriverVersion, FString& DriverDate);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FString Victory_GetGPUBrand();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool Victory_Get_Pixel(const TArray<FLinearColor>& Pixels, int32 ImageHeight, int32 X, int32 Y, FLinearColor& FoundColor);
     
     UFUNCTION(BlueprintCallable)
     static TEnumAsByte<EPathFollowingRequestResult::Type> Victory_AI_MoveToWithFilter(APawn* Pawn, const FVector& Dest, TSubclassOf<UNavigationQueryFilter> FilterClass, float AcceptanceRadius, bool bProjectDestinationToNavigation, bool bStopOnOverlap, bool bCanStrafe);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float VerticalFOV(float NewHorizontalFOV, float AspectRatio);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FVector2D Vector2DInterpTo_Constant(FVector2D Current, FVector2D Target, float DeltaTime, float InterpSpeed);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FVector2D Vector2DInterpTo(FVector2D Current, FVector2D Target, float DeltaTime, float InterpSpeed);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static void UTCToLocal(const FDateTime& UTCTime, FDateTime& LocalTime);
     
     UFUNCTION(BlueprintCallable)
     static void UnloadStreamingLevel(ULevelStreamingDynamic* LevelInstance);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     FRotator TransformVectorToActorSpaceAngle(AActor* Actor, const FVector& InVector);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     FVector TransformVectorToActorSpace(AActor* Actor, const FVector& InVector);
     
     UFUNCTION(BlueprintCallable)
@@ -327,28 +327,28 @@ public:
     UFUNCTION(BlueprintCallable)
     static bool TraceData__GetTraceDataFromCharacterSocket(FVector& TraceStart, FVector& TraceEnd, AActor* TheCharacter, const FRotator& TraceRotation, float TraceLength, FName Socket, bool DrawTraceData, FLinearColor TraceDataColor, float TraceDataThickness);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static int32 Text_ToInt(const FText& Text, bool UseDotForThousands);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float Text_ToFloat(const FText& Text, bool UseDotForThousands);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool Text_IsNumeric(const FText& Text);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool StringIsEmpty(const FString& Target);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static void StringConversion__GetFloatAsStringWithPrecision(float TheFloat, FString& TheString, int32 Precision, bool IncludeLeadingZero);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static void String__ExplodeString(TArray<FString>& OutputStrings, const FString& InputString, const FString& Separator, int32 Limit, bool bTrimElements);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FString String__CombineStrings_Multi(const FString& A, const FString& B);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FString String__CombineStrings(const FString& StringFirst, const FString& StringSecond, const FString& Separator, const FString& StringFirstLabel, const FString& StringSecondLabel);
     
     UFUNCTION(BlueprintCallable)
@@ -381,10 +381,10 @@ public:
     UFUNCTION(BlueprintCallable)
     static bool ScreenShots_Rename_Move_Most_Recent(FString& OriginalFileName, const FString& NewName, const FString& NewAbsoluteFolderPath, bool HighResolution);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static void SaveGameObject_GetMostRecentSaveSlotFileName(FString& Filename, bool& bFound);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static void SaveGameObject_GetAllSaveSlotFileNames(TArray<FString>& FileNames);
     
     UFUNCTION(BlueprintCallable)
@@ -399,49 +399,49 @@ public:
     UFUNCTION(BlueprintCallable)
     static void RemoveAllWidgetsOfClass(UObject* WorldContextObject, TSubclassOf<UUserWidget> WidgetClass);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static void RealWorldTime__GetTimePassedSincePreviousTime(const FString& PreviousTime, float& MilliSeconds, float& Seconds, float& Minutes, float& Hours);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static void RealWorldTime__GetDifferenceBetweenTimes(const FString& PreviousTime1, const FString& PreviousTime2, float& MilliSeconds, float& Seconds, float& Minutes, float& Hours);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FString RealWorldTime__GetCurrentOSTime(int32& MilliSeconds, int32& Seconds, int32& Minutes, int32& Hours12, int32& Hours24, int32& Day, int32& Month, int32& Year);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static int32 RandInt_uniDis_MT();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static int32 RandInt_uniDis();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static int32 RandInt_MINMAX_uniDis_MT(int32 iMin, int32 iMax);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static int32 RandInt_MINMAX_uniDis(int32 iMin, int32 iMax);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float RandFloat_uniDis_MT();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float RandFloat_uniDis();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float RandFloat_MINMAX_uniDis_MT(float iMin, float iMax);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float RandFloat_MINMAX_uniDis(float iMin, float iMax);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool RandBool_Bernoulli_MT(float fBias);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool RandBool_Bernoulli(float fBias);
     
     UFUNCTION(BlueprintCallable)
     static FVector2D ProjectWorldToScreenPosition(const FVector& WorldLocation);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static void PointDistanceToPlane(const FPlane& Plane, FVector Point, float& Distance);
     
     UFUNCTION(BlueprintCallable)
@@ -474,34 +474,34 @@ public:
     UFUNCTION(BlueprintCallable)
     static bool Physics__EnterRagDoll(AActor* TheCharacter);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool OptionsMenu__GetDisplayAdapterScreenResolutions(TArray<int32>& Widths, TArray<int32>& Heights, TArray<int32>& RefreshRates, bool IncludeRefreshRates);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static void OperatingSystem__GetCurrentPlatform(bool& Windows_, bool& Mac, bool& Linux, bool& IOS, bool& Android, bool& Android_ARM, bool& Android_Vulkan, bool& PS4, bool& XboxOne, bool& HTML5, bool& APPLE);
     
     UFUNCTION(BlueprintCallable)
     static void Open_URL_In_Web_Browser(const FString& TheURL);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool NotEqual_Vector2DVector2D(FVector2D A, FVector2D B, float ErrorTolerance);
     
     UFUNCTION(BlueprintCallable)
     static bool Mobility__SetSceneCompMobility(USceneComponent* SceneComp, TEnumAsByte<EComponentMobility::Type> NewMobility);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static void MinOfIntArray(const TArray<int32>& IntArray, int32& IndexOfMinValue, int32& MinValue);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static void MinOfFloatArray(const TArray<float>& FloatArray, int32& IndexOfMinValue, float& MinValue);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static void MaxOfIntArray(const TArray<int32>& IntArray, int32& IndexOfMaxValue, int32& MaxValue);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static void MaxOfFloatArray(const TArray<float>& FloatArray, int32& IndexOfMaxValue, float& MaxValue);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float MapRangeClamped(float Value, float InRangeA, float InRangeB, float OutRangeA, float OutRangeB);
     
     UFUNCTION(BlueprintCallable)
@@ -516,7 +516,7 @@ public:
     UFUNCTION(BlueprintCallable)
     static bool LoadStringFromFile(FString& Result, const FString& FullFilePath);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool LoadStringArrayFromFile(TArray<FString>& StringArray, int32& ArraySize, const FString& FullFilePath, bool ExcludeEmptyLines);
     
     UFUNCTION(BlueprintCallable)
@@ -525,7 +525,7 @@ public:
     UFUNCTION(BlueprintCallable)
     static bool LensFlare__GetLensFlareOffsets(APlayerController* PlayerController, AActor* LightSource, float& PitchOffset, float& YawOffset, float& RollOffset);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static void JoyIsKey(const FKeyEvent& KeyEvent, FKey Key, bool& Ctrl, bool& Shift, bool& Alt, bool& Cmd, bool& Match);
     
     UFUNCTION(BlueprintCallable)
@@ -534,28 +534,28 @@ public:
     UFUNCTION(BlueprintPure)
     static TEnumAsByte<EJoyGraphicsFullScreen::Type> JoyGraphicsSettings__FullScreen_Get();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool JoyFileIO_GetFilesInRootAndAllSubFolders(TArray<FString>& Files, const FString& RootFolderFullPath, const FString& Ext);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool JoyFileIO_GetFiles(TArray<FString>& Files, const FString& RootFolderFullPath, const FString& Ext);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool IsWidgetOfClassInViewport(UObject* WorldContextObject, TSubclassOf<UUserWidget> WidgetClass);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool IsStandAlone(UObject* WorldContextObject);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool IsPointOnPlane(const FPlane& Plane, FVector Point, float Tolerance);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool IsAlphaNumeric(const FString& String);
     
     UFUNCTION(BlueprintCallable)
     static UPanelSlot* InsertChildAt(UWidget* Parent, int32 Index, UWidget* Content);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float HorizontalFOV(float NewVerticalFOV, float AspectRatio);
     
     UFUNCTION(BlueprintCallable)
@@ -579,49 +579,49 @@ public:
     UFUNCTION(BlueprintCallable)
     static bool GetViewportPosition(UObject* WorldContextObject, const FVector2D& ScreenPosition, FVector2D& OutViewportPosition);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FVector GetVectorRelativeLocation(FVector ParentLocation, FRotator ParentRotation, FVector ChildLocation);
     
     UFUNCTION(BlueprintPure)
     static void GetUTCFromUnixTimeStamp(int64 UnixTimeStamp, FDateTime& UTCTime);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static void GetUserDisplayAdapterBrand(bool& IsAMD, bool& IsNvidia, bool& IsIntel, bool& IsUnknown, int32& UnknownId);
     
     UFUNCTION(BlueprintPure)
     static int64 GetUnixTimeStamp(const FDateTime& UTCTime);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float GetTimeInPlay(AActor* Actor);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float GetTimeAlive(const AActor* Target);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool GetStaticMeshVertexLocations(UStaticMeshComponent* Comp, TArray<FVector>& VertexPositions);
     
     UFUNCTION(BlueprintCallable)
     static USoundWave* GetSoundWaveFromFile(const FString& FilePath);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FRotator GetRotatorRelativeRotation(FRotator ParentRotation, FRotator ChildRotation);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static int32 GetPlayerUniqueNetID();
     
     UFUNCTION(BlueprintCallable)
     static APlayerStart* GetPlayerStart(UObject* WorldContextObject, const FString& PlayerStartName);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FName GetObjectPath(UObject* Obj);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static void GetNamesOfLoadedLevels(UObject* WorldContextObject, TArray<FString>& NamesOfLoadedLevels);
     
     UFUNCTION(BlueprintCallable)
     static FLevelStreamInstanceInfo GetLevelInstanceInfo(ULevelStreamingDynamic* LevelInstance);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FName GetHeadMountedDisplayDeviceType();
     
     UFUNCTION(BlueprintPure)
@@ -630,31 +630,31 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintCosmetic)
     static UUserWidget* GetFirstWidgetOfClass(UObject* WorldContextObject, TSubclassOf<UUserWidget> WidgetClass, bool TopLevelOnly);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float GetDistanceToCollision(UPrimitiveComponent* CollisionComponent, const FVector& Point, FVector& ClosestPointOnCollision);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float GetDistanceBetweenComponentSurfaces(UPrimitiveComponent* CollisionComponent1, UPrimitiveComponent* CollisionComponent2, FVector& PointOnSurface1, FVector& PointOnSurface2);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float GetCreationTime(const AActor* Target);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FRotator GetComponentRelativeRotation(USceneComponent* ParentComponent, USceneComponent* ChildComponent);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FVector GetComponentRelativeLocation(USceneComponent* ParentComponent, USceneComponent* ChildComponent);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FString GetCommandLine();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static AActor* GetClosestActorOfClassInRadiusOfLocation(UObject* WorldContextObject, TSubclassOf<AActor> ActorClass, FVector Center, float Radius, bool& IsValid);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static AActor* GetClosestActorOfClassInRadiusOfActor(UObject* WorldContextObject, TSubclassOf<AActor> ActorClass, AActor* ActorCenter, float Radius, bool& IsValid);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static void GetBoxContainingWorldPoints(const TArray<FVector>& Points, FVector& Center, FVector& Extent);
     
     UFUNCTION(BlueprintCallable)
@@ -663,10 +663,10 @@ public:
     UFUNCTION(BlueprintCallable)
     static int32 GetAllBoneNamesBelowBone(USkeletalMeshComponent* SkeletalMeshComp, FName StartingBoneName, TArray<FName>& BoneNames);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FRotator GetActorRelativeRotation(AActor* ParentActor, AActor* ChildActor);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FVector GetActorRelativeLocation(AActor* ParentActor, AActor* ChildActor);
     
     UFUNCTION(BlueprintCallable)
@@ -681,7 +681,7 @@ public:
     UFUNCTION(BlueprintCallable)
     static bool FileIO__SaveStringArrayToFile(const FString& SaveDirectory, const FString& JoyfulFileName, TArray<FString> SaveText, bool AllowOverWriting, bool AllowAppend);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool EqualEqual_Vector2DVector2D(FVector2D A, FVector2D B, float ErrorTolerance);
     
     UFUNCTION(BlueprintCallable)
@@ -696,7 +696,7 @@ public:
     UFUNCTION(BlueprintCallable)
     static void Draw__Thick3DLineBetweenActors(AActor* StartActor, AActor* EndActor, FLinearColor LineColor, float Thickness, float Duration);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool DoesMaterialHaveParameter(UMaterialInterface* Mat, FName Parameter);
     
     UFUNCTION(BlueprintCallable)
@@ -711,7 +711,7 @@ public:
     UFUNCTION(BlueprintCallable)
     static UPrimitiveComponent* CreatePrimitiveComponent(UObject* WorldContextObject, TSubclassOf<UPrimitiveComponent> CompClass, FName Name, FVector Location, FRotator Rotation);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FPlane CreatePlane(FVector Center, FVector Normal);
     
     UFUNCTION(BlueprintCallable)
@@ -723,25 +723,25 @@ public:
     UFUNCTION(BlueprintPure)
     static int32 CountOccurrancesOfSubString(const FString& Source, const FString& SubString, TEnumAsByte<ESearchCase::Type> SearchCase);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FRotator Conversions__VectorToRotator(const FVector& TheVector);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static void Conversions__StringToVector(const FString& String, FVector& ConvertedVector, bool& IsValid);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static void Conversions__StringToRotator(const FString& String, FRotator& ConvertedRotator, bool& IsValid);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static void Conversions__StringToColor(const FString& String, FLinearColor& ConvertedColor, bool& IsValid);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FVector Conversions__RotatorToVector(const FRotator& TheRotator);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static void Conversions__ColorToString(const FLinearColor& Color, FString& ColorAsString);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static int32 Conversion__FloatToRoundedInteger(float IN_Float);
     
     UFUNCTION(BlueprintCallable)
@@ -756,25 +756,25 @@ public:
     UFUNCTION(BlueprintCallable)
     static AStaticMeshActor* Clone__StaticMeshActor(UObject* WorldContextObject, bool& IsValid, AStaticMeshActor* ToClone, FVector LocationOffset, FRotator RotationOffset);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool ClientWindow__GameWindowIsForeGroundInOS();
     
     UFUNCTION(BlueprintCallable)
     static bool CharacterMovement__SetMaxMoveSpeed(ACharacter* TheCharacter, float NewMaxMoveSpeed);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FRotator Character__GetControllerRotation(AActor* TheCharacter);
     
     UFUNCTION(BlueprintCallable)
     static bool CaptureComponent2D_SaveImage(USceneCaptureComponent2D* Target, const FString& ImagePath, const FLinearColor ClearColour);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool CaptureComponent2D_Project(USceneCaptureComponent2D* Target, FVector Location, FVector2D& OutPixelLocation);
     
     UFUNCTION(BlueprintCallable)
     static bool Capture2D_SaveImage(ASceneCapture2D* Target, const FString& ImagePath, const FLinearColor ClearColour);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool Capture2D_Project(ASceneCapture2D* Target, FVector Location, FVector2D& OutPixelLocation);
     
     UFUNCTION(BlueprintCallable)
@@ -783,10 +783,10 @@ public:
     UFUNCTION(BlueprintCallable)
     static void Array_Sort(const TArray<int32>& TargetArray, bool bAscendingOrder, FName VariableName);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool Array_IsValidIndex(const TArray<int32>& TargetArray, int32 Index);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FString AppendMultiple(const FString& A, const FString& B);
     
     UFUNCTION(BlueprintCallable)
@@ -804,16 +804,16 @@ public:
     UFUNCTION(BlueprintCallable)
     static void Actor_PrestreamTextures(AActor* Target, float Seconds, bool bEnableStreaming, int32 CinematicTextureGroups);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool Actor__TeleportToActor(AActor* ActorToTeleport, AActor* DestinationActor);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static void Actor__GetAttachedActors(AActor* ParentActor, TArray<AActor*>& ActorsArray);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static APlayerController* Accessor__GetPlayerController(AActor* TheCharacter, bool& IsValid);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FString Accessor__GetNameAsString(const UObject* TheObject);
     
     UFUNCTION(BlueprintCallable)

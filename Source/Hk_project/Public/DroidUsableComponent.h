@@ -1,58 +1,58 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AnimationStartUseStruct.h"
 #include "Components/SceneComponent.h"
 #include "AnimationUsingStruct.h"
+#include "AnimationStartUseStruct.h"
 #include "UObject/NoExportTypes.h"
 #include "DroidUsableComponent.generated.h"
 
-class AActor;
-class UDroidUsableComponent;
 class ACharacterDroid;
+class UDroidUsableComponent;
+class AActor;
 class UHierarchicalStateMachine;
 
-UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+UCLASS(BlueprintType, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class HK_PROJECT_API UDroidUsableComponent : public USceneComponent {
     GENERATED_BODY()
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FUseDelegate, UDroidUsableComponent*, DroidUsableComponent, ACharacterDroid*, Droid);
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable)
     FUseDelegate OnStartUseEvent;
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable)
     FUseDelegate OnUsingEvent;
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable)
     FUseDelegate OnStopUseEvent;
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable)
     FUseDelegate OnUseEndedEvent;
     
 protected:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, SimpleDisplay, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadOnly, EditAnywhere, SimpleDisplay)
     FAnimationUsingStruct m_usingAnimation;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadOnly, EditAnywhere)
     FAnimationStartUseStruct m_startUseAnimation;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadOnly, EditAnywhere)
     FAnimationStartUseStruct m_stopUseAnimation;
     
 private:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     FText m_objectName;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(VisibleAnywhere)
     AActor* m_startUsingTransformActor;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     bool m_isEnabled;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     bool m_enableTeleportAtEnd;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     UHierarchicalStateMachine* m_stateMachine;
     
 public:
@@ -63,28 +63,28 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetEnabled(bool _enabled);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void OnUsing(ACharacterDroid* _droid);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void OnStopUse();
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void OnStartUse(ACharacterDroid* _droid);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     bool IsEnabled();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     bool IsBeingUsed();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     FTransform GetStartUseSocketTransform();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     ACharacterDroid* GetCurrentDroid();
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void ForceUsing(ACharacterDroid* _droid);
     
 };

@@ -4,26 +4,26 @@
 #include "HKUserWidget.h"
 #include "DebugInputWidget.generated.h"
 
-class UKeyIconWidget;
-class UScrollBox;
 class UUniformGridPanel;
+class UScrollBox;
 class UHKButton;
+class UKeyIconWidget;
 
-UCLASS(Blueprintable, EditInlineNew)
+UCLASS(EditInlineNew)
 class HK_PROJECT_API UDebugInputWidget : public UHKUserWidget {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Instanced)
     UUniformGridPanel* grid;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Instanced)
     UScrollBox* ScrollBox;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Instanced)
     UHKButton* BackButton;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditDefaultsOnly)
     TSubclassOf<UKeyIconWidget> m_keyIconWidgetClass;
     
 public:

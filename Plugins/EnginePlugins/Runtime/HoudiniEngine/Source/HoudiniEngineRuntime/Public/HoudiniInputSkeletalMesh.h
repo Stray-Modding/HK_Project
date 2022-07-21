@@ -3,7 +3,7 @@
 #include "HoudiniInputObject.h"
 #include "HoudiniInputSkeletalMesh.generated.h"
 
-UCLASS(Blueprintable)
+UCLASS()
 class HOUDINIENGINERUNTIME_API UHoudiniInputSkeletalMesh : public UHoudiniInputObject {
     GENERATED_BODY()
 public:

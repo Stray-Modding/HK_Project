@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/PlayerController.h"
 #include "VictorySubtitleCue.h"
 #include "Engine/EngineTypes.h"
+#include "GameFramework/PlayerController.h"
 #include "VictoryPC.generated.h"
 
 class UAudioComponent;
 class USoundBase;
 
-UCLASS(Blueprintable)
+UCLASS()
 class VICTORYBPLIBRARY_API AVictoryPC : public APlayerController {
     GENERATED_BODY()
 public:
@@ -19,13 +19,13 @@ public:
     UFUNCTION(BlueprintCallable)
     bool VictoryPC_GetMyIP_SendRequest();
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void VictoryPC_GetMyIP_DataReceived(const FString& YourIP);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void Subtitles_CPPDelegate(const TArray<FSubtitleCue>& VictorySubtitles, float CueDuration);
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void OnVictorySubtitlesQueued(const TArray<FVictorySubtitleCue>& VictorySubtitles, float CueDuration);
     
 };

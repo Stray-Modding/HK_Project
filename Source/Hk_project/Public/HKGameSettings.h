@@ -1,25 +1,25 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/EngineTypes.h"
 #include "UObject/Object.h"
+#include "Engine/EngineTypes.h"
 #include "HKGameSettings.generated.h"
 
-class UWorld;
 class UTexture2D;
+class UWorld;
 class UKeyIconSetData;
 class UFont;
 
-UCLASS(Blueprintable, DefaultConfig, Config=Game)
+UCLASS(DefaultConfig, Config=Game)
 class HK_PROJECT_API UHKGameSettings : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Config, EditAnywhere)
     bool DisplayActorLinksOnlyWhileSelected;
     
-    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Config, EditAnywhere)
     FName SessionSaveName;
     
-    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Config, EditAnywhere)
     bool IsAudioLogEnabled;
     
     UPROPERTY(Config, EditAnywhere)
@@ -37,44 +37,44 @@ public:
     UPROPERTY(Config, EditAnywhere)
     TEnumAsByte<ECollisionChannel> VisibilityCollisionChannel;
     
-    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Config, EditAnywhere)
     bool LoadingNotificationEnabled;
     
-    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Config, EditAnywhere)
     bool FadeToBlackDuringWaitForStreamingAndLoading;
     
-    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Config, EditAnywhere)
     bool UseBaseMapMode;
     
-    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Config, EditAnywhere)
     TSoftObjectPtr<UWorld> BaseMap;
     
-    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Config, EditAnywhere)
     TArray<TSoftObjectPtr<UWorld>> BaseMapModeZones;
     
-    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Config, EditAnywhere)
     TSoftObjectPtr<UKeyIconSetData> KeyIconSetData;
     
-    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Config, EditAnywhere)
     TSoftObjectPtr<UTexture2D> LoadingScreenPawTexture;
     
-    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Config, EditAnywhere)
     TSoftObjectPtr<UFont> LoadingScreenFont;
     
 private:
-    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Config, EditDefaultsOnly)
     TSoftObjectPtr<UWorld> MainMenuMap;
     
-    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Config, EditDefaultsOnly)
     float GUIInputDeadZone;
     
-    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Config, EditDefaultsOnly)
     float GUIFadeOutDuration;
     
-    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Config, EditDefaultsOnly)
     float GUIAutoFireDelay;
     
-    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Config, EditDefaultsOnly)
     float GUIAutoFireInterval;
     
 public:

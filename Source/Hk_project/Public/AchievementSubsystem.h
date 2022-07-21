@@ -3,7 +3,7 @@
 #include "HKGameSubsystem.h"
 #include "AchievementSubsystem.generated.h"
 
-UCLASS(Blueprintable)
+UCLASS()
 class HK_PROJECT_API UAchievementSubsystem : public UHKGameSubsystem {
     GENERATED_BODY()
 public:

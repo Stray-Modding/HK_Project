@@ -5,14 +5,14 @@
 
 class UPhysicalMaterial;
 
-UCLASS(Blueprintable, DefaultConfig, Config=Game)
+UCLASS(DefaultConfig, Config=Game)
 class TOYOTOOLRUNTIME_API UToyoToolRuntimeSettings : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Config, EditAnywhere)
     TSoftObjectPtr<UPhysicalMaterial> DefaultToyoPhysicalMaterial;
     
-    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Config, EditAnywhere)
     FName DefaultCollisionProfileName;
     
     UToyoToolRuntimeSettings();

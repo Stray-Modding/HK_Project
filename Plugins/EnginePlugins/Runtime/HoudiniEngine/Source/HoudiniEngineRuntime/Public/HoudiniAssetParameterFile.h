@@ -3,7 +3,7 @@
 #include "HoudiniAssetParameter.h"
 #include "HoudiniAssetParameterFile.generated.h"
 
-UCLASS(Blueprintable)
+UCLASS()
 class UHoudiniAssetParameterFile : public UHoudiniAssetParameter {
     GENERATED_BODY()
 public:

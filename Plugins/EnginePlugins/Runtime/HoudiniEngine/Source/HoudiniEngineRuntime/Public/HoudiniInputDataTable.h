@@ -3,7 +3,7 @@
 #include "HoudiniInputObject.h"
 #include "HoudiniInputDataTable.generated.h"
 
-UCLASS(Blueprintable)
+UCLASS()
 class HOUDINIENGINERUNTIME_API UHoudiniInputDataTable : public UHoudiniInputObject {
     GENERATED_BODY()
 public:

@@ -4,12 +4,12 @@
 #include "Curves/CurveFloat.h"
 #include "CurveTools.generated.h"
 
-UCLASS(Blueprintable)
+UCLASS(BlueprintType)
 class JOYLIBRARYRUNTIME_API UCurveTools : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UCurveTools();
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float GetFloatValue(const FRuntimeFloatCurve& _curve, float _time);
     
 };

@@ -4,7 +4,7 @@
 #include "Engine/LatentActionManager.h"
 #include "BreakableDelay.generated.h"
 
-UCLASS(Blueprintable)
+UCLASS(BlueprintType)
 class JOYLIBRARYRUNTIME_API UBreakableDelay : public UObject {
     GENERATED_BODY()
 public:

@@ -9,10 +9,10 @@ USTRUCT(BlueprintType)
 struct FLightToLightableTrace {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Instanced)
     UAntiZurgSpotlightComponent* Light;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Instanced)
     UAntiZurgLightableComponent* lightable;
     
     HK_PROJECT_API FLightToLightableTrace();

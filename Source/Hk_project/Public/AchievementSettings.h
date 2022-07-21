@@ -3,56 +3,56 @@
 #include "HKSubsystemSettings.h"
 #include "AchievementSettings.generated.h"
 
-UCLASS(Abstract, Blueprintable)
+UCLASS(Abstract)
 class UAchievementSettings : public UHKSubsystemSettings {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditDefaultsOnly)
     uint32 MeowTarget;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditDefaultsOnly)
     uint32 jumpTarget;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditDefaultsOnly)
     uint32 SleepTargetMinutes;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditDefaultsOnly)
     uint32 BasketballsDunkedTarget;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditDefaultsOnly)
     uint32 ZurgPursuitCompletedWithoutTouchTarget;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditDefaultsOnly)
     uint32 SentinelPatternCompletedWithoutDetectionTarget;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditDefaultsOnly)
     uint32 DeathTarget;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditDefaultsOnly)
     uint32 ClubVinylScratchedTarget;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditDefaultsOnly)
     uint32 SewersCompletedWithoutKillTarget;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditDefaultsOnly)
     uint32 GameCompleteTargetMinutes;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditDefaultsOnly)
     uint32 AAKingMusicSheetsTarget;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditDefaultsOnly)
     uint32 PaperBagWornTarget;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditDefaultsOnly)
     uint32 TriedToPlayMahjongTarget;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditDefaultsOnly)
     uint32 RobotsRubbedAgainstTarget;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditDefaultsOnly)
     uint32 TVChannelsWatchedTarget;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(EditDefaultsOnly)
     uint32 CollectedBadgesTarget;
     
     UAchievementSettings();

@@ -7,17 +7,17 @@
 #include "Components/CapsuleComponent.h"
 #include "Components/ArrowComponent.h"
 
-class UDroidMovementAnimationSettings;
 class UAnimSequence;
 class AActor;
+class UDroidMovementAnimationSettings;
 class ADialog;
 class UMaterialInstance;
-class UDroidUsableComponent;
+class UPrimitiveComponent;
 class ACatPawn;
 class ARecastNavMesh;
 class USceneComponent;
+class UDroidUsableComponent;
 class ACharacterDroid;
-class UPrimitiveComponent;
 
 void ACharacterDroid::ThrowObjectTo_Implementation(UAnimSequence* _throwAnimation, AActor* _throwToThisActor, float _trajectoryArc, bool _blendWithIdle) {
 }

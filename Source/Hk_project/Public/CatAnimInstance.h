@@ -1,9 +1,9 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "JumpData.h"
 #include "HKAnimInstance.h"
 #include "JumpBlock.h"
+#include "JumpData.h"
 #include "ECatBendInputMode.h"
 #include "CatAnimInstance.generated.h"
 
@@ -11,29 +11,29 @@ class UJumpAnimationLibrary;
 class UAnimNotify;
 class UAnimSequence;
 
-UCLASS(Blueprintable, NonTransient)
+UCLASS(NonTransient)
 class HK_PROJECT_API UCatAnimInstance : public UHKAnimInstance {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     UJumpAnimationLibrary* m_jumpAnimationLibrary;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     bool m_logAnimationErrors;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TSubclassOf<UAnimNotify> m_enablePlayerControlNotifyClass;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TSubclassOf<UAnimNotify> m_jumpExitNotifyClass;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float m_maxSlopeCorrectionAngle;
     
 public:
     UCatAnimInstance();
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void SetupAnimationBanks();
     
     UFUNCTION(BlueprintCallable)
@@ -48,40 +48,40 @@ public:
     UFUNCTION(BlueprintCallable)
     void PopBendDisabled();
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void OnTeleport();
     
     UFUNCTION(BlueprintCallable)
     void OnJumpExit();
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void OnInitJump(const FJumpData& _jumpData);
     
     UFUNCTION(BlueprintCallable)
     void OnEnablePlayerControl();
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void OnBeginInterpolate(UAnimSequence* _interpolateAnimation);
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     bool IsInterpolating();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     bool IsBendDisabled() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     FJumpBlock GetCurrentJumpBlock() const;
     
     UFUNCTION(BlueprintPure)
     TEnumAsByte<ECatBendInputMode> GetBendInputMode() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     FJumpBlock FindRelevantJumpBlock(float _jumpLength, float _jumpHeight, const TArray<FJumpBlock>& _jumpBlocks) const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     bool FindJumpBlockBySpeed(float _speed, float _jumpLength, float _jumpHeight, FJumpBlock& _outJumpBlock) const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     bool FindJumpBlockByName(FName _speedName, float _jumpLength, float _jumpHeight, FJumpBlock& _outJumpBlock) const;
     
 };

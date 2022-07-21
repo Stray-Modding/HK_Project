@@ -1,27 +1,27 @@
 #include "CatPawn.h"
+#include "LifeComponent.h"
 #include "CatMovementComponent.h"
 #include "Components/SceneComponent.h"
 #include "Components/SplineComponent.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "Components/CapsuleComponent.h"
-#include "LifeComponent.h"
 #include "Components/SphereComponent.h"
 #include "DrawMovementComponent.h"
 
-class USplineRailComponent;
 class AActor;
-class AHKPlayerCameraManager;
-class UAnimSequence;
-class UCatUsableComponentBase;
-class ACameraThirdPerson;
-class AScriptedJump;
+class USplineRailComponent;
 class UPhysicalMaterial;
-class UAnimInstance;
 class AZurgPawnSlave;
+class AScriptedJump;
+class UCatUsableComponentBase;
+class UAnimSequence;
+class UAnimInstance;
+class AHKPlayerCameraManager;
+class UCatAnimInstance;
+class ABackpack;
 class USoundBase;
 class UPrimitiveComponent;
-class ABackpack;
-class UCatAnimInstance;
+class ACameraThirdPerson;
 
 void ACatPawn::UpdateSpeedModifier(FName _key, float _speedModifier) {
 }

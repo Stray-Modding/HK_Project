@@ -4,14 +4,14 @@
 #include "InputCoreTypes.h"
 #include "InputSubsystemSettings.generated.h"
 
-UCLASS(Abstract, Blueprintable)
+UCLASS(Abstract)
 class UInputSubsystemSettings : public UHKSubsystemSettings {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditDefaultsOnly)
     TMap<FKey, FKey> QwertyToAzerty;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditDefaultsOnly)
     TMap<FKey, FKey> QwertyToQwertz;
     
     UInputSubsystemSettings();

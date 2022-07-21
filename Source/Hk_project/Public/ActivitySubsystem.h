@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "EObjective.h"
 #include "HKGameSubsystem.h"
 #include "EChapter.h"
-#include "EObjective.h"
 #include "ActivitySubsystem.generated.h"
 
 class UChapterSubsystem;
 
-UCLASS(Blueprintable)
+UCLASS(BlueprintType)
 class HK_PROJECT_API UActivitySubsystem : public UHKGameSubsystem {
     GENERATED_BODY()
 public:
@@ -19,7 +19,7 @@ public:
     void SetObjectiveComplete(EObjective _id);
     
 private:
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _OnChapterChanged(UChapterSubsystem* _chapterSubsystem, EChapter _previousChapter, EChapter _currentChapter, bool _isOpeningChapter);
     
 };

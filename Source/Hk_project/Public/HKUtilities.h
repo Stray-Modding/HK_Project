@@ -1,11 +1,11 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
-#include "LookAtData.h"
 #include "EChapter.h"
 #include "DialogLineSynchronizedActor.h"
 #include "EHKPlatform.h"
 #include "UObject/NoExportTypes.h"
+#include "LookAtData.h"
 #include "UObject/NoExportTypes.h"
 #include "InputCoreTypes.h"
 #include "HKUtilities.generated.h"
@@ -16,7 +16,7 @@ class AGameStateManager;
 class UB12Memories;
 class UActivityData;
 
-UCLASS(Blueprintable)
+UCLASS(BlueprintType)
 class HK_PROJECT_API UHKUtilities : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
@@ -51,94 +51,94 @@ public:
     UFUNCTION(BlueprintCallable)
     static TArray<FString> LoadLevelAndGetSubLevelsPath(const FName _levelAssetPath, bool _excludeInvisibleLevels);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool IsMemoryRevealed(const UObject* _worldContextObject, const FName& _memoryId);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool IsDecemberDemoBuild();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool IsAudioLogEnabled();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static int32 GetVolumetricFogGridPixelSize();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FString GetVersionText();
     
     UFUNCTION(BlueprintPure)
     static TEnumAsByte<EHKPlatform> GetPlatform();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float GetMusicVolume();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static int32 GetMinorVersion();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float GetMasterVolume();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static int32 GetMajorVersion();
     
     UFUNCTION(BlueprintCallable)
     static FVector GetLookAtTarget(const FLookAtData& _lookAtData, const FVector& _referenceLocation, const FRotator& _referenceRotation);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FText GetKeyDisplayName(const FKey& _key, bool _longDisplayName);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool GetJumpPromptEnabled();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool GetIsInZurgPursuit(const UObject* _worldContextObject);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool GetIsInSentinelPattern(const UObject* _worldContextObject);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool GetHUDEnabled();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static AGameStateManager* GetGameStateManager(const UObject* _worldContextObject);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float GetEffectsVolume();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FText GetChapterName(const UObject* _worldContextObject, EChapter _id);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static TSet<FName> GetChapterMemories(const UObject* _worldContextObject, EChapter _id);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static EChapter GetChapter(const UObject* _worldContextObject);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FString GetBuildTimestamp();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static int32 GetBuildRevision();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static int32 GetBuildNumber();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FString GetBuildDescription();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FString GetBuildConfiguration();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FString GetBranchName();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static UB12Memories* GetB12MemoriesData(const UObject* _worldContextObject);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool GetAutoCameraEnabled();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static UActivityData* GetActivityData(const UObject* _worldContextObject);
     
     UFUNCTION(BlueprintCallable)

@@ -1,202 +1,202 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "HoudiniStaticMeshGenerationProperties.h"
 #include "Components/PrimitiveComponent.h"
+#include "Engine/EngineTypes.h"
+#include "HoudiniStaticMeshGenerationProperties.h"
 #include "HoudiniAssetStateEvents.h"
 #include "EHoudiniStaticMeshMethod.h"
 #include "Engine/EngineTypes.h"
-#include "Engine/EngineTypes.h"
 #include "UObject/NoExportTypes.h"
-#include "Engine/EngineTypes.h"
 #include "EHoudiniAssetState.h"
 #include "EHoudiniAssetStateResult.h"
 #include "HoudiniBakedOutput.h"
+#include "Engine/EngineTypes.h"
 #include "HoudiniAssetComponent.generated.h"
 
-class UHoudiniAsset;
 class UHoudiniAssetComponent;
+class UHoudiniAsset;
 class UHoudiniParameter;
-class UHoudiniInput;
 class UHoudiniOutput;
+class UHoudiniInput;
 class AActor;
 class UHoudiniHandleComponent;
 class UHoudiniPDGAssetLink;
 class UObject;
 
-UCLASS(Blueprintable, EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+UCLASS(EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class HOUDINIENGINERUNTIME_API UHoudiniAssetComponent : public UPrimitiveComponent, public IHoudiniAssetStateEvents {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     UHoudiniAsset* HoudiniAsset;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     bool bCookOnParameterChange;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     bool bUploadTransformsToHoudiniEngine;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     bool bCookOnTransformChange;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     bool bCookOnAssetInputCook;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     bool bOutputless;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     bool bOutputTemplateGeos;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     bool bUseOutputNodes;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     FDirectoryPath TemporaryCookFolder;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     FDirectoryPath BakeFolder;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     EHoudiniStaticMeshMethod StaticMeshMethod;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     FHoudiniStaticMeshGenerationProperties StaticMeshGenerationProperties;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     FMeshBuildSettings StaticMeshBuildSettings;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     bool bOverrideGlobalProxyStaticMeshSettings;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     bool bEnableProxyStaticMeshOverride;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     bool bEnableProxyStaticMeshRefinementByTimerOverride;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float ProxyMeshAutoRefineTimeoutSecondsOverride;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     bool bEnableProxyStaticMeshRefinementOnPreSaveWorldOverride;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     bool bEnableProxyStaticMeshRefinementOnPreBeginPIEOverride;
     
 protected:
-    UPROPERTY(BlueprintReadWrite, DuplicateTransient, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(DuplicateTransient)
     int32 AssetId;
     
-    UPROPERTY(BlueprintReadWrite, DuplicateTransient, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(DuplicateTransient, Transient)
     TArray<int32> NodeIdsToCook;
     
-    UPROPERTY(BlueprintReadWrite, DuplicateTransient, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(DuplicateTransient, Transient)
     TMap<int32, int32> OutputNodeCookCounts;
     
-    UPROPERTY(BlueprintReadWrite, DuplicateTransient, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(DuplicateTransient, Export)
     TSet<UHoudiniAssetComponent*> DownstreamHoudiniAssets;
     
-    UPROPERTY(BlueprintReadWrite, DuplicateTransient, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(DuplicateTransient)
     FGuid ComponentGUID;
     
-    UPROPERTY(BlueprintReadWrite, DuplicateTransient, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(DuplicateTransient)
     FGuid HapiGUID;
     
-    UPROPERTY(BlueprintReadWrite, DuplicateTransient, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(DuplicateTransient)
     FString HapiAssetName;
     
-    UPROPERTY(BlueprintReadWrite, DuplicateTransient, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(DuplicateTransient)
     EHoudiniAssetState AssetState;
     
-    UPROPERTY(BlueprintReadWrite, DuplicateTransient, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(DuplicateTransient)
     EHoudiniAssetState DebugLastAssetState;
     
-    UPROPERTY(BlueprintReadWrite, DuplicateTransient, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(DuplicateTransient)
     EHoudiniAssetStateResult AssetStateResult;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY()
     uint32 SubAssetIndex;
     
-    UPROPERTY(BlueprintReadWrite, DuplicateTransient, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(DuplicateTransient)
     int32 AssetCookCount;
     
-    UPROPERTY(BlueprintReadWrite, DuplicateTransient, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(DuplicateTransient)
     bool bHasBeenLoaded;
     
-    UPROPERTY(BlueprintReadWrite, DuplicateTransient, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(DuplicateTransient)
     bool bHasBeenDuplicated;
     
-    UPROPERTY(BlueprintReadWrite, DuplicateTransient, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(DuplicateTransient)
     bool bPendingDelete;
     
-    UPROPERTY(BlueprintReadWrite, DuplicateTransient, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(DuplicateTransient)
     bool bRecookRequested;
     
-    UPROPERTY(BlueprintReadWrite, DuplicateTransient, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(DuplicateTransient)
     bool bRebuildRequested;
     
-    UPROPERTY(BlueprintReadWrite, DuplicateTransient, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(DuplicateTransient)
     bool bEnableCooking;
     
-    UPROPERTY(BlueprintReadWrite, DuplicateTransient, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(DuplicateTransient)
     bool bForceNeedUpdate;
     
-    UPROPERTY(BlueprintReadWrite, DuplicateTransient, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(DuplicateTransient)
     bool bLastCookSuccess;
     
-    UPROPERTY(BlueprintReadWrite, DuplicateTransient, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(DuplicateTransient)
     bool bParameterDefinitionUpdateNeeded;
     
-    UPROPERTY(BlueprintReadWrite, DuplicateTransient, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(DuplicateTransient)
     bool bBlueprintStructureModified;
     
-    UPROPERTY(BlueprintReadWrite, DuplicateTransient, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(DuplicateTransient)
     bool bBlueprintModified;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Instanced)
     TArray<UHoudiniParameter*> Parameters;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Instanced)
     TArray<UHoudiniInput*> Inputs;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Instanced)
     TArray<UHoudiniOutput*> Outputs;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TArray<FHoudiniBakedOutput> BakedOutputs;
+    /*UPROPERTY()
+    TArray<FHoudiniBakedOutput> BakedOutputs;*/
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY()
     TArray<TWeakObjectPtr<AActor>> UntrackedOutputs;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Instanced)
     TArray<UHoudiniHandleComponent*> HandleComponents;
     
-    UPROPERTY(BlueprintReadWrite, DuplicateTransient, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(DuplicateTransient, Transient)
     bool bHasComponentTransformChanged;
     
-    UPROPERTY(BlueprintReadWrite, DuplicateTransient, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(DuplicateTransient, Transient)
     bool bFullyLoaded;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     UHoudiniPDGAssetLink* PDGAssetLink;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     FTimerHandle RefineMeshesTimer;
     
-    UPROPERTY(BlueprintReadWrite, DuplicateTransient, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(DuplicateTransient)
     bool bNoProxyMeshNextCookRequested;
     
-    UPROPERTY(BlueprintReadWrite, DuplicateTransient, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(DuplicateTransient, Transient)
     TMap<UObject*, int32> InputPresets;
     
-    UPROPERTY(BlueprintReadWrite, DuplicateTransient, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(DuplicateTransient)
     bool bBakeAfterNextCook;
     
-    UPROPERTY(BlueprintReadWrite, DuplicateTransient, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(DuplicateTransient, Transient)
     bool bCachedIsPreview;
     
-    UPROPERTY(EditAnywhere, Transient)
+    UPROPERTY(Transient)
     double LastTickTime;
     
 public:

@@ -5,12 +5,12 @@
 
 class UStreamingUnit;
 
-UCLASS(Blueprintable)
+UCLASS()
 class UStreamingGroupDynamic : public UStreamingGroup {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     TArray<UStreamingUnit*> m_streamingUnits;
     
 public:

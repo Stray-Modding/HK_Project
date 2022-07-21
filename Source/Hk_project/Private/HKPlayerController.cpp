@@ -1,9 +1,9 @@
 #include "HKPlayerController.h"
 #include "DebugInputComponent.h"
 
+class ABackpack;
 class ACatPawn;
 class ADrone;
-class ABackpack;
 
 void AHKPlayerController::SetWalkableDebugModeEnabled(bool _enabled) {
 }

@@ -1,8 +1,8 @@
 #include "AntiZurgZoneComponent.h"
 
-class AActor;
 class UAntiZurgSpotlightComponent;
 class UPrimitiveComponent;
+class AActor;
 
 void UAntiZurgZoneComponent::SetSpotlightOwner(UAntiZurgSpotlightComponent* _newSpotlight) {
 }

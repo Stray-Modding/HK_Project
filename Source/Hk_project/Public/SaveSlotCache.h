@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct FSaveSlotCache {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     UHKSaveGame* SaveGame;
     
     HK_PROJECT_API FSaveSlotCache();

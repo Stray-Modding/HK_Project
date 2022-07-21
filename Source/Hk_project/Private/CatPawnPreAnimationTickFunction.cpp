@@ -1,5 +1,5 @@
 #include "CatPawnPreAnimationTickFunction.h"
 
-FCatPawnPreAnimationTickFunction::FCatPawnPreAnimationTickFunction() {
-}
+/*FCatPawnPreAnimationTickFunction::FCatPawnPreAnimationTickFunction() {
+}*/
 

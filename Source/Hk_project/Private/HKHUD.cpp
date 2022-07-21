@@ -1,9 +1,9 @@
 #include "HKHUD.h"
 
-class ADialog;
 class UUserWidget;
-class UHUDDebugWidget;
+class ADialog;
 class ABackpack;
+class UHUDDebugWidget;
 
 
 void AHKHUD::StopScreenFade(TEnumAsByte<EScreenFadeType> _type) {

@@ -2,102 +2,102 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "GameFramework/PlayerController.h"
+#include "EPS5TriggersState.h"
 #include "WalkableDebuggedPrimitive.h"
 #include "PS5TriggerEffectData.h"
-#include "EPS5TriggersState.h"
 #include "EPS5TriggersSide.h"
 #include "HKPlayerController.generated.h"
 
-class AHKPlayerCameraManager;
-class AHKSpectatorPawn;
-class UHierarchicalStateMachine;
-class AGameStateManager;
-class ADrone;
-class ACatPawn;
-class ABackpack;
 class UDebugInputComponent;
+class AHKPlayerCameraManager;
 class UMaterialInterface;
+class UHierarchicalStateMachine;
+class AHKSpectatorPawn;
+class ADrone;
+class ABackpack;
+class ACatPawn;
+class AGameStateManager;
 class UTexture;
 class AActor;
 class USoundSubmix;
 
-UCLASS(Blueprintable)
+UCLASS()
 class HK_PROJECT_API AHKPlayerController : public APlayerController {
     GENERATED_BODY()
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnControllerShakedEvent);
     
 private:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float m_fadeOutTime;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float m_targetTimeDilation;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float m_timeDilationLerpRatio;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TSubclassOf<AHKSpectatorPawn> m_spectatorClass;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float m_minimumWaitForStreamingTime;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Instanced)
     UHierarchicalStateMachine* m_stateMachine;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     AHKPlayerCameraManager* m_cameraManager;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     ACatPawn* m_catPawn;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     ABackpack* M_BackPack;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     ADrone* M_Drone;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     AHKSpectatorPawn* m_spectator;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     int32 m_debugJumpProbeWheelSubdivisions;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Instanced)
     UDebugInputComponent* m_debugInputComponent;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     AGameStateManager* m_gameStateManager;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     TArray<FWalkableDebuggedPrimitive> m_walkableDebuggedPrimitives;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     UMaterialInterface* m_walkableDebugMaterial;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     UMaterialInterface* m_movementObstacleDebugMaterial;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     int32 m_maxDebugTransformStackSize;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     UTexture* m_defaultIcon;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
+    UPROPERTY(SaveGame)
     bool m_savedHasBackpack;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
+    UPROPERTY(SaveGame)
     bool m_savedHasUnlockedLight;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
+    UPROPERTY(SaveGame)
     TArray<TSubclassOf<AActor>> m_savedInventory;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     USoundSubmix* m_PS5VibrationSubmix;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     FPS5TriggerEffectData m_scratchablePS5TriggerEffect;
     
 public:
@@ -111,7 +111,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetBackpackEnabled(bool _enabled, bool _unlockStrongLight);
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void RespawnAfterDeathPressed();
     
     UFUNCTION(BlueprintCallable)
@@ -123,50 +123,50 @@ public:
     UFUNCTION(BlueprintCallable)
     void PopIngameCinematicModeEnabled(float _fadeTime);
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void OnExitCinematicMode(float _fadeTime);
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void OnEnterCinematicMode(float _fadeTime);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     bool IsWaitingForStreamingAndLoading() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     bool IsSkipCinematicDown() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     bool IsIngameCinematicModeEnabled() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     ADrone* GetDrone() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     float GetContextualAxisRightValue() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     float GetContextualAxisLeftValue() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     ACatPawn* GetCat() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     ABackpack* GetBackpack() const;
     
     UFUNCTION(BlueprintCallable)
     void ForceWaitForStreamingAndLoading(float _fadeOutTime);
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void CatDied();
     
 private:
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _OnR3Pressed();
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _OnL3Pressed();
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _OnCatDied(ACatPawn* _cat);
     
 };

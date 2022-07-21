@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct FDiskOperation {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     USaveGame* SaveGame;
     
     HK_PROJECT_API FDiskOperation();

@@ -3,7 +3,7 @@
 #include "StreamingGroup.h"
 #include "StreamingGroupPersistent.generated.h"
 
-UCLASS(Blueprintable)
+UCLASS()
 class UStreamingGroupPersistent : public UStreamingGroup {
     GENERATED_BODY()
 public:

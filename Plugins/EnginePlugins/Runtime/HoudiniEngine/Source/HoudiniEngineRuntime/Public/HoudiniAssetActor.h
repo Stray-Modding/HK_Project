@@ -5,11 +5,11 @@
 
 class UHoudiniAssetComponent;
 
-UCLASS(Blueprintable)
+UCLASS()
 class HOUDINIENGINERUNTIME_API AHoudiniAssetActor : public AActor {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadOnly, Export, VisibleAnywhere)
     UHoudiniAssetComponent* HoudiniAssetComponent;
     
     AHoudiniAssetActor();

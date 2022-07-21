@@ -1,20 +1,20 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/Object.h"
 #include "DebugProfile.h"
+#include "UObject/Object.h"
 #include "DebugProfileObject.generated.h"
 
-UCLASS(Blueprintable)
+UCLASS()
 class HK_PROJECT_API UDebugProfileObject : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     bool bDebugProfileEnabled;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     FDebugProfile DebugProfile;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     FString MapName;
     
     UDebugProfileObject();

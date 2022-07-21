@@ -1,7 +1,7 @@
 #include "BackpackGUI.h"
 
-class ACatPawn;
 class ABackpack;
+class ACatPawn;
 
 
 void ABackpackGUI::SetGUIMode(TEnumAsByte<EBackpackGUIMode> _mode) {

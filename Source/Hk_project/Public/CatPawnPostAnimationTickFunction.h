@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "CatPawnTickFunction.h"
-#include "CatPawnPostAnimationTickFunction.generated.h"
+/*#include "CatPawnPostAnimationTickFunction.generated.h"*/
 
-USTRUCT(BlueprintType)
+/*USTRUCT()
 struct FCatPawnPostAnimationTickFunction : public FCatPawnTickFunction {
     GENERATED_BODY()
 public:
     HK_PROJECT_API FCatPawnPostAnimationTickFunction();
-};
+};*/
 

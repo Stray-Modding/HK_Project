@@ -3,11 +3,11 @@
 #include "HoudiniInputObject.h"
 #include "HoudiniInputHoudiniAsset.generated.h"
 
-UCLASS(Blueprintable)
+UCLASS()
 class HOUDINIENGINERUNTIME_API UHoudiniInputHoudiniAsset : public UHoudiniInputObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     int32 AssetOutputIndex;
     
     UHoudiniInputHoudiniAsset();

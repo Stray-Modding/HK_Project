@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct JOYLIBRARYRUNTIME_API FFuzzyBool {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
     float Delay;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
     TEnumAsByte<EEasingFunc::Type> EasingType;
     
     FFuzzyBool();

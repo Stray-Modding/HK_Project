@@ -1,50 +1,50 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EHoudiniInputObjectType.h"
 #include "UObject/Object.h"
 #include "UObject/NoExportTypes.h"
+#include "EHoudiniInputObjectType.h"
 #include "UObject/NoExportTypes.h"
 #include "HoudiniInputObject.generated.h"
 
-UCLASS(Blueprintable)
+UCLASS()
 class HOUDINIENGINERUNTIME_API UHoudiniInputObject : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     TSoftObjectPtr<UObject> InputObject;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     FTransform Transform;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     EHoudiniInputObjectType Type;
     
-    UPROPERTY(BlueprintReadWrite, DuplicateTransient, EditAnywhere, NonTransactional, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(DuplicateTransient, NonTransactional, Transient)
     int32 InputNodeId;
     
-    UPROPERTY(BlueprintReadWrite, DuplicateTransient, EditAnywhere, NonTransactional, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(DuplicateTransient, NonTransactional, Transient)
     int32 InputObjectNodeId;
     
-    UPROPERTY(BlueprintReadWrite, DuplicateTransient, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(DuplicateTransient)
     FGuid Guid;
     
 protected:
-    UPROPERTY(BlueprintReadWrite, DuplicateTransient, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(DuplicateTransient)
     bool bHasChanged;
     
-    UPROPERTY(BlueprintReadWrite, DuplicateTransient, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(DuplicateTransient)
     bool bNeedsToTriggerUpdate;
     
-    UPROPERTY(BlueprintReadWrite, DuplicateTransient, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(DuplicateTransient)
     bool bTransformChanged;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     bool bImportAsReference;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     bool bImportAsReferenceRotScaleEnabled;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     bool bCanDeleteHoudiniNodes;
     
 public:

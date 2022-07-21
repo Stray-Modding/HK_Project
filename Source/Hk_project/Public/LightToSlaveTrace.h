@@ -2,17 +2,17 @@
 #include "CoreMinimal.h"
 #include "LightToSlaveTrace.generated.h"
 
-class UAntiZurgSpotlightComponent;
 class AZurgPawnSlave;
+class UAntiZurgSpotlightComponent;
 
 USTRUCT(BlueprintType)
 struct FLightToSlaveTrace {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Instanced)
     UAntiZurgSpotlightComponent* Light;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     AZurgPawnSlave* slave;
     
     HK_PROJECT_API FLightToSlaveTrace();

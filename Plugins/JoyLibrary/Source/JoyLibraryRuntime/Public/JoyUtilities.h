@@ -2,31 +2,31 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
-#include "UObject/NoExportTypes.h"
-#include "ECoordinatesOrigin.h"
 #include "Engine/EngineTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
+#include "UObject/NoExportTypes.h"
+#include "ECoordinatesOrigin.h"
 #include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "Engine/CollisionProfile.h"
 #include "Engine/EngineTypes.h"
 #include "JoyUtilities.generated.h"
 
-class UCurveFloat;
-class AActor;
-class UStaticMeshComponent;
-class UUserWidget;
-class UWidgetComponent;
-class UShapeComponent;
-class UPrimitiveComponent;
 class UObject;
-class UPathFollowingComponent;
+class UStaticMeshComponent;
+class UPrimitiveComponent;
+class UWidgetComponent;
+class UUserWidget;
+class UShapeComponent;
+class AActor;
 class UNavigationPath;
+class UPathFollowingComponent;
 class ULevelStreaming;
 class ULevel;
+class UCurveFloat;
 
-UCLASS(Blueprintable)
+UCLASS(BlueprintType)
 class JOYLIBRARYRUNTIME_API UJoyUtilities : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
@@ -52,58 +52,58 @@ public:
     UFUNCTION(BlueprintCallable)
     static void LogError(UObject* WorldContextObject, const FString& _errorMessage);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool IsWorldTearingDown(UObject* _worldContextObject);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool IsWithEditorBuild();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool IsSimulatingInEditor();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool IsShipping();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool IsPlayInEditor(const UObject* _worldContextObject);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool IsAssertEnabled();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static int32 HashString(const FString& _string);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool HasActorBegunPlay(const AActor* _actor);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool GetShapeNavigationRelevancy(UShapeComponent* _shapeComponent);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float GetPathComponentRemainingLength(const UPathFollowingComponent* _pathFollowingComponent);
     
     UFUNCTION(BlueprintCallable)
     static void GetPathComponentCurrentPath(const UPathFollowingComponent* _pathFollowingComponent, UNavigationPath* _outPath);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FName GetLevelStreamingAssetName(const ULevelStreaming* _levelStreaming);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FName GetLevelAssetName(const ULevel* _level);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static int32 GetCurrentFrameNumber();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float GetBoxRadius(const FBox& _box);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FVector GetBoxExtent(const FBox& _box);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FVector GetBoxCenter(const FBox& _box);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FBox GetActorVisualBounds(const AActor* _actor);
     
     UFUNCTION(BlueprintCallable)
@@ -118,10 +118,10 @@ public:
     UFUNCTION(BlueprintCallable)
     static void DebugBreak();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FBox CombineBoxes(const FBox& _a, const FBox& _b);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FName CollisionProfileNameToName(const FCollisionProfileName& _collisionProfileName);
     
     UFUNCTION(BlueprintCallable)

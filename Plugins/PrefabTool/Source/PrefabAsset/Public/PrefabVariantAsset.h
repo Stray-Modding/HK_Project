@@ -3,11 +3,11 @@
 #include "PrefabAsset.h"
 #include "PrefabVariantAsset.generated.h"
 
-UCLASS(Blueprintable)
+UCLASS()
 class PREFABASSET_API UPrefabVariantAsset : public UPrefabAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(AssetRegistrySearchable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(AssetRegistrySearchable, VisibleAnywhere)
     UPrefabAsset* Parent;
     
     UPrefabVariantAsset();

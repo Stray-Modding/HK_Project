@@ -7,7 +7,7 @@
 
 class APlayerController;
 
-UCLASS(Blueprintable)
+UCLASS(BlueprintType)
 class JOYLIBRARYRUNTIME_API UInputTools : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
@@ -15,16 +15,16 @@ public:
     UFUNCTION(BlueprintCallable)
     static void SetViewportIgnoreInput(bool _value);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool IsShiftPressed(const APlayerController* _playerController);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool IsCtrlPressed(const APlayerController* _playerController);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool IsCmdPressed(const APlayerController* _playerController);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool IsAltPressed(const APlayerController* _playerController);
     
     UFUNCTION(BlueprintCallable)
@@ -33,7 +33,7 @@ public:
     UFUNCTION(BlueprintCallable)
     static bool InputAxis(APlayerController* _playerController, FKey Key, float Delta, float DeltaTime);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float GetTimeDown(const APlayerController* _playerController, FKey InKey);
     
 };

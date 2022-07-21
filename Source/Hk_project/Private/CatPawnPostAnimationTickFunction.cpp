@@ -1,5 +1,5 @@
 #include "CatPawnPostAnimationTickFunction.h"
 
-FCatPawnPostAnimationTickFunction::FCatPawnPostAnimationTickFunction() {
-}
+/*FCatPawnPostAnimationTickFunction::FCatPawnPostAnimationTickFunction() {
+}*/
 

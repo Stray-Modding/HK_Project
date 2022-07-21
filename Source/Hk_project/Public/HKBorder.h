@@ -1,15 +1,15 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
 #include "Components/Border.h"
+#include "UObject/NoExportTypes.h"
 #include "HKBorder.generated.h"
 
-UCLASS(Blueprintable)
+UCLASS()
 class HK_PROJECT_API UHKBorder : public UBorder {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditDefaultsOnly)
     FLinearColor m_selectedColor;
     
 public:

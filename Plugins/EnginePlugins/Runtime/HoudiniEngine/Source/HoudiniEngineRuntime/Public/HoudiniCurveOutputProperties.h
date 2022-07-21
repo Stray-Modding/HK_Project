@@ -9,19 +9,19 @@ USTRUCT(BlueprintType)
 struct HOUDINIENGINERUNTIME_API FHoudiniCurveOutputProperties {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     EHoudiniCurveOutputType CurveOutputType;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     int32 NumPoints;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     bool bClosed;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY()
     EHoudiniCurveType CurveType;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY()
     EHoudiniCurveMethod CurveMethod;
     
     FHoudiniCurveOutputProperties();

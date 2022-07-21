@@ -2,8 +2,8 @@
 
 class AActor;
 class UZurgAttackPointComponent;
-class AZurgPawnSlave;
 class ULifeComponent;
+class AZurgPawnSlave;
 
 void UZurgAttackPointManagerComponent::SetAttackPointsActive(bool _active) {
 }

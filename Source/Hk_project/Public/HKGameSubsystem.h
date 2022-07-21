@@ -5,12 +5,12 @@
 
 class UHKSubsystemSettings;
 
-UCLASS(Abstract, Blueprintable)
+UCLASS(Abstract)
 class HK_PROJECT_API UHKGameSubsystem : public UGameInstanceSubsystem {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     UHKSubsystemSettings* m_settings;
     
 public:

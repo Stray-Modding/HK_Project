@@ -6,10 +6,10 @@ USTRUCT(BlueprintType)
 struct HOUDINIENGINERUNTIME_API FHoudiniBakedOutputObjectIdentifier {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     int32 PartId;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     FString SplitIdentifier;
     
     FHoudiniBakedOutputObjectIdentifier();

@@ -5,15 +5,15 @@
 
 class USplineComponent;
 
-UCLASS(Blueprintable)
+UCLASS()
 class HK_PROJECT_API ACameraThirdPersonSplinesPreset : public AActor {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     USplineComponent* m_cameraSpline;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     USplineComponent* m_targetSpline;
     
 public:

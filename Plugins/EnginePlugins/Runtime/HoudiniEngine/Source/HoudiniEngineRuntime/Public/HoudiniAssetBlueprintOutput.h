@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct FHoudiniAssetBlueprintOutput {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     int32 OutputIndex;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     FHoudiniOutputObject OutputObject;
     
     HOUDINIENGINERUNTIME_API FHoudiniAssetBlueprintOutput();

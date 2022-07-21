@@ -5,11 +5,11 @@
 
 class UHoudiniInput;
 
-UCLASS(Blueprintable)
+UCLASS()
 class HOUDINIENGINERUNTIME_API UHoudiniParameterOperatorPath : public UHoudiniParameter {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY()
     TWeakObjectPtr<UHoudiniInput> HoudiniInput;
     
     UHoudiniParameterOperatorPath();

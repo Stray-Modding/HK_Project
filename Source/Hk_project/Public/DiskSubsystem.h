@@ -4,12 +4,12 @@
 #include "DiskOperation.h"
 #include "DiskSubsystem.generated.h"
 
-UCLASS(Blueprintable)
+UCLASS()
 class HK_PROJECT_API UDiskSubsystem : public UHKGameSubsystem {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     TArray<FDiskOperation> m_diskOperations;
     
 public:

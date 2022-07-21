@@ -5,14 +5,14 @@
 
 class UTexture2D;
 
-UCLASS(Blueprintable)
+UCLASS(BlueprintType)
 class UPhoto : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadOnly)
     TArray<FText> ScannedNames;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadOnly)
     UTexture2D* Texture;
     
     UPhoto();

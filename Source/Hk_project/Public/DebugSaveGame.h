@@ -4,14 +4,14 @@
 #include "DebugProfile.h"
 #include "DebugSaveGame.generated.h"
 
-UCLASS(Blueprintable)
+UCLASS()
 class HK_PROJECT_API UDebugSaveGame : public USaveGame {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     bool bDebugProfileEnabled;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     FDebugProfile DebugProfile;
     
     UDebugSaveGame();

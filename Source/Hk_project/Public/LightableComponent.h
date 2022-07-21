@@ -3,8 +3,8 @@
 #include "Components/SceneComponent.h"
 #include "LightableComponent.generated.h"
 
-class ULightableComponent;
 class UAntiZurgSpotlightComponent;
+class ULightableComponent;
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class HK_PROJECT_API ULightableComponent : public USceneComponent {
@@ -12,26 +12,26 @@ class HK_PROJECT_API ULightableComponent : public USceneComponent {
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FLightableDelegate, ULightableComponent*, _lightableComponent, UAntiZurgSpotlightComponent*, _spotlightComponent);
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable)
     FLightableDelegate OnEnlightenBegin;
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable)
     FLightableDelegate OnEnlightenEnd;
     
     ULightableComponent();
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     void IsEnlighten(bool& _enlighten, float& _lightingRatio);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     USceneComponent* GetOwnerSceneComponent();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     TArray<UAntiZurgSpotlightComponent*> GetLights() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void EnlightenEnd(UAntiZurgSpotlightComponent* _spotlight);
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void EnlightenBegin(UAntiZurgSpotlightComponent* _spotlight);
     
 };

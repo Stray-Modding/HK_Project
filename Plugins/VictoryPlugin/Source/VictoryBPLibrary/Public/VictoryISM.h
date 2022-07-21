@@ -5,11 +5,11 @@
 
 class UInstancedStaticMeshComponent;
 
-UCLASS(Blueprintable)
+UCLASS()
 class AVictoryISM : public AActor {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadOnly, Export, VisibleAnywhere)
     UInstancedStaticMeshComponent* Mesh;
     
     AVictoryISM();

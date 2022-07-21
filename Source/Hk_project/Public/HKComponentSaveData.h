@@ -7,16 +7,16 @@ USTRUCT(BlueprintType)
 struct FHKComponentSaveData {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     FTransform RelativeTransform;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     FName Name;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY()
     TArray<uint8> Data;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     bool NoAttachment;
     
     HK_PROJECT_API FHKComponentSaveData();

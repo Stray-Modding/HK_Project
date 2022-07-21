@@ -1,8 +1,8 @@
 #include "SplineRailComponent.h"
 
+class UPrimitiveComponent;
 class ACatPawn;
 class UStreamingComponent;
-class UPrimitiveComponent;
 class AActor;
 
 void USplineRailComponent::SetQuadrantEnabled(int32 _quadrantId, bool _enabled) {

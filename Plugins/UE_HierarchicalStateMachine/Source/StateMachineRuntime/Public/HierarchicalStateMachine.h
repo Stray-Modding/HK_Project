@@ -3,7 +3,7 @@
 #include "UObject/Object.h"
 #include "HierarchicalStateMachine.generated.h"
 
-UCLASS(Blueprintable)
+UCLASS()
 class STATEMACHINERUNTIME_API UHierarchicalStateMachine : public UObject {
     GENERATED_BODY()
 public:

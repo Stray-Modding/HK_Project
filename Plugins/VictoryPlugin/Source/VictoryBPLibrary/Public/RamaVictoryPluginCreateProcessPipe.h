@@ -3,7 +3,7 @@
 #include "UObject/Object.h"
 #include "RamaVictoryPluginCreateProcessPipe.generated.h"
 
-UCLASS(Blueprintable)
+UCLASS(BlueprintType)
 class URamaVictoryPluginCreateProcessPipe : public UObject {
     GENERATED_BODY()
 public:
@@ -11,7 +11,7 @@ public:
     UFUNCTION(BlueprintCallable)
     bool ReadFromPipe(FString& PipeContents);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     bool PipeIsValid();
     
     UFUNCTION(BlueprintCallable)

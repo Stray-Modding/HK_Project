@@ -3,7 +3,7 @@
 #include "GameFramework/CheatManager.h"
 #include "HKCheatManager.generated.h"
 
-UCLASS(Blueprintable)
+UCLASS()
 class UHKCheatManager : public UCheatManager {
     GENERATED_BODY()
 public:

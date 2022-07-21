@@ -6,35 +6,35 @@
 
 class UHoudiniStaticMesh;
 
-UCLASS(Blueprintable, EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+UCLASS(EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class HOUDINIENGINERUNTIME_API UHoudiniStaticMeshComponent : public UMeshComponent {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     UHoudiniStaticMesh* Mesh;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     FBox LocalBounds;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     bool bHoudiniIconVisible;
     
 public:
     UHoudiniStaticMeshComponent();
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void SetMesh(UHoudiniStaticMesh* InMesh);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void SetHoudiniIconVisible(bool bInHoudiniIconVisible);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void NotifyMeshUpdated();
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     bool IsHoudiniIconVisible() const;
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     UHoudiniStaticMesh* GetMesh();
     
 };

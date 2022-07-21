@@ -8,10 +8,10 @@ USTRUCT(BlueprintType)
 struct FZurgSocket {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite)
     FName SocketName;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite)
     AZurgPawnSlave* Zurg;
     
     HK_PROJECT_API FZurgSocket();

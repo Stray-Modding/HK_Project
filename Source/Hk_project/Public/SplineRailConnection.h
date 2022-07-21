@@ -3,17 +3,17 @@
 #include "UObject/Object.h"
 #include "SplineRailConnection.generated.h"
 
-class USphereComponent;
 class USplineRailComponent;
+class USphereComponent;
 
-UCLASS(Blueprintable)
+UCLASS()
 class USplineRailConnection : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Instanced)
     USplineRailComponent* Rail;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Instanced)
     USphereComponent* Collider;
     
     USplineRailConnection();

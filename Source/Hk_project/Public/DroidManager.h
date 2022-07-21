@@ -6,21 +6,21 @@
 
 class ACharacterDroid;
 
-UCLASS(Blueprintable)
+UCLASS()
 class HK_PROJECT_API ADroidManager : public AManager {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
     int32 m_maxDroidTicksPerFrame;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
     float m_droidSignificanceDistanceThreshold;
     
 private:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     TArray<ACharacterDroid*> m_droids;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     TArray<FDroidTick> m_droidTickList;
     
 public:

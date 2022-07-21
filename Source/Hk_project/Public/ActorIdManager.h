@@ -5,7 +5,7 @@
 
 class AActor;
 
-UCLASS(Blueprintable)
+UCLASS()
 class HK_PROJECT_API AActorIdManager : public AManager {
     GENERATED_BODY()
 public:

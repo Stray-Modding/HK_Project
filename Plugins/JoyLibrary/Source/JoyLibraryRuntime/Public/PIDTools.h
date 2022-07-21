@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "VectorPIDController.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "UObject/NoExportTypes.h"
+#include "VectorPIDController.h"
 #include "FloatPIDController.h"
 #include "PIDTools.generated.h"
 
-UCLASS(Blueprintable)
+UCLASS(BlueprintType)
 class JOYLIBRARYRUNTIME_API UPIDTools : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

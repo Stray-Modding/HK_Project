@@ -3,7 +3,7 @@
 #include "GameFramework/Actor.h"
 #include "Manager.generated.h"
 
-UCLASS(Abstract, Blueprintable)
+UCLASS(Abstract)
 class JOYLIBRARYRUNTIME_API AManager : public AActor {
     GENERATED_BODY()
 public:

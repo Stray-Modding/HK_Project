@@ -9,7 +9,7 @@ USTRUCT(BlueprintType)
 struct FBackpackScreenEntry {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     TSubclassOf<UBackpackScreenUserWidget> Class;
     
     HK_PROJECT_API FBackpackScreenEntry();

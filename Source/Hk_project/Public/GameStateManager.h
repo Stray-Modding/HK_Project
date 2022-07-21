@@ -2,25 +2,26 @@
 #include "CoreMinimal.h"
 #include "Manager.h"
 #include "EGameSuspendedReason.h"
+#include "HierarchicalStateMachine.h"
 #include "GameStateManager.generated.h"
 
 class UHierarchicalStateMachine;
 class UHUDDebugWidget;
 
-UCLASS(Blueprintable)
+UCLASS()
 class HK_PROJECT_API AGameStateManager : public AManager {
     GENERATED_BODY()
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGameStateManagerTypedDelegate, TEnumAsByte<EGameSuspendedReason>, _gameSuspendedReason);
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable)
     FGameStateManagerTypedDelegate OnGameSuspended;
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable)
     FGameStateManagerTypedDelegate OnGameUnsuspended;
     
 private:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Transient)
     UHierarchicalStateMachine* m_stateMachine;
     
 public:
@@ -34,29 +35,29 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetDebugMenuOpen(bool _open);
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void OnFadeOutStart(float _fadeTime);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     bool IsSuspended() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     bool IsGameMapType() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     bool IsDebugMenuOpen() const;
     
 private:
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _OnToggleDebugMenuPressed();
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _OnMenuStartPressed();
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _OnHUDDebugWidgetOpened(UHUDDebugWidget* _widget);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _OnHUDDebugWidgetClosed(UHUDDebugWidget* _widget);
     
 };

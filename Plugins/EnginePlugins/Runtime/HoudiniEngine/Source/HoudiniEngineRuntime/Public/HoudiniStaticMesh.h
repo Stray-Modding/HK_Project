@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/Object.h"
 #include "UObject/NoExportTypes.h"
+#include "UObject/Object.h"
 #include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
@@ -11,51 +11,51 @@
 
 class UMaterialInterface;
 
-UCLASS(Blueprintable)
+UCLASS()
 class HOUDINIENGINERUNTIME_API UHoudiniStaticMesh : public UObject {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     bool bHasNormals;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     bool bHasTangents;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     bool bHasColors;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY()
     uint32 NumUVLayers;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     bool bHasPerFaceMaterials;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, SkipSerialization, meta=(AllowPrivateAccess=true))
+    UPROPERTY(SkipSerialization)
     TArray<FVector> VertexPositions;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, SkipSerialization, meta=(AllowPrivateAccess=true))
+    UPROPERTY(SkipSerialization)
     TArray<FIntVector> TriangleIndices;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, SkipSerialization, meta=(AllowPrivateAccess=true))
+    UPROPERTY(SkipSerialization)
     TArray<FColor> VertexInstanceColors;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, SkipSerialization, meta=(AllowPrivateAccess=true))
+    UPROPERTY(SkipSerialization)
     TArray<FVector> VertexInstanceNormals;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, SkipSerialization, meta=(AllowPrivateAccess=true))
+    UPROPERTY(SkipSerialization)
     TArray<FVector> VertexInstanceUTangents;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, SkipSerialization, meta=(AllowPrivateAccess=true))
+    UPROPERTY(SkipSerialization)
     TArray<FVector> VertexInstanceVTangents;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, SkipSerialization, meta=(AllowPrivateAccess=true))
+    UPROPERTY(SkipSerialization)
     TArray<FVector2D> VertexInstanceUVs;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, SkipSerialization, meta=(AllowPrivateAccess=true))
+    UPROPERTY(SkipSerialization)
     TArray<int32> MaterialIDsPerTriangle;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     TArray<FStaticMaterial> StaticMaterials;
     
 public:
@@ -93,61 +93,61 @@ public:
     UFUNCTION()
     void SetNumStaticMaterials(uint32 InNumStaticMaterials);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void SetHasTangents(bool bInHasTangents);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void SetHasPerFaceMaterials(bool bInHasPerFaceMaterials);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void SetHasNormals(bool bInHasNormals);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void SetHasColors(bool bInHasColors);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void Optimize();
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     bool IsValid(bool bInSkipVertexIndicesCheck) const;
     
     UFUNCTION()
     void Initialize(uint32 InNumVertices, uint32 InNumTriangles, uint32 InNumUVLayers, uint32 InInitialNumStaticMaterials, bool bInHasNormals, bool bInHasTangents, bool bInHasColors, bool bInHasPerFaceMaterials);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     bool HasTangents() const;
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     bool HasPerFaceMaterials() const;
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     bool HasNormals() const;
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     bool HasColors() const;
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     TArray<FVector> GetVertexPositions() const;
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     TArray<FVector> GetVertexInstanceVTangents() const;
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     TArray<FVector2D> GetVertexInstanceUVs() const;
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     TArray<FVector> GetVertexInstanceUTangents() const;
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     TArray<FVector> GetVertexInstanceNormals() const;
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     TArray<FColor> GetVertexInstanceColors() const;
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     TArray<FIntVector> GetTriangleIndices() const;
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     TArray<FStaticMaterial> GetStaticMaterials() const;
     
     UFUNCTION()
@@ -165,22 +165,22 @@ public:
     UFUNCTION()
     uint32 GetNumStaticMaterials() const;
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     int32 GetMaterialIndex(FName InMaterialSlotName) const;
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     TArray<int32> GetMaterialIDsPerTriangle() const;
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     UMaterialInterface* GetMaterial(int32 InMaterialIndex);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void CalculateTangents(bool bInComputeWeightedNormals);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void CalculateNormals(bool bInComputeWeightedNormals);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     FBox CalcBounds() const;
     
     UFUNCTION()

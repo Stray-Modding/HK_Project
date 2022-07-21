@@ -1,8 +1,8 @@
 #include "CatUsableComponentBase.h"
 
-class USoundBase;
-class ACatPawn;
 class USceneComponent;
+class ACatPawn;
+class USoundBase;
 
 void UCatUsableComponentBase::UseDone() {
 }
@@ -58,9 +58,9 @@ FText UCatUsableComponentBase::GetUseDisplayText_Implementation() const {
     return FText::GetEmpty();
 }
 
-TEnumAsByte<EUsableInteractionButton> UCatUsableComponentBase::GetInteractionButton_Implementation() const {
+/*TEnumAsByte<EUsableInteractionButton> UCatUsableComponentBase::GetInteractionButton/*_Implementation#1#() const {
     return UsableInteractionButton_JumpUp;
-}
+}*/
 
 USceneComponent* UCatUsableComponentBase::GetGUIFeedbackPosition(FName& _outSocket) const {
     return NULL;

@@ -3,7 +3,7 @@
 #include "HoudiniParameter.h"
 #include "HoudiniParameterSeparator.generated.h"
 
-UCLASS(Blueprintable)
+UCLASS()
 class HOUDINIENGINERUNTIME_API UHoudiniParameterSeparator : public UHoudiniParameter {
     GENERATED_BODY()
 public:

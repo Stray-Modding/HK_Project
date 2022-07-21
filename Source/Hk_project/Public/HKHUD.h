@@ -5,57 +5,58 @@
 #include "JoyHUD.h"
 #include "EScreenFadeType.h"
 #include "ActionDisplay.h"
+#include "HUDDebugWidget.h"
 #include "HKHUD.generated.h"
 
-class USaveIconWidget;
-class UHUDDebugWidget;
 class AHKHUD;
-class UUserWidget;
-class UReticuleWidget;
-class ADialog;
 class ABackpack;
+class ADialog;
+class UHUDDebugWidget;
+class UUserWidget;
+class USaveIconWidget;
+class UReticuleWidget;
 
-UCLASS(Blueprintable, NonTransient)
+UCLASS(NonTransient)
 class HK_PROJECT_API AHKHUD : public AJoyHUD {
     GENERATED_BODY()
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FHKHUDDelegate, AHKHUD*, _hud);
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable)
     FHKHUDDelegate ActionDisplayAdded;
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable)
     FHKHUDDelegate ActionDisplayRemoved;
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable)
     FHKHUDDelegate ActionDisplayEnabledChanged;
     
 private:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TSubclassOf<UUserWidget> m_HUDWidgetClass;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TSubclassOf<UHUDDebugWidget> m_HUDDebugWidgetClass;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditDefaultsOnly)
     TMap<TSubclassOf<UUserWidget>, TSubclassOf<UUserWidget>> m_widgetToBlueprintMap;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Instanced)
     TArray<UUserWidget*> m_widgets;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Instanced)
     UUserWidget* m_HUDWidget;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Instanced)
     UHUDDebugWidget* m_HUDDebugWidget;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Instanced)
     USaveIconWidget* m_saveIcon;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Instanced)
     UReticuleWidget* m_reticule;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditDefaultsOnly)
     bool m_enableSaveIcon;
     
 public:
@@ -90,46 +91,46 @@ public:
     UFUNCTION(BlueprintCallable)
     void PopActionDisplayHidden();
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void OnDialogLineBegan(ADialog* _dialog);
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void OnDialogEnded(ADialog* _dialog);
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void OnDialogBegan(ADialog* _dialog);
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void OnActionDisplayShown();
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void OnActionDisplayHidden();
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, BlueprintPure)
+    UFUNCTION(BlueprintImplementableEvent, BlueprintPure)
     bool IsVideoCinematicSkippable() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, BlueprintPure)
+    UFUNCTION(BlueprintImplementableEvent, BlueprintPure)
     bool IsPlayingVideoCinematic() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     bool IsActionDisplayHidden() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     TArray<UUserWidget*> GetWidgets() const;
     
-    UFUNCTION(BlueprintImplementableEvent)
-    FLinearColor GetScreenFadeColorInternal(TEnumAsByte<EScreenFadeType> _type) const;
+    /*UFUNCTION(BlueprintImplementableEvent)
+    FLinearColor GetScreenFadeColorInternal(TEnumAsByte<EScreenFadeType> _type) const;*/
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     UUserWidget* GetHUDWidget() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     UHUDDebugWidget* GetHUDDebugWidget() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     TArray<FActionDisplay> GetActionDisplays() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     bool FindActionDisplay(FName _actionID, FActionDisplay& _outActionDisplay) const;
     
     UFUNCTION(BlueprintCallable)
@@ -139,17 +140,17 @@ public:
     void AddActionDisplay(FName _actionID, FText _displayText, FName _actionBindingName, int32 _priority, bool _showAllKeys);
     
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
-    void _SetScreenFadeColorInternal(TEnumAsByte<EScreenFadeType> _type, FLinearColor _color);
+    /*UFUNCTION(BlueprintImplementableEvent)
+    void _SetScreenFadeColorInternal(TEnumAsByte<EScreenFadeType> _type, FLinearColor _color);*/
     
 private:
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _OnBackpackDialogLineBegan(ABackpack* _backpack, ADialog* _dialog);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _OnBackpackDialogEnded(ABackpack* _backpack, ADialog* _dialog);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _OnBackpackDialogBegan(ABackpack* _backpack, ADialog* _dialog);
     
 };

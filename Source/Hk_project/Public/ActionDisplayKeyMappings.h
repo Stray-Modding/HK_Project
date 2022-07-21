@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FActionDisplayKeyMappings {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite)
     TArray<FInputActionKeyMapping> KeyMappings;
     
     HK_PROJECT_API FActionDisplayKeyMappings();

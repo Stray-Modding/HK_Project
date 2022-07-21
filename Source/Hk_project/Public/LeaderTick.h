@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct FLeaderTick {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     AZurgPawnLeader* leader;
     
     HK_PROJECT_API FLeaderTick();

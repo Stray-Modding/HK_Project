@@ -3,13 +3,13 @@
 #include "Components/ProgressBar.h"
 #include "HKProgressBar.generated.h"
 
-UCLASS(Blueprintable)
+UCLASS()
 class HK_PROJECT_API UHKProgressBar : public UProgressBar {
     GENERATED_BODY()
 public:
     UHKProgressBar();
 private:
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _OnValueChanged(float _value);
     
 };

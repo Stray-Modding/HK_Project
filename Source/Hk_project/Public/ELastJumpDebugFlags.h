@@ -4,7 +4,7 @@
 
 UENUM(BlueprintType)
 enum ELastJumpDebugFlags {
-    LastJumpDebug_DisplayMotion = 0x1,
+    LastJumpDebug_DisplayMotion/* = 0x1*/,
     LastJumpDebug_DisplayMotionRatios,
     LastJumpDebug_MAX UMETA(Hidden),
 };

@@ -1,7 +1,7 @@
 #include "LightableComponent.h"
 
-class USceneComponent;
 class UAntiZurgSpotlightComponent;
+class USceneComponent;
 
 void ULightableComponent::IsEnlighten(bool& _enlighten, float& _lightingRatio) {
 }

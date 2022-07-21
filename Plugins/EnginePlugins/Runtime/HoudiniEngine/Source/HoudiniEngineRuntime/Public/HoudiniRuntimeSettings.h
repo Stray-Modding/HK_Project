@@ -1,168 +1,168 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
-#include "Engine/EngineTypes.h"
+#include "EHoudiniExecutableType.h"
 #include "EHoudiniRuntimeSettingsSessionType.h"
+#include "Engine/EngineTypes.h"
 #include "PhysicsEngine/BodyInstance.h"
 #include "BodySetupEnums.h"
 #include "EHoudiniRuntimeSettingsRecomputeFlag.h"
 #include "Engine/EngineTypes.h"
-#include "EHoudiniExecutableType.h"
 #include "HoudiniRuntimeSettings.generated.h"
 
 class UPhysicalMaterial;
-class UFoliageType_InstancedStaticMesh;
 class UAssetUserData;
+class UFoliageType_InstancedStaticMesh;
 
-UCLASS(Blueprintable, DefaultConfig)
+UCLASS(BlueprintType, DefaultConfig, Config=Engine)
 class HOUDINIENGINERUNTIME_API UHoudiniRuntimeSettings : public UObject {
     GENERATED_BODY()
 public:
     UPROPERTY(EditAnywhere, GlobalConfig)
     TEnumAsByte<EHoudiniRuntimeSettingsSessionType> SessionType;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, GlobalConfig)
     FString ServerHost;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, GlobalConfig)
     int32 ServerPort;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, GlobalConfig)
     FString ServerPipeName;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, GlobalConfig)
     bool bStartAutomaticServer;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, GlobalConfig)
     float AutomaticServerTimeout;
     
-    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(AdvancedDisplay, EditAnywhere, GlobalConfig)
     bool bSyncWithHoudiniCook;
     
-    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(AdvancedDisplay, EditAnywhere, GlobalConfig)
     bool bCookUsingHoudiniTime;
     
-    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(AdvancedDisplay, EditAnywhere, GlobalConfig)
     bool bSyncViewport;
     
-    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(AdvancedDisplay, EditAnywhere, GlobalConfig)
     bool bSyncHoudiniViewport;
     
-    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(AdvancedDisplay, EditAnywhere, GlobalConfig)
     bool bSyncUnrealViewport;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, GlobalConfig)
     bool bShowMultiAssetDialog;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, GlobalConfig)
     bool bPreferHdaMemoryCopyOverHdaSourceFile;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, GlobalConfig)
     bool bPauseCookingOnStart;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, GlobalConfig)
     bool bDisplaySlateCookingNotifications;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, GlobalConfig)
     FString DefaultTemporaryCookFolder;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, GlobalConfig)
     FString DefaultBakeFolder;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, GlobalConfig)
     bool MarshallingLandscapesUseDefaultUnrealScaling;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, GlobalConfig)
     bool MarshallingLandscapesUseFullResolution;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, GlobalConfig)
     bool MarshallingLandscapesForceMinMaxValues;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(GlobalConfig, VisibleAnywhere)
     float MarshallingLandscapesForcedMinValue;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(GlobalConfig, VisibleAnywhere)
     float MarshallingLandscapesForcedMaxValue;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, GlobalConfig)
     bool bAddRotAndScaleAttributesOnCurves;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, GlobalConfig)
     bool bUseLegacyInputCurves;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, GlobalConfig)
     float MarshallingSplineResolution;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, GlobalConfig)
     bool bEnableProxyStaticMesh;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, GlobalConfig)
     bool bShowDefaultMesh;
     
-    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(AdvancedDisplay, EditAnywhere, GlobalConfig)
     bool bEnableProxyStaticMeshRefinementByTimer;
     
-    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(AdvancedDisplay, EditAnywhere, GlobalConfig)
     float ProxyMeshAutoRefineTimeoutSeconds;
     
-    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(AdvancedDisplay, EditAnywhere, GlobalConfig)
     bool bEnableProxyStaticMeshRefinementOnPreSaveWorld;
     
-    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(AdvancedDisplay, EditAnywhere, GlobalConfig)
     bool bEnableProxyStaticMeshRefinementOnPreBeginPIE;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, GlobalConfig)
     uint8 bDoubleSidedGeometry: 1;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     UPhysicalMaterial* PhysMaterial;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, GlobalConfig)
     FBodyInstance DefaultBodyInstance;
     
-    UPROPERTY(EditAnywhere, GlobalConfig)
+    UPROPERTY(GlobalConfig, VisibleDefaultsOnly)
     TEnumAsByte<ECollisionTraceFlag> CollisionTraceFlag;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, GlobalConfig)
     int32 LightMapResolution;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadOnly, EditAnywhere, GlobalConfig)
     float LpvBiasMultiplier;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, GlobalConfig)
     float GeneratedDistanceFieldResolutionScale;
     
-    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(AdvancedDisplay, EditAnywhere, GlobalConfig)
     FWalkableSlopeOverride WalkableSlopeOverride;
     
-    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(AdvancedDisplay, EditAnywhere, GlobalConfig)
     int32 LightMapCoordinateIndex;
     
-    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(AdvancedDisplay, EditAnywhere, GlobalConfig)
     uint8 bUseMaximumStreamingTexelRatio: 1;
     
-    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(AdvancedDisplay, EditAnywhere, GlobalConfig)
     float StreamingDistanceMultiplier;
     
-    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UPROPERTY(AdvancedDisplay, EditAnywhere, Instanced)
     UFoliageType_InstancedStaticMesh* FoliageDefaultSettings;
     
-    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(AdvancedDisplay, EditAnywhere, Export)
     TArray<UAssetUserData*> AssetUserData;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, GlobalConfig)
     bool bUseFullPrecisionUVs;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, GlobalConfig)
     int32 SrcLightmapIndex;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, GlobalConfig)
     int32 DstLightmapIndex;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, GlobalConfig)
     int32 MinLightmapResolution;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, GlobalConfig)
     bool bRemoveDegenerates;
     
     UPROPERTY(EditAnywhere, GlobalConfig)
@@ -174,64 +174,64 @@ public:
     UPROPERTY(EditAnywhere, GlobalConfig)
     TEnumAsByte<EHoudiniRuntimeSettingsRecomputeFlag> RecomputeTangentsFlag;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, GlobalConfig)
     bool bUseMikkTSpace;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, GlobalConfig)
     bool bBuildAdjacencyBuffer;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
     uint8 bComputeWeightedNormals: 1;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
     uint8 bBuildReversedIndexBuffer: 1;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
     uint8 bUseHighPrecisionTangentBasis: 1;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
     float DistanceFieldResolutionScale;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
     uint8 bGenerateDistanceFieldAsIfTwoSided: 1;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
     uint8 bSupportFaceRemap: 1;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, GlobalConfig)
     bool bPDGAsyncCommandletImportEnabled;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, GlobalConfig)
     bool bEnableBackwardCompatibility;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, GlobalConfig)
     bool bAutomaticLegacyHDARebuild;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, GlobalConfig)
     bool bUseCustomHoudiniLocation;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(GlobalConfig, VisibleAnywhere)
     FDirectoryPath CustomHoudiniLocation;
     
     UPROPERTY(EditAnywhere, GlobalConfig)
     TEnumAsByte<EHoudiniExecutableType> HoudiniExecutable;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, GlobalConfig)
     int32 CookingThreadStackSize;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, GlobalConfig)
     FString HoudiniEnvironmentFiles;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, GlobalConfig)
     FString OtlSearchPath;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, GlobalConfig)
     FString DsoSearchPath;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, GlobalConfig)
     FString ImageDsoSearchPath;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere, GlobalConfig)
     FString AudioDsoSearchPath;
     
     UHoudiniRuntimeSettings();

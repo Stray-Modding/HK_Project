@@ -3,14 +3,14 @@
 #include "Animation/AnimNotifies/AnimNotify.h"
 #include "AnimNotify_SoundEvent.generated.h"
 
-UCLASS(Blueprintable, CollapseCategories)
+UCLASS(CollapseCategories)
 class HK_PROJECT_API UAnimNotify_SoundEvent : public UAnimNotify {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadOnly, EditAnywhere)
     FName EventName;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadOnly, EditAnywhere)
     float Velocity;
     
     UAnimNotify_SoundEvent();

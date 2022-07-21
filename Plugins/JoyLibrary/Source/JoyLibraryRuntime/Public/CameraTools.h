@@ -4,12 +4,12 @@
 #include "UObject/NoExportTypes.h"
 #include "CameraTools.generated.h"
 
+class UObject;
 class AActor;
 class APlayerController;
 class UPrimitiveComponent;
-class UObject;
 
-UCLASS(Blueprintable)
+UCLASS(BlueprintType)
 class JOYLIBRARYRUNTIME_API UCameraTools : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
@@ -20,7 +20,7 @@ public:
     UFUNCTION(BlueprintCallable)
     static void RemovePlayerControllerHiddenActor(APlayerController* _playerController, AActor* _actor);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FVector GetCurrentViewLocation(UObject* _worldContextObject);
     
     UFUNCTION(BlueprintCallable)

@@ -1,25 +1,25 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "NoiseSmootherVector2D.h"
-#include "Kismet/BlueprintFunctionLibrary.h"
-#include "NoiseSmootherVector.h"
 #include "UObject/NoExportTypes.h"
+#include "Kismet/BlueprintFunctionLibrary.h"
+#include "SmootherCurved.h"
+#include "NoiseSmootherVector2D.h"
+#include "NoiseSmootherVector.h"
+#include "NoiseSmootherRotation.h"
+#include "UObject/NoExportTypes.h"
+#include "SmootherVector.h"
+#include "SmootherVectorByComponent.h"
 #include "UObject/NoExportTypes.h"
 #include "NoiseSmootherFloat.h"
 #include "UObject/NoExportTypes.h"
-#include "NoiseSmootherRotation.h"
-#include "SmootherVectorByComponent.h"
-#include "SmootherVector.h"
-#include "UObject/NoExportTypes.h"
 #include "SmootherTransform.h"
 #include "SmootherRotation.h"
-#include "SmootherCurved.h"
 #include "SmootherFloat.h"
 #include "Smoother.generated.h"
 
 class UCurveFloat;
 
-UCLASS(Blueprintable)
+UCLASS(BlueprintType)
 class JOYLIBRARYRUNTIME_API USmoother : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
@@ -63,7 +63,7 @@ public:
     UFUNCTION(BlueprintCallable)
     static void SmootherCurvedSetAccelerationCurve(UPARAM(Ref) FSmootherCurved& _smoother, UCurveFloat* _curve);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float SmootherCurvedGetValue(const FSmootherCurved& _smoother);
     
     UFUNCTION(BlueprintCallable)
@@ -114,19 +114,19 @@ public:
     UFUNCTION(BlueprintCallable)
     static void ResetNoiseSmootherFloat(UPARAM(Ref) FNoiseSmootherFloat& _noiseSmoother, float _value);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FRotator GetRotator(const FSmootherRotation& _smoother);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FVector GetNoiseSmootherVectorValue(UPARAM(Ref) FNoiseSmootherVector& _noiseSmoother);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FVector2D GetNoiseSmootherVector2DValue(UPARAM(Ref) FNoiseSmootherVector2D& _noiseSmoother);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FRotator GetNoiseSmootherRotationValue(UPARAM(Ref) FNoiseSmootherRotation& _noiseSmoother);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float GetNoiseSmootherFloatValue(UPARAM(Ref) FNoiseSmootherFloat& _noiseSmoother);
     
 };

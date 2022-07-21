@@ -3,7 +3,7 @@
 #include "BackpackUserWidget.h"
 #include "DialogUserWidget.generated.h"
 
-UCLASS(Blueprintable, EditInlineNew)
+UCLASS(EditInlineNew)
 class HK_PROJECT_API UDialogUserWidget : public UBackpackUserWidget {
     GENERATED_BODY()
 public:

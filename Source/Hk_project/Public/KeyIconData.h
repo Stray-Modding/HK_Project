@@ -7,17 +7,17 @@
 
 class UIconData;
 
-UCLASS(Blueprintable)
+UCLASS()
 class HK_PROJECT_API UKeyIconData : public UPrimaryDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     FKey Key;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     UIconData* DefaultIcon;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TMap<EGameControllerType, UIconData*> ControllerIcons;
     
     UKeyIconData();

@@ -1,7 +1,7 @@
 #include "ZurgPawn.h"
 
-class USceneComponent;
 class ACatPawn;
+class USceneComponent;
 
 void AZurgPawn::OnDetachedFromCat_Implementation(ACatPawn* _catPawn, USceneComponent* _attachedComponent, FName _socketName) {
 }

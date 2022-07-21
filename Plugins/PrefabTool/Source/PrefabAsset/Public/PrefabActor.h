@@ -4,15 +4,15 @@
 #include "Engine/EngineTypes.h"
 #include "PrefabActor.generated.h"
 
-class UPrefabAsset;
 class UPrefabComponent;
+class UPrefabAsset;
 
-UCLASS(Blueprintable)
+UCLASS()
 class PREFABASSET_API APrefabActor : public AActor {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadOnly, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
     UPrefabComponent* PrefabComponent;
     
 public:
@@ -23,7 +23,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetMobility(TEnumAsByte<EComponentMobility::Type> InMobility);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     UPrefabAsset* GetPrefab() const;
     
     UFUNCTION(BlueprintCallable)

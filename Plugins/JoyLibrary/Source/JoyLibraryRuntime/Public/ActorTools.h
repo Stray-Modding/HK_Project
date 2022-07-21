@@ -5,7 +5,7 @@
 
 class AActor;
 
-UCLASS(Blueprintable)
+UCLASS(BlueprintType)
 class JOYLIBRARYRUNTIME_API UActorTools : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
@@ -13,7 +13,7 @@ public:
     UFUNCTION(BlueprintCallable)
     static void SetActorActive(AActor* _actor, bool _active);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool IsActorActive(AActor* _actor);
     
     UFUNCTION(BlueprintCallable)

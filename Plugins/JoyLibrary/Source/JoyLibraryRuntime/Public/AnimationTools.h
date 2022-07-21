@@ -11,7 +11,7 @@ class USkeletalMeshComponent;
 class UAnimationAsset;
 class UBlendSpaceBase;
 
-UCLASS(Blueprintable)
+UCLASS(BlueprintType)
 class JOYLIBRARYRUNTIME_API UAnimationTools : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
@@ -34,13 +34,13 @@ public:
     UFUNCTION(BlueprintCallable)
     static void RefreshAnimationCache(UAnimSequence* _animationSequence);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static float GetPlayLength(const UAnimSequence* _animationSequence);
     
     UFUNCTION(BlueprintCallable)
     static bool GetBoneChain(const USkeletalMeshComponent* _skeletalMesh, const FName& _firstBone, const FName& _lastBone, TArray<FName>& _outChain);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static UAnimationAsset* GetAnimation(USkeletalMeshComponent* _skeletalMeshComponent);
     
     UFUNCTION(BlueprintCallable)

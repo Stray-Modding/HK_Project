@@ -3,10 +3,10 @@
 #include "StreamingComponent.h"
 #include "Components/SplineComponent.h"
 
-class AActor;
-class UNavigationQueryFilter;
 class USentinelSettings;
 class UCanvas;
+class AActor;
+class UNavigationQueryFilter;
 class ARecastNavMesh;
 class ATargetPoint;
 

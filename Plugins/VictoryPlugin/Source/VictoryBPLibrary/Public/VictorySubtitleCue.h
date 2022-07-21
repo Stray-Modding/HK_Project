@@ -6,10 +6,10 @@ USTRUCT(BlueprintType)
 struct FVictorySubtitleCue {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
     FText SubtitleText;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
     float Time;
     
     VICTORYBPLIBRARY_API FVictorySubtitleCue();

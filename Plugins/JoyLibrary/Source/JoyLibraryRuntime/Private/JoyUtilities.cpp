@@ -1,15 +1,15 @@
 #include "JoyUtilities.h"
 #include "Templates/SubclassOf.h"
 
-class UStaticMeshComponent;
-class AActor;
-class UUserWidget;
-class UWidgetComponent;
-class UShapeComponent;
 class UPrimitiveComponent;
+class UWidgetComponent;
+class UUserWidget;
+class UShapeComponent;
+class AActor;
 class UObject;
-class UPathFollowingComponent;
+class UStaticMeshComponent;
 class UNavigationPath;
+class UPathFollowingComponent;
 class ULevelStreaming;
 class ULevel;
 class UCurveFloat;

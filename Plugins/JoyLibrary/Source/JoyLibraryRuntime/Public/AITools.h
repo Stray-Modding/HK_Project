@@ -5,12 +5,12 @@
 
 class AAIController;
 
-UCLASS(Blueprintable)
+UCLASS(BlueprintType)
 class JOYLIBRARYRUNTIME_API UAITools : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UAITools();
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static FString GetActiveBehaviorTreeTaskName(AAIController* _aiController);
     
 };

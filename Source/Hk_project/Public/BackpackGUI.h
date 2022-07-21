@@ -1,16 +1,16 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EBackpackGUIMode.h"
 #include "GameFramework/Actor.h"
+#include "EBackpackGUIMode.h"
 #include "BackpackGUI.generated.h"
 
 class UPhoto;
 class ULootableComponent;
 class ABackpackGUI;
-class ABackpack;
 class ACatPawn;
+class ABackpack;
 
-UCLASS(Blueprintable)
+UCLASS()
 class HK_PROJECT_API ABackpackGUI : public AActor {
     GENERATED_BODY()
 public:
@@ -18,13 +18,13 @@ public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FGUIClosed, ABackpackGUI*, GUI);
     
 private:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float m_GUIInputDeadZone;
     
 public:
     ABackpackGUI();
 protected:
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void StartDialog(AActor* _droid);
     
 public:
@@ -32,88 +32,88 @@ public:
     void SetGUIMode(TEnumAsByte<EBackpackGUIMode> _mode);
     
 protected:
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void OnYPressed(bool& _handled);
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void OnXPressed(bool& _handled);
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void OnValidatePressed(bool& _handled);
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void OnUpPressed(bool& _handled);
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void OnUpdateInventory(const TArray<ULootableComponent*>& _inventory);
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void OnRightVerticalAxis(float _value, bool& _handled);
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void OnRightPressed(bool& _handled);
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void OnRightHorizontalAxis(float _value, bool& _handled);
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void OnRBPressed(bool& _handled);
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void OnPhotoCatalogUpdated(const TArray<UPhoto*>& _photoCatalog);
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void OnOpened();
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void OnLeftPressed(bool& _handled);
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void OnLBPressed(bool& _handled);
     
 public:
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void OnGUIModeChanged();
     
 protected:
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void OnGUIInputNotHandled();
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void OnGUIInputHandled();
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void OnDpadUpPressed(bool& _handled);
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void OnDpadRightPressed(bool& _handled);
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void OnDpadLeftPressed(bool& _handled);
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void OnDpadDownPressed(bool& _handled);
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void OnDownPressed(bool& _handled);
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void OnClosed();
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void OnCancelPressed(bool& _handled);
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void OnBackpackSet(ABackpack* _backpack);
     
 public:
     UFUNCTION(BlueprintPure)
     TEnumAsByte<EBackpackGUIMode> GetGUIMode() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     ACatPawn* GetCatPawn() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     ABackpack* GetBackpack() const;
     
 };

@@ -5,12 +5,12 @@
 #include "Engine/EngineTypes.h"
 #include "PrefabFunctionLibrary.generated.h"
 
-class APrefabActor;
-class UObject;
 class AActor;
+class UObject;
+class APrefabActor;
 class UPrefabAsset;
 
-UCLASS(Blueprintable)
+UCLASS(BlueprintType)
 class PREFABASSET_API UPrefabFunctionLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

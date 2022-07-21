@@ -2,74 +2,74 @@
 #include "CoreMinimal.h"
 #include "AggregatedWorkItemTally.h"
 #include "UObject/Object.h"
-#include "TOPWorkResult.h"
 #include "WorkItemTally.h"
+#include "TOPWorkResult.h"
 #include "EPDGNodeState.h"
 #include "HoudiniPDGWorkResultObjectBakedOutput.h"
 #include "OutputActorOwner.h"
 #include "TOPNode.generated.h"
 
-UCLASS(Blueprintable)
+UCLASS()
 class HOUDINIENGINERUNTIME_API UTOPNode : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, NonTransactional, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(NonTransactional, Transient)
     int32 NodeId;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, NonTransactional, meta=(AllowPrivateAccess=true))
+    UPROPERTY(NonTransactional)
     FString NodeName;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, NonTransactional, meta=(AllowPrivateAccess=true))
+    UPROPERTY(NonTransactional)
     FString NodePath;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, NonTransactional, meta=(AllowPrivateAccess=true))
+    UPROPERTY(NonTransactional)
     FString ParentName;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     UObject* WorkResultParent;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, NonTransactional, meta=(AllowPrivateAccess=true))
+    UPROPERTY(NonTransactional)
     TArray<FTOPWorkResult> WorkResult;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     bool bHidden;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     bool bAutoLoad;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, NonTransactional, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(NonTransactional, Transient)
     EPDGNodeState NodeState;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, NonTransactional, meta=(AllowPrivateAccess=true))
+    UPROPERTY(NonTransactional)
     bool bCachedHaveNotLoadedWorkResults;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, NonTransactional, meta=(AllowPrivateAccess=true))
+    UPROPERTY(NonTransactional)
     bool bCachedHaveLoadedWorkResults;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, NonTransactional, meta=(AllowPrivateAccess=true))
+    UPROPERTY(NonTransactional)
     bool bHasChildNodes;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     TSet<FString> ClearedLandscapeLayers;
     
 protected:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     bool bShow;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     TMap<FString, FHoudiniPDGWorkResultObjectBakedOutput> BakedWorkResultObjectOutputs;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, NonTransactional, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(NonTransactional, Transient)
     FWorkItemTally WorkItemTally;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, NonTransactional, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(NonTransactional, Transient)
     FAggregatedWorkItemTally AggregatedWorkItemTally;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, NonTransactional, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(NonTransactional, Transient)
     bool bHasReceivedCookCompleteEvent;
     
 private:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     FOutputActorOwner OutputActorOwner;
     
 public:

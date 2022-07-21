@@ -1,7 +1,7 @@
 #include "JoyAsyncTraceSingleAction.h"
 
-class UObject;
 class AActor;
+class UObject;
 class UJoyAsyncTraceSingleAction;
 
 UJoyAsyncTraceSingleAction* UJoyAsyncTraceSingleAction::AsyncSphereTraceSingleByChannel(UObject* _worldContextObject, FVector _start, FVector _end, float _radius, TEnumAsByte<ETraceTypeQuery> _traceChannel, const TArray<AActor*>& _actorsToIgnore, bool _traceComplex, bool _ignoreSelf, TEnumAsByte<EDrawDebugTrace::Type> _drawDebugType, FLinearColor _traceColor, FLinearColor _traceHitColor, float _drawTime) {

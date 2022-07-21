@@ -1,5 +1,5 @@
 #include "HKPlayerControllerPostUpdateTickFunction.h"
 
-FHKPlayerControllerPostUpdateTickFunction::FHKPlayerControllerPostUpdateTickFunction() {
-}
+/*FHKPlayerControllerPostUpdateTickFunction::FHKPlayerControllerPostUpdateTickFunction() {
+}*/
 

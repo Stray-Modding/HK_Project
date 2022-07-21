@@ -1,37 +1,37 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/Object.h"
 #include "EHoudiniRampInterpolationType.h"
 #include "UObject/NoExportTypes.h"
+#include "UObject/Object.h"
 #include "HoudiniParameterRampColorPoint.generated.h"
 
 class UHoudiniParameterColor;
 class UHoudiniParameterFloat;
 class UHoudiniParameterChoice;
 
-UCLASS(Blueprintable, DefaultToInstanced)
+UCLASS(DefaultToInstanced)
 class HOUDINIENGINERUNTIME_API UHoudiniParameterRampColorPoint : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     float Position;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     FLinearColor Value;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY()
     EHoudiniRampInterpolationType Interpolation;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     int32 InstanceIndex;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Instanced)
     UHoudiniParameterFloat* PositionParentParm;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Instanced)
     UHoudiniParameterColor* ValueParentParm;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Instanced)
     UHoudiniParameterChoice* InterpolationParentParm;
     
     UHoudiniParameterRampColorPoint();

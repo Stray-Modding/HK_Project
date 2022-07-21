@@ -3,7 +3,7 @@
 #include "HoudiniParameter.h"
 #include "HoudiniParameterButton.generated.h"
 
-UCLASS(Blueprintable)
+UCLASS()
 class HOUDINIENGINERUNTIME_API UHoudiniParameterButton : public UHoudiniParameter {
     GENERATED_BODY()
 public:

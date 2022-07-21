@@ -1,7 +1,7 @@
 #include "DroneUsableComponent.h"
 
-class ADrone;
 class USceneComponent;
+class ADrone;
 
 void UDroneUsableComponent::SetUsePosition(USceneComponent* _usePosition, FName _socket) {
 }

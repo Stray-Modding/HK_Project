@@ -1,10 +1,10 @@
 #include "HKGameInstance.h"
 
 class UHKSaveInstance;
-class UActivityData;
 class UDebugMenuEntry;
-class UB12Memories;
 class ULevelStreaming;
+class UB12Memories;
+class UActivityData;
 
 
 
@@ -125,11 +125,11 @@ void UHKGameInstance::_ChaptersEntry_OnAPressed(UDebugMenuEntry* _entry) {
 void UHKGameInstance::_ChaptersDebugMenuEntry_OnUpdate(UDebugMenuEntry* _entry) {
 }
 
-void UHKGameInstance::_BeforeStreamOut(ULevelStreaming* _levelStreaming, FShouldEndState& _shouldEndState) {
+/*void UHKGameInstance::_BeforeStreamOut(ULevelStreaming* _levelStreaming, FShouldEndState& _shouldEndState) {
 }
 
 void UHKGameInstance::_BeforeStreamIn(ULevelStreaming* _levelStreaming, FShouldEndState& _shouldEndState) {
-}
+}*/
 
 UHKGameInstance::UHKGameInstance() {
     this->CatClass = NULL;

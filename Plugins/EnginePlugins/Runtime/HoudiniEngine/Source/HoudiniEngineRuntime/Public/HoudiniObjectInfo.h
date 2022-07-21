@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "HoudiniObjectInfo.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct HOUDINIENGINERUNTIME_API FHoudiniObjectInfo {
     GENERATED_BODY()
 public:

@@ -4,8 +4,8 @@
 #include "Components/BoxComponent.h"
 #include "NoisableComponent.generated.h"
 
-class AActor;
 class UNoisableComponent;
+class AActor;
 
 UCLASS(Blueprintable, EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class HK_PROJECT_API UNoisableComponent : public UBoxComponent {
@@ -13,7 +13,7 @@ class HK_PROJECT_API UNoisableComponent : public UBoxComponent {
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FNoiseDelegate, UNoisableComponent*, _noisableComponent, FVector, _location, AActor*, _emitter);
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable)
     FNoiseDelegate OnNoised;
     
     UNoisableComponent();
@@ -21,11 +21,11 @@ public:
     void SetEnabled(bool _enable);
     
 protected:
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     bool OnNoise(FVector _location, AActor* _emitter);
     
 public:
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     bool IsEnabled() const;
     
 };

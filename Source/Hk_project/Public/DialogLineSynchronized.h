@@ -9,13 +9,13 @@ USTRUCT(BlueprintType)
 struct FDialogLineSynchronized {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
     TArray<UAnimSequence*> Animations;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
     TArray<FDialogLineSynchronizedActor> ActorsSynchronizedAnimations;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
     bool KeepLastAnimAsIdle;
     
     HK_PROJECT_API FDialogLineSynchronized();

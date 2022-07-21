@@ -3,7 +3,7 @@
 #include "UObject/Object.h"
 #include "HoudiniAssetComponentMaterials_V1.generated.h"
 
-UCLASS(Blueprintable)
+UCLASS()
 class UHoudiniAssetComponentMaterials_V1 : public UObject {
     GENERATED_BODY()
 public:

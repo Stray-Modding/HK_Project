@@ -1,49 +1,49 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameFramework/WorldSettings.h"
-#include "StartData.h"
 #include "StreamingGroupData.h"
 #include "EChapter.h"
+#include "StartData.h"
 #include "HKWorldSettings.generated.h"
 
-class AHKPlayerStart;
 class USoundSubmix;
+class AHKPlayerStart;
 
-UCLASS(Blueprintable)
+UCLASS()
 class HK_PROJECT_API AHKWorldSettings : public AWorldSettings {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     AHKPlayerStart* PlayerStart;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     bool StreamingDebugModeEnabled;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TArray<FStreamingGroupData> StreamingGroups;
     
 private:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     FStartData StartData;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditInstanceOnly)
     TMap<EChapter, AHKPlayerStart*> m_chapterPlayerStarts;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditDefaultsOnly)
     USoundSubmix* m_masterSoundSubmix;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditDefaultsOnly)
     USoundSubmix* m_controllerSoundSubmix;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditDefaultsOnly)
     TArray<USoundSubmix*> m_musicSoundSubmixes;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditDefaultsOnly)
     TArray<USoundSubmix*> m_effectsSoundSubmixes;
     
 public:
     AHKWorldSettings();
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void AfterNotifyBeginPlay();
     
 };

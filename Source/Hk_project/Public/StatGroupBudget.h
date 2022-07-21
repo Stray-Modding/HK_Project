@@ -6,10 +6,10 @@ USTRUCT(BlueprintType)
 struct FStatGroupBudget {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     FName Name;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float Budget;
     
     HK_PROJECT_API FStatGroupBudget();

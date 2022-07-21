@@ -3,7 +3,7 @@
 #include "Blueprint/UserWidget.h"
 #include "BindingIconWidget.generated.h"
 
-UCLASS(Blueprintable, EditInlineNew)
+UCLASS(EditInlineNew)
 class HK_PROJECT_API UBindingIconWidget : public UUserWidget {
     GENERATED_BODY()
 public:

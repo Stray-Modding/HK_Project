@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct FLookAtAnimationState {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite)
     FRotator CurrentRotation;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite)
     bool Enable;
     
     HK_PROJECT_API FLookAtAnimationState();

@@ -1,35 +1,35 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/Object.h"
 #include "EHoudiniRampInterpolationType.h"
 #include "UObject/NoExportTypes.h"
+#include "UObject/Object.h"
 #include "HoudiniParameterRampModificationEvent.generated.h"
 
-UCLASS(Blueprintable, DefaultToInstanced)
+UCLASS(DefaultToInstanced)
 class HOUDINIENGINERUNTIME_API UHoudiniParameterRampModificationEvent : public UObject {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     bool bIsInsertEvent;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     bool bIsFloatRamp;
     
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     int32 DeleteInstanceIndex;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     float InsertPosition;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     float InsertFloat;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     FLinearColor InsertColor;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY()
     EHoudiniRampInterpolationType InsertInterpolation;
     
     UHoudiniParameterRampModificationEvent();

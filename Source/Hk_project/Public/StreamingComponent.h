@@ -1,8 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "Engine/EngineTypes.h"
 #include "Components/ActorComponent.h"
 #include "ComponentPhysicsSettings.h"
-#include "Engine/EngineTypes.h"
 #include "StreamingComponent.generated.h"
 
 class UStreamingComponent;
@@ -14,20 +14,20 @@ class HK_PROJECT_API UStreamingComponent : public UActorComponent {
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FStreamingComponentDelegate, UStreamingComponent*, _component);
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     bool bDoNotTickUntilStreamedIn;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     bool bDisablePhysicsUntilStreamedIn;
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable)
     FStreamingComponentDelegate StreamedIn;
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable)
     FStreamingComponentDelegate StreamedOut;
     
 private:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     TMap<FName, FComponentPhysicsSettings> m_componentsPhysicsSettings;
     
 public:
@@ -38,13 +38,13 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetComponentCollisionEnabled(UPrimitiveComponent* _component, TEnumAsByte<ECollisionEnabled::Type> _collisionEnabled);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     bool IsStreamedIn() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void BlueprintOnStreamOut();
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void BlueprintOnStreamIn();
     
 };

@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
 #include "GameFramework/Actor.h"
+#include "UObject/NoExportTypes.h"
 #include "Hideout.generated.h"
 
-UCLASS(Blueprintable)
+UCLASS()
 class HK_PROJECT_API AHideout : public AActor {
     GENERATED_BODY()
 public:
@@ -12,16 +12,16 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetClosed(bool _value);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     bool IsClosed() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     bool IsAvailableForHiding() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     FVector GetHiddenLocation() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     AActor* GetHiddenActor() const;
     
 };

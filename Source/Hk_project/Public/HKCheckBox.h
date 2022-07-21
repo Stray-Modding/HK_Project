@@ -3,13 +3,13 @@
 #include "Components/CheckBox.h"
 #include "HKCheckBox.generated.h"
 
-UCLASS(Blueprintable)
+UCLASS()
 class HK_PROJECT_API UHKCheckBox : public UCheckBox {
     GENERATED_BODY()
 public:
     UHKCheckBox();
 private:
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _OnCheckStateChanged(bool _isChecked);
     
 };

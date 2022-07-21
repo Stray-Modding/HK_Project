@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Kismet/BlueprintFunctionLibrary.h"
 #include "FuzzyBool.h"
+#include "Kismet/BlueprintFunctionLibrary.h"
 #include "LogicTools.generated.h"
 
 class UObject;
 
-UCLASS(Blueprintable)
+UCLASS(BlueprintType)
 class JOYLIBRARYRUNTIME_API ULogicTools : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
@@ -14,10 +14,10 @@ public:
     UFUNCTION(BlueprintCallable)
     static void FuzzyBoolSetTarget(UObject* WorldContextObject, UPARAM(Ref) FFuzzyBool& _fuzzyBool, bool _targetResult);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool FuzzyBoolGetTarget(UPARAM(Ref) FFuzzyBool& _fuzzyBool);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool FuzzyBoolGetFuzzy(UObject* WorldContextObject, UPARAM(Ref) FFuzzyBool& _fuzzyBool);
     
 };

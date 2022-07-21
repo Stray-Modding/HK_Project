@@ -2,26 +2,26 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "GameFramework/Character.h"
-#include "SmootherRotation.h"
 #include "TraceBoneName.h"
-#include "UObject/NoExportTypes.h"
+#include "SmootherRotation.h"
 #include "ESentinelTazerMode.h"
+#include "UObject/NoExportTypes.h"
 #include "ESentinelInputMode.h"
 #include "Engine/EngineTypes.h"
 #include "Sentinel.generated.h"
 
 class AActor;
-class ATargetPoint;
+class UCanvas;
 class UNavigationQueryFilter;
+class ATargetPoint;
 class USplineComponent;
 class USentinelSettings;
 class UStreamingComponent;
 class UHierarchicalStateMachine;
 class USkeletalMesh;
-class UCanvas;
 class ARecastNavMesh;
 
-UCLASS(Blueprintable)
+UCLASS()
 class HK_PROJECT_API ASentinel : public ACharacter {
     GENERATED_BODY()
 public:
@@ -29,51 +29,51 @@ public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE(FSentinelEventDelegate);
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSentinelBoolEventDelegate, bool, status);
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable)
     FSentinelEventDelegate OnSentinelSettingsChanged;
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable)
     FSentinelBoolEventDelegate OnSentinelAggressivityChanged;
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable)
     FSentinelBoolEventDelegate OnSentinelActivityChanged;
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable)
     FSentinelLockedTargetEventDelegate OnSentinelLockedTargetChanged;
     
 protected:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
     TArray<ATargetPoint*> m_waypoints;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadOnly)
     FSmootherRotation m_rotationSmoother;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadOnly, EditAnywhere)
     UNavigationQueryFilter* m_navigationQueryFilter;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadOnly, Export, VisibleAnywhere)
     USplineComponent* m_splinePathFindComponent;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadOnly, EditAnywhere)
     USentinelSettings* m_sentinelSettings;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadOnly, EditAnywhere)
     bool m_drawDebug;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Export)
     UStreamingComponent* m_streamingComponent;
     
 private:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Instanced)
     UHierarchicalStateMachine* m_sentinelStateMachine;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TMap<USkeletalMesh*, FTraceBoneName> m_bonesNameForVisionDetection;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     bool m_startSentinelActive;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     AActor* m_lockedTargetActor;
     
 public:
@@ -85,49 +85,49 @@ public:
     void TickRotateToDirectionInSpeed(FVector _direction, float _speed);
     
 protected:
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void Tazer_UnLoading_Tick(float _dt);
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void Tazer_UnLoading_Exit();
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void Tazer_UnLoading_Enter();
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void Tazer_Shooting_Exit();
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void Tazer_Shooting_Enter();
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void Tazer_Reloading_Tick(float _dt);
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void Tazer_Reloading_Exit();
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void Tazer_Reloading_Enter();
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void Tazer_ReadyToShoot_Exit();
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void Tazer_ReadyToShoot_Enter();
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void Tazer_Loading_Tick(float _dt);
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void Tazer_Loading_Exit();
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void Tazer_Loading_Enter();
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void Tazer_Idle_Exit();
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void Tazer_Idle_Enter();
     
 public:
@@ -159,11 +159,11 @@ public:
     void RotateToDirectionInTime(FVector _direction, float _time);
     
 protected:
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void OnSentinelActivityChange(bool _newActiveState) const;
     
 public:
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void OnDisplayDebug(UCanvas* _canvas);
     
     UFUNCTION(BlueprintCallable)
@@ -172,60 +172,60 @@ public:
     UFUNCTION(BlueprintCallable)
     bool MoveTo(FVector _location, float _speed, float _zOffset, bool _rotateToVelocity, TSubclassOf<UNavigationQueryFilter> _queryFilter);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     bool IsSentinelActive() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     bool IsAggressive() const;
     
     UFUNCTION(BlueprintPure)
     bool IsActorInVision(AActor* _actorToCheck, FVector _direction, float _angleInDegree, float _distance, TEnumAsByte<ECollisionChannel> _traceChannel, bool _drawDebug) const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     bool GetVisionLightEnabled() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     ESentinelTazerMode GetTazerMode() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     USentinelSettings* GetSettings() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     ARecastNavMesh* GetSelectedNavMeshRecastActor() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     ATargetPoint* GetNextWaypointFromLocation(FVector _location);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     AActor* GetLockedTargetActor() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     ESentinelInputMode GetInputMode() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     ATargetPoint* GetClosestWaypointToLocation(FVector _location);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     FVector GetClosestLocationOnPatrolPath();
     
     UFUNCTION(BlueprintCallable)
     void AddForce(FVector _direction, float _speed);
     
 protected:
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void _OnVisionLightEnabled();
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void _OnVisionLightDisabled();
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _OnStreamedOut(UStreamingComponent* _streamingComponent);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _OnStreamedIn(UStreamingComponent* _streamingComponent);
     
 private:
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _EditorTick(float _deltaTime);
     
 };

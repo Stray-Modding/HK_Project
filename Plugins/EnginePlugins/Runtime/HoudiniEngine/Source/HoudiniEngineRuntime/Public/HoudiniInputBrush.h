@@ -1,27 +1,27 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "HoudiniInputActor.h"
-#include "Engine/Brush.h"
 #include "HoudiniBrushInfo.h"
+#include "Engine/Brush.h"
 #include "HoudiniInputBrush.generated.h"
 
 class UModel;
 
-UCLASS(Blueprintable)
+UCLASS()
 class HOUDINIENGINERUNTIME_API UHoudiniInputBrush : public UHoudiniInputActor {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     TArray<FHoudiniBrushInfo> BrushesInfo;
     
-    UPROPERTY(BlueprintReadWrite, DuplicateTransient, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(DuplicateTransient, Transient)
     UModel* CombinedModel;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     bool bIgnoreInputObject;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY()
     TEnumAsByte<EBrushType> CachedInputBrushType;
     
 public:

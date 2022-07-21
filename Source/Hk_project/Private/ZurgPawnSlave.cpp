@@ -1,18 +1,18 @@
 #include "ZurgPawnSlave.h"
 #include "LifeComponent.h"
 
-class ULightableComponent;
 class UZurgNewSettings;
+class AZurgPawnSlave;
 class UAntiZurgSpotlightComponent;
+class UCanvas;
 class AActor;
 class AZurgPawnLeader;
-class UCanvas;
+class ULightableComponent;
+class UPrimitiveComponent;
 class ACatPawn;
 class USkeletalMeshComponent;
 class UZurgAttackPointComponent;
-class AZurgPawnSlave;
 class ARecastNavMesh;
-class UPrimitiveComponent;
 
 void AZurgPawnSlave::StopMovement() {
 }

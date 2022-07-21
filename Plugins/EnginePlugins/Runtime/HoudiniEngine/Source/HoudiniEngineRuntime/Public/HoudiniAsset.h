@@ -3,27 +3,27 @@
 #include "UObject/Object.h"
 #include "HoudiniAsset.generated.h"
 
-UCLASS(Blueprintable, EditInlineNew)
+UCLASS(EditInlineNew)
 class HOUDINIENGINERUNTIME_API UHoudiniAsset : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     FString AssetFileName;
     
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY()
     TArray<uint8> AssetBytes;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY()
     uint32 AssetBytesCount;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     bool bAssetLimitedCommercial;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     bool bAssetNonCommercial;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     bool bAssetExpanded;
     
 public:

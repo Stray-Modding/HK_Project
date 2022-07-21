@@ -3,7 +3,7 @@
 #include "Manager.h"
 #include "SplineRailManager.generated.h"
 
-UCLASS(Blueprintable)
+UCLASS()
 class HK_PROJECT_API ASplineRailManager : public AManager {
     GENERATED_BODY()
 public:

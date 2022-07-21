@@ -5,23 +5,23 @@
 
 class USoundBase;
 
-UCLASS(Blueprintable)
+UCLASS()
 class HK_PROJECT_API ULoadingScreenSettings : public UHKSubsystemSettings {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditDefaultsOnly)
     float TimeWithoutLoadingBeforeEndingScreen;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditDefaultsOnly)
     USoundBase* LoadingScreenSound;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditDefaultsOnly)
     float LoadingScreenSoundVolume;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditDefaultsOnly)
     float LoadingScreenSoundFadeInDuration;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditDefaultsOnly)
     float LoadingScreenSoundFadeOutDuration;
     
     ULoadingScreenSettings();

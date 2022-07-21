@@ -1,27 +1,27 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "HoudiniInputObject.h"
 #include "EHoudiniCurveMethod.h"
 #include "EHoudiniCurveType.h"
-#include "HoudiniInputObject.h"
 #include "HoudiniInputHoudiniSplineComponent.generated.h"
 
 class UHoudiniSplineComponent;
 
-UCLASS(Blueprintable)
+UCLASS()
 class HOUDINIENGINERUNTIME_API UHoudiniInputHoudiniSplineComponent : public UHoudiniInputObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY()
     EHoudiniCurveType CurveType;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY()
     EHoudiniCurveMethod CurveMethod;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     bool Reversed;
     
 protected:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Instanced)
     UHoudiniSplineComponent* CachedComponent;
     
 public:

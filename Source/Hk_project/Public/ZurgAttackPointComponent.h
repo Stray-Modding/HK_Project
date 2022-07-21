@@ -9,20 +9,20 @@ class UZurgAttackPointComponent;
 class AZurgPawnSlave;
 class UPrimitiveComponent;
 
-UCLASS(Blueprintable, EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+UCLASS(EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class HK_PROJECT_API UZurgAttackPointComponent : public USphereComponent {
     GENERATED_BODY()
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FZurgAttackPointComponentDelegate, UZurgAttackPointComponent*, _zurgAttackPointComponent, AZurgPawnSlave*, _zurg);
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable)
     FZurgAttackPointComponentDelegate OnZurgAttached;
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable)
     FZurgAttackPointComponentDelegate OnZurgDetached;
     
     UZurgAttackPointComponent();
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     AZurgPawnSlave* GetAttachedZurg() const;
     
     UFUNCTION(BlueprintCallable)
@@ -32,7 +32,7 @@ public:
     void AttachZurg(AZurgPawnSlave* _zurg);
     
 private:
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _OnSphereBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     
 };

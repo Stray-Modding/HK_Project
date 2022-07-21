@@ -8,15 +8,15 @@
 class UKeyIconData;
 class UTexture2D;
 
-UCLASS(Blueprintable)
+UCLASS(BlueprintType)
 class HK_PROJECT_API UKeyIconSetData : public UPrimaryDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     TArray<UKeyIconData*> Keys;
     
     UKeyIconSetData();
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     UTexture2D* FindIconForKey(const FKey& _key, EGameControllerType _controller) const;
     
 };

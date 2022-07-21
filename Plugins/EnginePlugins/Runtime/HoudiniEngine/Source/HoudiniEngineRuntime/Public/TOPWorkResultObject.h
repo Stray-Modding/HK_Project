@@ -10,27 +10,27 @@ USTRUCT(BlueprintType)
 struct HOUDINIENGINERUNTIME_API FTOPWorkResultObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, NonTransactional, meta=(AllowPrivateAccess=true))
+    UPROPERTY(NonTransactional)
     FString Name;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, NonTransactional, meta=(AllowPrivateAccess=true))
+    UPROPERTY(NonTransactional)
     FString FilePath;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, NonTransactional, meta=(AllowPrivateAccess=true))
+    UPROPERTY(NonTransactional)
     EPDGWorkResultState State;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, NonTransactional, meta=(AllowPrivateAccess=true))
+    UPROPERTY(NonTransactional)
     int32 WorkItemResultInfoIndex;
     
 protected:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, NonTransactional, meta=(AllowPrivateAccess=true))
+    UPROPERTY(NonTransactional)
     TArray<UHoudiniOutput*> ResultOutputs;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, NonTransactional, meta=(AllowPrivateAccess=true))
+    UPROPERTY(NonTransactional)
     bool bAutoBakedSinceLastLoad;
     
 private:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, NonTransactional, meta=(AllowPrivateAccess=true))
+    UPROPERTY(NonTransactional)
     FOutputActorOwner OutputActorOwner;
     
 public:

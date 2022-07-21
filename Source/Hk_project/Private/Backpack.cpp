@@ -6,10 +6,10 @@
 class UBackpackUsableComponent;
 class UBackpackScreenUserWidget;
 class ADialog;
-class UUserWidget;
-class UPhoto;
 class ULootableComponent;
+class UUserWidget;
 class AActor;
+class UPhoto;
 class ABackpackGUI;
 class ADrone;
 class USceneComponent;

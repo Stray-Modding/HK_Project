@@ -5,7 +5,7 @@
 
 class UWidget;
 
-UCLASS(Blueprintable)
+UCLASS(BlueprintType)
 class JOYLIBRARYRUNTIME_API UGUITools : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

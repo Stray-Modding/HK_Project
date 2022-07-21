@@ -4,7 +4,7 @@
 
 UENUM(BlueprintType)
 enum class EHoudiniCurveBreakpointParameterization : uint8 {
-    Invalid = -0x1,
+    Invalid/* = -0x1*/,
     Uniform,
     Chord,
     Centripetal,

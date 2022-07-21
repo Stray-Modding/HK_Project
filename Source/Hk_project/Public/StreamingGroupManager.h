@@ -5,45 +5,45 @@
 #include "EStreamingState.h"
 #include "StreamingGroupManager.generated.h"
 
-class USaveComponent;
-class UStreamingGroupPersistent;
 class UStreamingGroup;
+class USaveComponent;
 class UStreamingGroupDynamic;
+class UStreamingGroupPersistent;
 
-UCLASS(Blueprintable)
+UCLASS()
 class HK_PROJECT_API AStreamingGroupManager : public AManager {
     GENERATED_BODY()
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FStreamingGroupSaveLoadedDelegate, UStreamingGroup*, StreamingGroup);
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     FStreamingGroupSaveLoadedDelegate OnStreamingGroupSaveLoaded;
     
 private:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Transient)
     TArray<UStreamingGroupDynamic*> m_streamingGroups;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Transient)
     UStreamingGroupPersistent* m_persistentGroup;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Export, VisibleDefaultsOnly)
     USaveComponent* m_saveComponent;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
+    UPROPERTY(SaveGame)
     TArray<FStreamingGroupSavedState> m_savedGroupsStates;
     
 public:
     AStreamingGroupManager();
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     bool IsStreamingInProgress() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     bool IsPersistentGroupLoaded() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     bool IsGroupLoaded(const FName _name) const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     bool IsGroupActive(const FName _name) const;
     
     UFUNCTION(BlueprintPure)
@@ -59,16 +59,16 @@ public:
     void ActivateGroup(const FName _name);
     
 private:
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _OnPreLoadZone(const FString& _previousMapName, const FString& _nextMapName);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _OnPostLoadZone();
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _BeforeSaved(USaveComponent* _saveComponent);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _AfterLoaded(USaveComponent* _saveComponent);
     
 };

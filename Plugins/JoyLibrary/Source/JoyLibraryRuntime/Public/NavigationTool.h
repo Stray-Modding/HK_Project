@@ -7,7 +7,7 @@ class UObject;
 class UShapeComponent;
 class ARecastNavMesh;
 
-UCLASS(Blueprintable)
+UCLASS(BlueprintType)
 class JOYLIBRARYRUNTIME_API UNavigationTool : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
@@ -15,10 +15,10 @@ public:
     UFUNCTION(BlueprintCallable)
     static void SetDynamicObstacle(UObject* WorldContextObject, UShapeComponent* _shapeComponent, bool _dynamicObstacle);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static bool IsDynamicObstacle(UObject* WorldContextObject, UShapeComponent* _shapeComponent);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     static ARecastNavMesh* GetRecastNavMesh(UObject* WorldContextObject, const FString& _navMeshName);
     
 };

@@ -4,11 +4,11 @@
 #include "HKChapter.h"
 #include "HKChapters.generated.h"
 
-UCLASS(Blueprintable)
+UCLASS(BlueprintType)
 class HK_PROJECT_API UHKChapters : public UPrimaryDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
     TArray<FHKChapter> Chapters;
     
     UHKChapters();

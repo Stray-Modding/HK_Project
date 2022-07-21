@@ -1,7 +1,7 @@
 #include "PrefabFunctionLibrary.h"
 
-class UObject;
 class AActor;
+class UObject;
 class UPrefabAsset;
 class APrefabActor;
 

@@ -7,7 +7,7 @@
 class UChapterSubsystem;
 class UHKSaveInstance;
 
-UCLASS(Blueprintable)
+UCLASS()
 class HK_PROJECT_API UChapterSubsystem : public UHKGameSubsystem {
     GENERATED_BODY()
 public:
@@ -15,10 +15,10 @@ public:
     
     UChapterSubsystem();
 private:
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _OnBeforePersistentSaveDataSaved(UHKSaveInstance* _saveInstance);
     
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _OnAfterPersistentSaveDataLoaded(UHKSaveInstance* _saveInstance);
     
 };

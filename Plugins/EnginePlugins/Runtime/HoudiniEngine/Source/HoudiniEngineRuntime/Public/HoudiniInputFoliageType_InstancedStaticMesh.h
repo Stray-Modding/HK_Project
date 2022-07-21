@@ -3,7 +3,7 @@
 #include "HoudiniInputStaticMesh.h"
 #include "HoudiniInputFoliageType_InstancedStaticMesh.generated.h"
 
-UCLASS(Blueprintable)
+UCLASS()
 class HOUDINIENGINERUNTIME_API UHoudiniInputFoliageType_InstancedStaticMesh : public UHoudiniInputStaticMesh {
     GENERATED_BODY()
 public:

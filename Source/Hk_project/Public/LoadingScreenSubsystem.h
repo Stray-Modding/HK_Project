@@ -5,17 +5,17 @@
 
 class UAudioComponent;
 
-UCLASS(Blueprintable)
+UCLASS(BlueprintType)
 class HK_PROJECT_API ULoadingScreenSubsystem : public UHKGameSubsystem {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Instanced)
     UAudioComponent* m_loadingAudio;
     
 public:
     ULoadingScreenSubsystem();
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     bool IsLoadingScreenOn() const;
     
     UFUNCTION(BlueprintCallable)

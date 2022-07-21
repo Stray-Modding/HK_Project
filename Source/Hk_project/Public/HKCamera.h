@@ -5,7 +5,7 @@
 #include "UObject/NoExportTypes.h"
 #include "HKCamera.generated.h"
 
-UCLASS(Blueprintable)
+UCLASS()
 class HK_PROJECT_API AHKCamera : public AActor {
     GENERATED_BODY()
 public:
@@ -14,26 +14,26 @@ public:
     void SetCameraInput(FVector2D _input);
     
 protected:
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void OnCameraFocusLost(float _blendTime);
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void OnCameraFocus(float _blendTime);
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void OnCameraButtonReleased();
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void OnCameraButtonPressed();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     float GetLookSensitivity() const;
     
 public:
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     FVector GetCollisionPosition() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     FVector2D GetCameraInput() const;
     
 };

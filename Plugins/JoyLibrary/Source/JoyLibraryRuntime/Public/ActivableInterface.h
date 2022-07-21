@@ -11,10 +11,10 @@ class UActivableInterface : public UInterface {
 class IActivableInterface : public IInterface {
     GENERATED_BODY()
 public:
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void OnDeactivate();
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void OnActivate();
     
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)

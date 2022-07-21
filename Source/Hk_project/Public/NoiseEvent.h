@@ -9,10 +9,10 @@ USTRUCT(BlueprintType)
 struct FNoiseEvent {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     AActor* Emitter;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Instanced)
     UNoisableComponent* noisable;
     
     HK_PROJECT_API FNoiseEvent();

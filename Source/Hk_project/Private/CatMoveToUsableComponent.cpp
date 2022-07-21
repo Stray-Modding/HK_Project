@@ -1,7 +1,7 @@
 #include "CatMoveToUsableComponent.h"
 
-class ACatPawn;
 class USceneComponent;
+class ACatPawn;
 
 void UCatMoveToUsableComponent::SetMoveToTarget(USceneComponent* _target, FName _targetSocket) {
 }

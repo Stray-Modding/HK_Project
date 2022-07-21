@@ -6,33 +6,33 @@
 #include "PlayerSaveData.h"
 #include "HKSaveGame.generated.h"
 
-UCLASS(Blueprintable)
+UCLASS()
 class HK_PROJECT_API UHKSaveGame : public USaveGame {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     FDateTime Timestamp;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     FName ZoneName;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     FPlayerSaveData PlayerData;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     TMap<FName, FHKLevelSaveData> LevelsData;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY()
     TArray<uint8> PersistentData;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY()
     TArray<uint8> SessionData;
     
 private:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     FName ChapterName;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY()
     uint32 Version;
     
 public:

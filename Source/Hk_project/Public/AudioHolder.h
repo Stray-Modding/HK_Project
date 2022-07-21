@@ -3,25 +3,25 @@
 #include "Components/SceneComponent.h"
 #include "AudioHolder.generated.h"
 
-class APlayerCameraManager;
 class UAudioComponent;
+class APlayerCameraManager;
 class AActor;
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class HK_PROJECT_API UAudioHolder : public USceneComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     int32 AudioComponentCount;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     float MovementSnappingDistance;
     
 private:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Instanced)
     TArray<UAudioComponent*> m_audioComponents;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     APlayerCameraManager* m_cameraManager;
     
 public:
@@ -32,13 +32,13 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetHolderCollisionEnabled(bool _enabled);
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void OnHolderEndOverlapCamera(AActor* _otherActor);
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void OnHolderBeginOverlapCamera(AActor* _otherActor);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     bool IsHolderCollisionEnabled() const;
     
     UFUNCTION(BlueprintPure)

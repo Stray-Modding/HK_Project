@@ -9,10 +9,10 @@ USTRUCT(BlueprintType)
 struct FDialogLineSynchronizedActor {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
     AActor* Actor;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
     TArray<UAnimSequence*> ActorAnimations;
     
     HK_PROJECT_API FDialogLineSynchronizedActor();

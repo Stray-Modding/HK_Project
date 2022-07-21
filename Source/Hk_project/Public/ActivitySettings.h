@@ -5,11 +5,11 @@
 
 class UActivityData;
 
-UCLASS(Abstract, Blueprintable)
+UCLASS(Abstract)
 class UActivitySettings : public UHKSubsystemSettings {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditDefaultsOnly)
     UActivityData* ActivityData;
     
     UActivitySettings();

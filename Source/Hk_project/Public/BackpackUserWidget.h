@@ -6,7 +6,7 @@
 class ABackpackGUI;
 class ADrone;
 
-UCLASS(Blueprintable, EditInlineNew)
+UCLASS(EditInlineNew)
 class HK_PROJECT_API UBackpackUserWidget : public UUserWidget {
     GENERATED_BODY()
 public:
@@ -92,10 +92,10 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void OnCancelPressed(bool& _handled);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     ABackpackGUI* GetGUI() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     ADrone* GetDrone() const;
     
 };

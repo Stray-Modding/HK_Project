@@ -6,7 +6,7 @@ USTRUCT(BlueprintType)
 struct JOYLIBRARYRUNTIME_API FSmootherTransform {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
     float TimeTo90Percent;
     
     FSmootherTransform();

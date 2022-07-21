@@ -6,7 +6,7 @@
 
 class UWorld;
 
-UCLASS(Blueprintable)
+UCLASS()
 class HK_PROJECT_API AZoneManager : public AManager {
     GENERATED_BODY()
 public:
@@ -23,19 +23,19 @@ public:
     UFUNCTION(BlueprintCallable)
     bool LoadZone(TSoftObjectPtr<UWorld> _zone, TArray<FName> _transitionGroups, const TArray<TSoftObjectPtr<UWorld>>& _preloadedLevels, TEnumAsByte<EZoneLoadingType> _loadingType);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     bool IsZoneLoading() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     bool IsLoadZoneReadyForCommit() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     bool IsCurrentZone(TSoftObjectPtr<UWorld> _zone) const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     FName GetLoadingZoneName() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     FName GetCurrentZoneName() const;
     
     UFUNCTION(BlueprintCallable)
@@ -45,7 +45,7 @@ public:
     void CancelZoneLoading();
     
 private:
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _OnPostLoadZone();
     
 };

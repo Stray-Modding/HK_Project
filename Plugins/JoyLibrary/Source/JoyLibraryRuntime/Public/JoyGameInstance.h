@@ -7,21 +7,21 @@
 #include "ECoordinatesOrigin.h"
 #include "JoyGameInstance.generated.h"
 
+class UCurveFloat;
 class AManager;
 class UObject;
-class UCurveFloat;
 
-UCLASS(Blueprintable, NonTransient)
+UCLASS(NonTransient)
 class JOYLIBRARYRUNTIME_API UJoyGameInstance : public UPlatformGameInstance {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     TArray<AManager*> m_managers;
     
 public:
     UJoyGameInstance();
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     AManager* GetManager(TSubclassOf<AManager> _managerClass, UObject* _worldContextObject) const;
     
     UFUNCTION(BlueprintCallable)

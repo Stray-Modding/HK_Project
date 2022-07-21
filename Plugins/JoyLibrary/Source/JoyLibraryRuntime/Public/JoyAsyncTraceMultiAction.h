@@ -2,22 +2,22 @@
 #include "CoreMinimal.h"
 #include "JoyAsyncTraceAction.h"
 #include "JoyAsyncTraceMultiDoneDelegate.h"
-#include "Kismet/KismetSystemLibrary.h"
 #include "UObject/NoExportTypes.h"
+#include "Kismet/KismetSystemLibrary.h"
 #include "Engine/EngineTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "JoyAsyncTraceMultiAction.generated.h"
 
 class AActor;
-class UJoyAsyncTraceMultiAction;
 class UObject;
+class UJoyAsyncTraceMultiAction;
 
-UCLASS(Blueprintable)
+UCLASS()
 class JOYLIBRARYRUNTIME_API UJoyAsyncTraceMultiAction : public UJoyAsyncTraceAction {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable)
     FJoyAsyncTraceMultiDone TraceDone;
     
     UJoyAsyncTraceMultiAction();

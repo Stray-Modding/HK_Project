@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Engine/EngineBaseTypes.h"
-#include "HKPlayerControllerPostUpdateTickFunction.generated.h"
+/*#include "HKPlayerControllerPostUpdateTickFunction.generated.h"*/
 
-USTRUCT(BlueprintType)
+/*USTRUCT()
 struct FHKPlayerControllerPostUpdateTickFunction : public FTickFunction {
     GENERATED_BODY()
 public:
     HK_PROJECT_API FHKPlayerControllerPostUpdateTickFunction();
-};
+};*/
 

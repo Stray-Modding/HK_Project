@@ -7,13 +7,13 @@ USTRUCT(BlueprintType)
 struct HOUDINIENGINERUNTIME_API FTOPWorkResult {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, NonTransactional, meta=(AllowPrivateAccess=true))
+    UPROPERTY(NonTransactional)
     int32 WorkItemIndex;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Transient)
     int32 WorkItemID;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, NonTransactional, meta=(AllowPrivateAccess=true))
+    UPROPERTY(NonTransactional)
     TArray<FTOPWorkResultObject> ResultObjects;
     
     FTOPWorkResult();

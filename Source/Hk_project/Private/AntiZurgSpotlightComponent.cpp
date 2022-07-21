@@ -1,9 +1,9 @@
 #include "AntiZurgSpotlightComponent.h"
 
 class UCurveFloat;
+class UPrimitiveComponent;
 class AActor;
 class USphereComponent;
-class UPrimitiveComponent;
 
 void UAntiZurgSpotlightComponent::SetRadialDamageCurve(UCurveFloat* _newRadialDamageCurve) {
 }

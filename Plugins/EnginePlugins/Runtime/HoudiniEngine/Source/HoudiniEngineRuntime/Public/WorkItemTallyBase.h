@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "WorkItemTallyBase.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct HOUDINIENGINERUNTIME_API FWorkItemTallyBase {
     GENERATED_BODY()
 public:

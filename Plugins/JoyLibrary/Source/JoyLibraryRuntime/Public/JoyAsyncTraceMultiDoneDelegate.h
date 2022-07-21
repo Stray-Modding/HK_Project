@@ -3,5 +3,5 @@
 #include "Engine/EngineTypes.h"
 #include "JoyAsyncTraceMultiDoneDelegate.generated.h"
 
-UDELEGATE(BlueprintCallable) DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FJoyAsyncTraceMultiDone, bool, HasHit, const TArray<FHitResult>&, Hits);
+UDELEGATE() DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FJoyAsyncTraceMultiDone, bool, HasHit, const TArray<FHitResult>&, Hits);
 

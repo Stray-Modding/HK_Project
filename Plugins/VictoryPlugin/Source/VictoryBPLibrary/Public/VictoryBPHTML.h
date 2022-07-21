@@ -3,7 +3,7 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "VictoryBPHTML.generated.h"
 
-UCLASS(Blueprintable)
+UCLASS()
 class VICTORYBPLIBRARY_API UVictoryBPHTML : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

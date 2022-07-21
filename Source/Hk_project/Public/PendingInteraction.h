@@ -4,11 +4,11 @@
 
 class UBackpackUsableComponent;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FPendingInteraction {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Instanced)
     UBackpackUsableComponent* Usable;
     
     HK_PROJECT_API FPendingInteraction();

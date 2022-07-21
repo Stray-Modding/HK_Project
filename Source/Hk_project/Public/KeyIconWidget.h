@@ -4,19 +4,19 @@
 #include "InputCoreTypes.h"
 #include "KeyIconWidget.generated.h"
 
-UCLASS(Blueprintable, EditInlineNew)
+UCLASS(EditInlineNew)
 class HK_PROJECT_API UKeyIconWidget : public UUserWidget {
     GENERATED_BODY()
 public:
     UKeyIconWidget();
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void SetKey(const FKey& _key);
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void SetIsSelected(bool _isSelected);
     
 protected:
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     bool IsKeyboardColumnHidden() const;
     
 };

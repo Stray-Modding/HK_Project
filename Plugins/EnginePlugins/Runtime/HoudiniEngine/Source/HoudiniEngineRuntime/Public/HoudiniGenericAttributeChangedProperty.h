@@ -4,11 +4,11 @@
 
 class UObject;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct HOUDINIENGINERUNTIME_API FHoudiniGenericAttributeChangedProperty {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     UObject* Object;
     
     FHoudiniGenericAttributeChangedProperty();

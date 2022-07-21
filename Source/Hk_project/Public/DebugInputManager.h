@@ -3,7 +3,7 @@
 #include "Manager.h"
 #include "DebugInputManager.generated.h"
 
-UCLASS(Blueprintable)
+UCLASS()
 class HK_PROJECT_API ADebugInputManager : public AManager {
     GENERATED_BODY()
 public:

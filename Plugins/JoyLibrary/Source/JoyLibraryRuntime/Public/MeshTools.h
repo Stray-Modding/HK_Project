@@ -3,10 +3,10 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "MeshTools.generated.h"
 
-class USkeleton;
 class USkeletalMesh;
+class USkeleton;
 
-UCLASS(Blueprintable)
+UCLASS(BlueprintType)
 class JOYLIBRARYRUNTIME_API UMeshTools : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

@@ -4,24 +4,24 @@
 #include "ZurgPawn.generated.h"
 
 class UZurgSettings;
-class USceneComponent;
 class ACatPawn;
+class USceneComponent;
 
-UCLASS(Blueprintable)
+UCLASS()
 class HK_PROJECT_API AZurgPawn : public ACharacter {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere)
     UZurgSettings* ZurgSettings;
     
     AZurgPawn();
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void OnDetachedFromCat(ACatPawn* _catPawn, USceneComponent* _attachedComponent, FName _socketName);
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     void OnAttachedToCat(ACatPawn* _catPawn, USceneComponent* _attachedComponent, FName _socketName);
     
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    UFUNCTION(BlueprintNativeEvent)
     bool CanGrabCat() const;
     
 };

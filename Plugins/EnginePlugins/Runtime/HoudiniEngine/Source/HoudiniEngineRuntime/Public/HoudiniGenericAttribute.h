@@ -1,35 +1,35 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EAttribOwner.h"
 #include "EAttribStorageType.h"
+#include "EAttribOwner.h"
 #include "HoudiniGenericAttribute.generated.h"
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct HOUDINIENGINERUNTIME_API FHoudiniGenericAttribute {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     FString AttributeName;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY()
     EAttribStorageType AttributeType;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY()
     EAttribOwner AttributeOwner;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     int32 AttributeCount;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     int32 AttributeTupleSize;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY()
     TArray<double> DoubleValues;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY()
     TArray<int64> IntValues;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     TArray<FString> StringValues;
     
     FHoudiniGenericAttribute();

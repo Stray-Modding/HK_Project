@@ -4,11 +4,11 @@
 
 class UPrimitiveComponent;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FInteractionDebugData {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Instanced)
     UPrimitiveComponent* RaycastFailReason;
     
     HK_PROJECT_API FInteractionDebugData();

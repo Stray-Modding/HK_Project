@@ -4,14 +4,14 @@
 
 class ASequence;
 
-USTRUCT(BlueprintType)
+USTRUCT()
 struct FSequenceState {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     ASequence* Sequence;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     FName CheckpointName;
     
     HK_PROJECT_API FSequenceState();

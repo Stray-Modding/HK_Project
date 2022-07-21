@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct FGameplayNoise {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     AActor* Emitter;
     
     HK_PROJECT_API FGameplayNoise();

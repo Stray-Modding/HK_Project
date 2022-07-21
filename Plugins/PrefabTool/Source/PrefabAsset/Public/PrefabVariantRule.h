@@ -7,16 +7,16 @@ USTRUCT(BlueprintType)
 struct PREFABASSET_API FPrefabVariantRule {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     FName Scope;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     FString Rule;
     
     UPROPERTY(EditAnywhere)
     TEnumAsByte<EPrefabVariantRuleType> RuleType;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(EditAnywhere)
     bool bEnable;
     
     FPrefabVariantRule();

@@ -5,15 +5,15 @@
 
 class ABackpack;
 
-UCLASS(Blueprintable, EditInlineNew)
+UCLASS(EditInlineNew)
 class HK_PROJECT_API UBackpackScreenUserWidget : public UUserWidget {
     GENERATED_BODY()
 public:
     UBackpackScreenUserWidget();
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void OnBackpackSet();
     
-    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UFUNCTION(BlueprintPure)
     ABackpack* GetBackpack() const;
     
 };

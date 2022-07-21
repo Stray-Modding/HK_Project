@@ -7,22 +7,22 @@
 class USaveComponent;
 class UStreamingGroup;
 
-UCLASS(Blueprintable)
+UCLASS()
 class HK_PROJECT_API ALevelScript : public AActor {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(Instanced)
     USaveComponent* m_saveComponent;
     
 public:
     ALevelScript();
 protected:
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintImplementableEvent)
     void OnInitialise(EChapter _chapter);
     
 private:
-    UFUNCTION(BlueprintCallable)
+    UFUNCTION()
     void _OnStreamingGroupSaveLoaded(UStreamingGroup* _streamingGroup);
     
 };

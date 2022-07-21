@@ -5,15 +5,15 @@
 #include "InterpolatorTickOutputPinDelegate.h"
 #include "JoyInterpolator.generated.h"
 
-UCLASS(Blueprintable)
+UCLASS()
 class JOYLIBRARYRUNTIME_API UJoyInterpolator : public UBlueprintAsyncActionBase {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable)
     FInterpolatorTickOutputPin Tick;
     
-    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintAssignable)
     FInterpolatorCompleteOutputPin Complete;
     
 public:

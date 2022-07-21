@@ -3,17 +3,17 @@
 #include "GameFramework/SaveGame.h"
 #include "HKGlobalSaveGame.generated.h"
 
-UCLASS(Blueprintable)
+UCLASS()
 class HK_PROJECT_API UHKGlobalSaveGame : public USaveGame {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     FString LastUsedSlot;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY()
     TArray<uint8> GameUserSettingsData;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     FString Culture;
     
     UHKGlobalSaveGame();

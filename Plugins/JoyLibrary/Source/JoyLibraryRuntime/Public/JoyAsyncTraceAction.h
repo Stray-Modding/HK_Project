@@ -3,7 +3,7 @@
 #include "Kismet/BlueprintAsyncActionBase.h"
 #include "JoyAsyncTraceAction.generated.h"
 
-UCLASS(Blueprintable)
+UCLASS()
 class JOYLIBRARYRUNTIME_API UJoyAsyncTraceAction : public UBlueprintAsyncActionBase {
     GENERATED_BODY()
 public:
