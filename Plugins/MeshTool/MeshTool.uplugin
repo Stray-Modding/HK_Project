@@ -1,0 +1,28 @@
+{
+	"FileVersion": 3,
+	"Version": 41,
+	"VersionName": "1.1.12 Build 2",
+	"FriendlyName": "Mesh Tool",
+	"Description": "",
+	"Category": "Editor",
+	"CreatedBy": "marynate",
+	"CreatedByURL": "https://github.com/marynate",
+	"DocsURL": "",
+	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/7289f8ad4b6c43b289affc9870db344a",
+	"SupportURL": "",
+	"EngineVersion": "4.27.0",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": true,
+	"Plugins": [
+		{
+			"Name": "GeometryProcessing",
+			"Enabled": true
+		},
+		{
+			"Name": "ProxyLODPlugin",
+			"Enabled": true
+		}
+	]
+}

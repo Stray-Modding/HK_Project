@@ -1,0 +1,24 @@
+{
+	"FileVersion": 3,
+	"Version": 2,
+	"VersionName": "2.0",
+	"FriendlyName": "Toyo Tool",
+	"Description": "Procedural Pipes Generator & Editor",
+	"Category": "HK Tools",
+	"CreatedBy": "Elhoussine Mehnik",
+	"CreatedByURL": "bluetwelvestudio.com",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "ToyoToolRuntime",
+			"Type": "Runtime",
+			"LoadingPhase": "PreDefault"
+		}
+	]
+}
