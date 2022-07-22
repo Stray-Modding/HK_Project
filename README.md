@@ -9,6 +9,8 @@
  
  
  # Prebuilt uProject Installation Instructions
+ 
+ ## Note - the screenshots are taken from my instructions for a different game and therefore don't match the names of the files we are using here.
 
 ### See [option 1](#1-github-clone-install---update-with-the-click-of-a-button) for install along with Github desktop to allow for easy updates, or [option 2](#2-standard-install---no-easy-updating) for standard install.  Be sure to install any missing [prerequisites](/uProject%20and%20Engine%20Installation.md#prerequisites) first.
 
