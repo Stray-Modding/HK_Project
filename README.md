@@ -1,5 +1,5 @@
 # Stray
- HK_Project uProject
+ HK_Project WIP uProject for modding the game.  Note that some fixes and edits are still in progress, so updates will be frequent and not everything will work.
  
  STRAY and any other trademarks used throughout this project are the property of their respective owners.
  
