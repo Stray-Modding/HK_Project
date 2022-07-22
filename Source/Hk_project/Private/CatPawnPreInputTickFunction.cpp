@@ -1,5 +1,5 @@
 #include "CatPawnPreInputTickFunction.h"
 
-/*FCatPawnPreInputTickFunction::FCatPawnPreInputTickFunction() {
-}*/
+FCatPawnPreInputTickFunction::FCatPawnPreInputTickFunction() {
+}
 

@@ -1,5 +1,5 @@
 #include "InterpolatorTickFunction.h"
 
-/*FInterpolatorTickFunction::FInterpolatorTickFunction() {
-}*/
+FInterpolatorTickFunction::FInterpolatorTickFunction() {
+}
 
