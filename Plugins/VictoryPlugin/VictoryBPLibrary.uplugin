@@ -12,8 +12,6 @@
 	"SupportURL": "http://www.ue4code.com",
 	"EngineVersion": "4.27.0",
 	"CanContainContent": false,
-	"IsBetaVersion": false,
-	"IsExperimentalVersion": false,
 	"Installed": true,
 	"Modules": [
 		{
@@ -22,9 +20,7 @@
 			"LoadingPhase": "PreDefault",
 			"WhitelistPlatforms": [
 				"Win64",
-				"Win32",
-				"PS4",
-				"PS5"
+				"Win32"
 			]
 		}
 	],

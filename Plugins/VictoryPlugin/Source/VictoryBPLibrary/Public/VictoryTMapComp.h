@@ -1,100 +1,148 @@
+/*
+
+	By Rama
+
+*/
 #pragma once
-#include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
+
 #include "VictoryTMapComp.generated.h"
 
-class AActor;
+DECLARE_LOG_CATEGORY_EXTERN(VictoryTMapLog, Log, All);
 
-UCLASS(BlueprintType, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
-class UVictoryTMapComp : public UActorComponent {
-    GENERATED_BODY()
+UCLASS(ClassGroup=VictoryBPLibrary, meta=(BlueprintSpawnableComponent))
+class UVictoryTMapComp : public UActorComponent
+{
+	GENERATED_BODY()
 public:
-    UVictoryTMapComp();
-    UFUNCTION(BlueprintCallable)
-    void String_Vector__Remove(const FString& Key);
-    
-    UFUNCTION(BlueprintPure)
-    FVector String_Vector__Get(const FString& Key, bool& IsValid);
-    
-    UFUNCTION(BlueprintCallable)
-    void String_Vector__Clear();
-    
-    UFUNCTION(BlueprintCallable)
-    void String_Vector__AddPair(const FString& Key, FVector Value);
-    
-    UFUNCTION(BlueprintCallable)
-    void String_String__Remove(const FString& Key);
-    
-    UFUNCTION(BlueprintPure)
-    FString String_String__Get(const FString& Key, bool& IsValid);
-    
-    UFUNCTION(BlueprintCallable)
-    void String_String__Clear();
-    
-    UFUNCTION(BlueprintCallable)
-    void String_String__AddPair(const FString& Key, const FString& Value);
-    
-    UFUNCTION(BlueprintCallable)
-    void String_Rotator__Remove(const FString& Key);
-    
-    UFUNCTION(BlueprintPure)
-    FRotator String_Rotator__Get(const FString& Key, bool& IsValid);
-    
-    UFUNCTION(BlueprintCallable)
-    void String_Rotator__Clear();
-    
-    UFUNCTION(BlueprintCallable)
-    void String_Rotator__AddPair(const FString& Key, FRotator Value);
-    
-    UFUNCTION(BlueprintCallable)
-    void String_Int__Remove(const FString& Key);
-    
-    UFUNCTION(BlueprintPure)
-    int32 String_Int__Get(const FString& Key, bool& IsValid);
-    
-    UFUNCTION(BlueprintCallable)
-    void String_Int__Clear();
-    
-    UFUNCTION(BlueprintCallable)
-    void String_Int__AddPair(const FString& Key, int32 Value);
-    
-    UFUNCTION(BlueprintCallable)
-    void String_Actor__Remove(const FString& Key);
-    
-    UFUNCTION(BlueprintPure)
-    AActor* String_Actor__Get(const FString& Key, bool& IsValid);
-    
-    UFUNCTION(BlueprintCallable)
-    void String_Actor__Clear();
-    
-    UFUNCTION(BlueprintCallable)
-    void String_Actor__AddPair(const FString& Key, AActor* Value);
-    
-    UFUNCTION(BlueprintCallable)
-    void Int_Vector__Remove(int32 Key);
-    
-    UFUNCTION(BlueprintPure)
-    FVector Int_Vector__Get(int32 Key, bool& IsValid);
-    
-    UFUNCTION(BlueprintCallable)
-    void Int_Vector__Clear();
-    
-    UFUNCTION(BlueprintCallable)
-    void Int_Vector__AddPair(int32 Key, FVector Value);
-    
-    UFUNCTION(BlueprintCallable)
-    void Int_Float__Remove(int32 Key, float Value);
-    
-    UFUNCTION(BlueprintPure)
-    float Int_Float__Get(int32 Key, bool& IsValid);
-    
-    UFUNCTION(BlueprintCallable)
-    void Int_Float__Clear();
-    
-    UFUNCTION(BlueprintCallable)
-    void Int_Float__AddPair(int32 Key, float Value);
-    
+	UVictoryTMapComp(const FObjectInitializer& ObjectInitializer);
+	
+//Add
+public:
+	/** If a key already exists in the TMap, its current value is replaced with your new value! <3 Rama */
+	UFUNCTION(BlueprintCallable,Category="Victory BP Library|TMap Component|Add")
+	void String_Actor__AddPair(FString Key, AActor* Value);
+	
+	/** If a key already exists in the TMap, its current value is replaced with your new value! <3 Rama */
+	UFUNCTION(BlueprintCallable,Category="Victory BP Library|TMap Component|Add")
+	void String_String__AddPair(FString Key, FString Value);
+	
+	/** If a key already exists in the TMap, its current value is replaced with your new value! <3 Rama */
+	UFUNCTION(BlueprintCallable,Category="Victory BP Library|TMap Component|Add")
+	void String_Int__AddPair(FString Key, int32 Value);
+	
+	/** If a key already exists in the TMap, its current value is replaced with your new value! <3 Rama */
+	UFUNCTION(BlueprintCallable,Category="Victory BP Library|TMap Component|Add")
+	void String_Vector__AddPair(FString Key, FVector Value);
+	
+	/** If a key already exists in the TMap, its current value is replaced with your new value! <3 Rama */
+	UFUNCTION(BlueprintCallable,Category="Victory BP Library|TMap Component|Add")
+	void String_Rotator__AddPair(FString Key, FRotator Value);
+	
+	/** If a key already exists in the TMap, its current value is replaced with your new value! <3 Rama */
+	UFUNCTION(BlueprintCallable,Category="Victory BP Library|TMap Component|Add")
+	void Int_Vector__AddPair(int32 Key, FVector Value);
+	
+	/** If a key already exists in the TMap, its current value is replaced with your new value! <3 Rama */
+	UFUNCTION(BlueprintCallable,Category="Victory BP Library|TMap Component|Add")
+	void Int_Float__AddPair(int32 Key, float Value);
+	
+//Get
+public:
+	/** Get the value associated with they key at fastest possible speed! <3 Rama */
+	UFUNCTION(BlueprintPure,Category="Victory BP Library|TMap Component|Get")
+	AActor* String_Actor__Get(FString Key, bool& IsValid);
+	
+	/** Get the value associated with they key at fastest possible speed! <3 Rama */
+	UFUNCTION(BlueprintPure,Category="Victory BP Library|TMap Component|Get")
+	FString String_String__Get(FString Key, bool& IsValid);
+	
+	/** Get the value associated with they key at fastest possible speed! <3 Rama */
+	UFUNCTION(BlueprintPure,Category="Victory BP Library|TMap Component|Get")
+	int32 String_Int__Get(FString Key, bool& IsValid);
+	
+	/** Get the value associated with they key at fastest possible speed! <3 Rama */
+	UFUNCTION(BlueprintPure,Category="Victory BP Library|TMap Component|Get")
+	FVector String_Vector__Get(FString Key, bool& IsValid);
+	
+	/** Get the value associated with they key at fastest possible speed! <3 Rama */
+	UFUNCTION(BlueprintPure,Category="Victory BP Library|TMap Component|Get")
+	FRotator String_Rotator__Get(FString Key, bool& IsValid);
+	
+	/** Get the value associated with they key at fastest possible speed! <3 Rama */
+	UFUNCTION(BlueprintPure,Category="Victory BP Library|TMap Component|Get")
+	FVector Int_Vector__Get(int32 Key, bool& IsValid);
+	
+	/** Get the value associated with they key at fastest possible speed! <3 Rama */
+	UFUNCTION(BlueprintPure,Category="Victory BP Library|TMap Component|Get")
+	float Int_Float__Get(int32 Key, bool& IsValid);
+	
+//Remove
+public:
+	/** Removes the key and any associated value from the TMap! <3 Rama */
+	UFUNCTION(BlueprintCallable,Category="Victory BP Library|TMap Component|Remove")
+	void String_Actor__Remove(FString Key);
+	
+	/** Removes the key and any associated value from the TMap! <3 Rama */
+	UFUNCTION(BlueprintCallable,Category="Victory BP Library|TMap Component|Remove")
+	void String_String__Remove(FString Key);
+	
+	/** Removes the key and any associated value from the TMap! <3 Rama */
+	UFUNCTION(BlueprintCallable,Category="Victory BP Library|TMap Component|Remove")
+	void String_Int__Remove(FString Key);
+	
+	/** Removes the key and any associated value from the TMap! <3 Rama */
+	UFUNCTION(BlueprintCallable,Category="Victory BP Library|TMap Component|Remove")
+	void String_Vector__Remove(FString Key);
+	
+	/** Removes the key and any associated value from the TMap! <3 Rama */
+	UFUNCTION(BlueprintCallable,Category="Victory BP Library|TMap Component|Remove")
+	void String_Rotator__Remove(FString Key);
+	
+	/** Removes the key and any associated value from the TMap! <3 Rama */
+	UFUNCTION(BlueprintCallable,Category="Victory BP Library|TMap Component|Remove")
+	void Int_Vector__Remove(int32 Key);
+	
+	/** Removes the key and any associated value from the TMap! <3 Rama */
+	UFUNCTION(BlueprintCallable,Category="Victory BP Library|TMap Component|Remove")
+	void Int_Float__Remove(int32 Key, float Value);
+	
+//Clear
+public:
+	/** Removes every entry from the TMap! <3 Rama */
+	UFUNCTION(BlueprintCallable,Category="Victory BP Library|TMap Component|Clear", meta = (Keywords = "Clear Empty Reset"))
+	void String_Actor__Clear();
+	
+	/** Removes every entry from the TMap! <3 Rama */
+	UFUNCTION(BlueprintCallable,Category="Victory BP Library|TMap Component|Clear", meta = (Keywords = "Clear Empty Reset"))
+	void String_String__Clear();
+	
+	/** Removes every entry from the TMap! <3 Rama */
+	UFUNCTION(BlueprintCallable,Category="Victory BP Library|TMap Component|Clear", meta = (Keywords = "Clear Empty Reset"))
+	void String_Int__Clear();
+	
+	/** Removes every entry from the TMap! <3 Rama */
+	UFUNCTION(BlueprintCallable,Category="Victory BP Library|TMap Component|Clear", meta = (Keywords = "Clear Empty Reset"))
+	void String_Vector__Clear();
+	
+	/** Removes every entry from the TMap! <3 Rama */
+	UFUNCTION(BlueprintCallable,Category="Victory BP Library|TMap Component|Clear", meta = (Keywords = "Clear Empty Reset"))
+	void String_Rotator__Clear();
+	
+	/** Removes every entry from the TMap! <3 Rama */
+	UFUNCTION(BlueprintCallable,Category="Victory BP Library|TMap Component|Clear", meta = (Keywords = "Clear Empty Reset"))
+	void Int_Vector__Clear();
+	
+	/** Removes every entry from the TMap! <3 Rama */
+	UFUNCTION(BlueprintCallable,Category="Victory BP Library|TMap Component|Clear", meta = (Keywords = "Clear Empty Reset"))
+	void Int_Float__Clear();
+	
+public:
+	TMap<FString,AActor*> 	StringActor;
+	TMap<FString,FString> 		StringString;
+	TMap<FString,int32> 		StringInt;
+	TMap<FString,FVector> 	StringVector;
+	TMap<FString,FRotator> 	StringRotator;
+	TMap<int32,FVector> 		IntVector;
+	TMap<int32,float> 			IntFloat;
+	
 };
-

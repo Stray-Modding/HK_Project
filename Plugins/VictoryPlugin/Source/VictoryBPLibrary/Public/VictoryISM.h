@@ -1,17 +1,30 @@
+/*
+
+	By Rama
+
+*/
+
 #pragma once
-#include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
+
+#include "Runtime/Engine/Classes/Components/InstancedStaticMeshComponent.h"
 #include "VictoryISM.generated.h"
-
-class UInstancedStaticMeshComponent;
-
+ 
 UCLASS()
-class AVictoryISM : public AActor {
-    GENERATED_BODY()
+class AVictoryISM	: public AActor
+{
+	GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly, Export, VisibleAnywhere)
-    UInstancedStaticMeshComponent* Mesh;
-    
-    AVictoryISM();
+	 
+	AVictoryISM(const FObjectInitializer& ObjectInitializer);
+	  
+	UPROPERTY(Category = "Joy ISM", VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+	UInstancedStaticMeshComponent* Mesh; 
+	
+//~~~~~~~~~~~~~
+//	  ISM
+//~~~~~~~~~~~~~
+public:
+	virtual void BeginPlay() override;
+	
 };
 
