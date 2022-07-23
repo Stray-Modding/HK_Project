@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Manager.h"
+#include "JoyLibraryRuntime/Manager.h"
 #include "EGameSuspendedReason.h"
 #include "HierarchicalStateMachine.h"
 #include "GameStateManager.generated.h"

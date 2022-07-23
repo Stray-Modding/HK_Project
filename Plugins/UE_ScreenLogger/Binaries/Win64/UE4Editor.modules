@@ -2,6 +2,6 @@
 	"BuildId": "17155196",
 	"Modules": 
 	{
-		"ScreenLoggerRuntime": "UE4Editor-ScreenLoggerRuntime.dll"
+		"ScreenLogger": "UE4Editor-ScreenLogger.dll"
 	}
 }

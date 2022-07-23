@@ -12,11 +12,10 @@
 	"SupportURL": "",
 	"CanContainContent": true,
 	"IsBetaVersion": false,
-	"IsExperimentalVersion": false,
 	"Installed": false,
 	"Modules": [
 		{
-			"Name": "ScreenLoggerRuntime",
+			"Name": "ScreenLogger",
 			"Type": "Runtime",
 			"LoadingPhase": "PostEngineInit"
 		}

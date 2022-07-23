@@ -3,7 +3,7 @@
 #include "Templates/SubclassOf.h"
 #include "GameFramework/Character.h"
 #include "TraceBoneName.h"
-#include "SmootherRotation.h"
+#include "JoyLibraryRuntime/Smoother.h"
 #include "ESentinelTazerMode.h"
 #include "UObject/NoExportTypes.h"
 #include "ESentinelInputMode.h"

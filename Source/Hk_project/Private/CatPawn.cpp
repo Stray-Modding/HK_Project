@@ -6,7 +6,6 @@
 #include "Components/SkeletalMeshComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "Components/SphereComponent.h"
-#include "DrawMovementComponent.h"
 
 class AActor;
 class USplineRailComponent;

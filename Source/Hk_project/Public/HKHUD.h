@@ -2,10 +2,10 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "UObject/NoExportTypes.h"
-#include "JoyHUD.h"
 #include "EScreenFadeType.h"
 #include "ActionDisplay.h"
 #include "HUDDebugWidget.h"
+#include "JoyLibraryRuntime/JoyHUD.h"
 #include "HKHUD.generated.h"
 
 class AHKHUD;

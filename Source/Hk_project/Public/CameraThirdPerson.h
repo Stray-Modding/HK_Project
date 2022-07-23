@@ -2,12 +2,10 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "HKCamera.h"
-#include "SmootherFloat.h"
 #include "Engine/EngineTypes.h"
 #include "Curves/CurveFloat.h"
 #include "CameraThirdPersonPreset.h"
-#include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
+#include "JoyLibraryRuntime/Smoother.h"
 #include "UObject/NoExportTypes.h"
 #include "CameraThirdPerson.generated.h"
 

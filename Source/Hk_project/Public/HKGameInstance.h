@@ -1,9 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "JoyGameInstance.h"
 #include "EWorldInitializationMode.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=ShouldEndState -FallbackName=ShouldEndState
+#include "JoyLibraryRuntime/JoyGameInstance.h"
 #include "HKGameInstance.generated.h"
 
 class ADrone;

@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Manager.h"
+#include "JoyLibraryRuntime/Manager.h"
 #include "StatGroupBudget.h"
 #include "BudgetManager.generated.h"
 

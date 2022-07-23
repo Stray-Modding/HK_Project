@@ -9,17 +9,16 @@
 #include "Engine/EngineTypes.h"
 #include "Curves/CurveFloat.h"
 #include "CatLookAtEntry.h"
-#include "SmootherFloat.h"
+
 #include "ECatAttitude.h"
 #include "RailHangingTestResult.h"
-#include "SmootherCurved.h"
+
 #include "UObject/NoExportTypes.h"
 #include "DriftParameters.h"
 #include "JumpData.h"
 #include "GroundProbeData.h"
-#include "SmootherRotation.h"
-#include "SmootherTransform.h"
-#include "VectorPIDController.h"
+#include "JoyLibraryRuntime/Smoother.h"
+
 #include "GroundMaterialOverrideEntry.h"
 #include "ZurgSocket.h"
 #include "InteractionData.h"
@@ -33,6 +32,8 @@
 #include "CatInterpolateAlongSplineParams.h"
 #include "Engine/EngineTypes.h"
 #include "Camera/PlayerCameraManager.h"
+#include "JoyLibraryRuntime/DrawMovementComponent.h"
+#include "JoyLibraryRuntime/PID.h"
 #include "CatPawn.generated.h"
 
 class UPhysicalMaterial;
@@ -52,7 +53,6 @@ class USkeletalMeshComponent;
 class UCapsuleComponent;
 class USphereComponent;
 class USplineComponent;
-class UDrawMovementComponent;
 class UCatMovementComponent;
 class USceneComponent;
 class ACameraThirdPerson;

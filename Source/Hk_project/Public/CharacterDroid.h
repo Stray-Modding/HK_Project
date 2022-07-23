@@ -2,14 +2,12 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "EDroidLocomotionBehavior.h"
-#include "ActivableInterface.h"
 #include "EDroidMovementState.h"
 #include "EDroidBehaviorState.h"
 #include "EDroidPosture.h"
 #include "DialogLine.h"
 #include "UObject/NoExportTypes.h"
 #include "EDroidOnMeowedBehavior.h"
-#include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "EDroidLookAtType.h"
 #include "LookAtData.h"
@@ -19,7 +17,6 @@
 #include "PlayingAnimationSynchronizedActors.h"
 #include "Engine/EngineTypes.h"
 #include "EDroidMovementSplineMode.h"
-#include "Engine/EngineTypes.h"
 #include "DroidMovementAnimationSettings.h"
 #include "DroidManager.h"
 #include "DroidUsableComponent.h"
@@ -50,7 +47,7 @@ class ARecastNavMesh;
 class ACharacterDroid;
 
 UCLASS()
-class HK_PROJECT_API ACharacterDroid : public ACharacter, public IActivableInterface {
+class HK_PROJECT_API ACharacterDroid : public ACharacter/*, public IActivableInterface*/ {
     GENERATED_BODY()
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FIdleAnimationPositionChangedDelegate, float, newPosition);

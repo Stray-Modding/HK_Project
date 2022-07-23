@@ -92,11 +92,27 @@
 			"Type": "SymbolFile"
 		},
 		{
-			"Path": "$(ProjectDir)/Plugins/UE_ScreenLogger/Binaries/Win64/UE4Editor-ScreenLoggerRuntime.dll",
+			"Path": "$(ProjectDir)/Plugins/UE_HierarchicalStateMachine/Binaries/Win64/UE4Editor-StateMachineEditor.dll",
 			"Type": "DynamicLibrary"
 		},
 		{
-			"Path": "$(ProjectDir)/Plugins/UE_ScreenLogger/Binaries/Win64/UE4Editor-ScreenLoggerRuntime.pdb",
+			"Path": "$(ProjectDir)/Plugins/UE_HierarchicalStateMachine/Binaries/Win64/UE4Editor-StateMachineEditor.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/UE_HierarchicalStateMachine/Binaries/Win64/UE4Editor-StateMachineTests.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/UE_HierarchicalStateMachine/Binaries/Win64/UE4Editor-StateMachineTests.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/UE_ScreenLogger/Binaries/Win64/UE4Editor-ScreenLogger.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/UE_ScreenLogger/Binaries/Win64/UE4Editor-ScreenLogger.pdb",
 			"Type": "SymbolFile"
 		},
 		{
@@ -105,6 +121,14 @@
 		},
 		{
 			"Path": "$(ProjectDir)/Plugins/JoyLibrary/Binaries/Win64/UE4Editor-JoyLibraryRuntime.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/JoyLibrary/Binaries/Win64/UE4Editor-JoyLibraryEditor.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/JoyLibrary/Binaries/Win64/UE4Editor-JoyLibraryEditor.pdb",
 			"Type": "SymbolFile"
 		},
 		{

@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/PawnMovementComponent.h"
 #include "Engine/EngineTypes.h"
-#include "SmootherTransform.h"
+#include "JoyLibraryRuntime/Smoother.h"
 #include "CatMovementComponent.generated.h"
 
 class AActor;

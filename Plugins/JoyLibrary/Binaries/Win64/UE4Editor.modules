@@ -2,6 +2,7 @@
 	"BuildId": "17155196",
 	"Modules": 
 	{
+		"JoyLibraryEditor": "UE4Editor-JoyLibraryEditor.dll",
 		"JoyLibraryRuntime": "UE4Editor-JoyLibraryRuntime.dll"
 	}
 }

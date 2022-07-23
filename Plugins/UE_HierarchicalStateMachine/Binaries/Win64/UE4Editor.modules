@@ -2,6 +2,8 @@
 	"BuildId": "17155196",
 	"Modules": 
 	{
-		"StateMachineRuntime": "UE4Editor-StateMachineRuntime.dll"
+		"StateMachineEditor": "UE4Editor-StateMachineEditor.dll",
+		"StateMachineRuntime": "UE4Editor-StateMachineRuntime.dll",
+		"StateMachineTests": "UE4Editor-StateMachineTests.dll"
 	}
 }

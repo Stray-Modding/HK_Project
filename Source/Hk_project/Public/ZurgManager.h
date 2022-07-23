@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "Manager.h"
+#include "JoyLibraryRuntime/Manager.h"
 #include "SlaveKillRequest.h"
 #include "LightToSlaveTrace.h"
 #include "LightToLightableTrace.h"
