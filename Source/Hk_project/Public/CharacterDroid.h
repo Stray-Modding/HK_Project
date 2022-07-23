@@ -461,8 +461,8 @@ protected:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void OnRaise(UAnimSequence* _raiseFromFrontAnimation, UAnimSequence* _raiseFromBackAnimation);
     
-    /*UFUNCTION(BlueprintImplementableEvent)
-    void OnPreciseCatCollisionsEnabled(TEnumAsByte<ECollisionEnabled::Type> _collisionEnabled);*/
+    UFUNCTION(BlueprintImplementableEvent)
+    void OnPreciseCatCollisionsEnabled(ECollisionEnabled::Type _collisionEnabled);
     
 public:
     UFUNCTION(BlueprintImplementableEvent)

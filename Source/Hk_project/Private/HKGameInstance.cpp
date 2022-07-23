@@ -125,11 +125,11 @@ void UHKGameInstance::_ChaptersEntry_OnAPressed(UDebugMenuEntry* _entry) {
 void UHKGameInstance::_ChaptersDebugMenuEntry_OnUpdate(UDebugMenuEntry* _entry) {
 }
 
-/*void UHKGameInstance::_BeforeStreamOut(ULevelStreaming* _levelStreaming, FShouldEndState& _shouldEndState) {
+void UHKGameInstance::_BeforeStreamOut(ULevelStreaming* _levelStreaming, const FShouldEndState& _shouldEndState) {
 }
 
-void UHKGameInstance::_BeforeStreamIn(ULevelStreaming* _levelStreaming, FShouldEndState& _shouldEndState) {
-}*/
+void UHKGameInstance::_BeforeStreamIn(ULevelStreaming* _levelStreaming, const FShouldEndState& _shouldEndState) {
+}
 
 UHKGameInstance::UHKGameInstance() {
     this->CatClass = NULL;

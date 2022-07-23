@@ -28,6 +28,7 @@ class HK_PROJECT_API UHKGameInstance : public UJoyGameInstance {
     GENERATED_BODY()
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FOnLoadComplete, float, _loadTime, const FString&, _mapName, UWorld*, _world);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FShouldEndState, bool, _shouldEndState);
     
     UPROPERTY(BlueprintAssignable)
     FOnLoadComplete LoadCompleted;
@@ -234,11 +235,11 @@ private:
     UFUNCTION()
     void _ChaptersDebugMenuEntry_OnUpdate(UDebugMenuEntry* _entry);
     
-    /*UFUNCTION()
-    void _BeforeStreamOut(ULevelStreaming* _levelStreaming, FShouldEndState& _shouldEndState);
+    UFUNCTION()
+    void _BeforeStreamOut(ULevelStreaming* _levelStreaming, const FShouldEndState& _shouldEndState);
     
     UFUNCTION()
-    void _BeforeStreamIn(ULevelStreaming* _levelStreaming, FShouldEndState& _shouldEndState);*/
+    void _BeforeStreamIn(ULevelStreaming* _levelStreaming, const FShouldEndState& _shouldEndState);
     
 };
 
