@@ -96,8 +96,8 @@ protected:
     UFUNCTION()
     void OnMeshSleep(UPrimitiveComponent* _wakingComponent, FName _boneName);
     
-    /*UFUNCTION(BlueprintNativeEvent)
-    void OnImpact(FVector _location, float _amplitude, TEnumAsByte<EPhysicalSurface> _surfaceType);*/
+    UFUNCTION(BlueprintNativeEvent)
+    void OnImpact(FVector _location, float _amplitude, EPhysicalSurface _surfaceType);
     
 public:
     UFUNCTION(BlueprintPure)

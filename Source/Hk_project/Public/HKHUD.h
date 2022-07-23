@@ -118,8 +118,8 @@ public:
     UFUNCTION(BlueprintPure)
     TArray<UUserWidget*> GetWidgets() const;
     
-    /*UFUNCTION(BlueprintImplementableEvent)
-    FLinearColor GetScreenFadeColorInternal(TEnumAsByte<EScreenFadeType> _type) const;*/
+    UFUNCTION(BlueprintImplementableEvent)
+    FLinearColor GetScreenFadeColorInternal(EScreenFadeType _type);
     
     UFUNCTION(BlueprintPure)
     UUserWidget* GetHUDWidget() const;
@@ -140,8 +140,8 @@ public:
     void AddActionDisplay(FName _actionID, FText _displayText, FName _actionBindingName, int32 _priority, bool _showAllKeys);
     
 protected:
-    /*UFUNCTION(BlueprintImplementableEvent)
-    void _SetScreenFadeColorInternal(TEnumAsByte<EScreenFadeType> _type, FLinearColor _color);*/
+    UFUNCTION(BlueprintImplementableEvent)
+    void _SetScreenFadeColorInternal(EScreenFadeType _type, FLinearColor _color);
     
 private:
     UFUNCTION()

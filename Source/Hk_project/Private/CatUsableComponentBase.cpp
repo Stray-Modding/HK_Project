@@ -58,9 +58,9 @@ FText UCatUsableComponentBase::GetUseDisplayText_Implementation() const {
     return FText::GetEmpty();
 }
 
-/*TEnumAsByte<EUsableInteractionButton> UCatUsableComponentBase::GetInteractionButton/*_Implementation#1#() const {
+EUsableInteractionButton UCatUsableComponentBase::GetInteractionButton_Implementation() const {
     return UsableInteractionButton_JumpUp;
-}*/
+}
 
 USceneComponent* UCatUsableComponentBase::GetGUIFeedbackPosition(FName& _outSocket) const {
     return NULL;

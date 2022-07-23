@@ -109,8 +109,8 @@ public:
     UFUNCTION(BlueprintNativeEvent, BlueprintPure)
     FText GetUseDisplayText() const;
     
-    /*UFUNCTION(BlueprintNativeEvent, BlueprintPure)
-    TEnumAsByte<EUsableInteractionButton> GetInteractionButton() const;*/
+    UFUNCTION(BlueprintNativeEvent, BlueprintPure)
+    EUsableInteractionButton GetInteractionButton() const;
     
     UFUNCTION(BlueprintPure)
     USceneComponent* GetGUIFeedbackPosition(FName& _outSocket) const;

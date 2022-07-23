@@ -7,7 +7,11 @@ UCLASS(ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class HK_PROJECT_API UDebugInputComponent : public UActorComponent {
     GENERATED_BODY()
 public:
-    /*UPROPERTY(BlueprintAssignable)
+
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FInputDelegate, UDebugInputComponent*, Input);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FInputAxisDelegate, UDebugInputComponent*, Input);
+    
+    UPROPERTY(BlueprintAssignable)
     FInputDelegate GamepadDPadDownPressed;
     
     UPROPERTY(BlueprintAssignable)
@@ -119,7 +123,7 @@ public:
     FInputDelegate GamepadFaceButtonTopPressed;
     
     UPROPERTY(BlueprintAssignable)
-    FInputDelegate GamepadFaceButtonTopReleased;*/
+    FInputDelegate GamepadFaceButtonTopReleased;
     
     UDebugInputComponent();
 };
