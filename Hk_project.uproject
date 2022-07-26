@@ -134,6 +134,10 @@
 			"Name": "PrefabTool",
 			"Enabled": true,
 			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/d7df59e893f84bccbdcbd9899f773ede"
+		},
+		{
+			"Name": "PlanarCut",
+			"Enabled": true
 		}
 	],
 	"TargetPlatforms": [

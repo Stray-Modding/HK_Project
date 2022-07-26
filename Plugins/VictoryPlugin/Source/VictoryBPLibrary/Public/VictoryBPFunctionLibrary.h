@@ -40,6 +40,7 @@
 //Texture2D
 //#include "Engine/Texture2D.h"
 #include "DDSLoader.h"
+#include "DestructibleComponent.h"
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

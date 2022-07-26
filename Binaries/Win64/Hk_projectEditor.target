@@ -356,6 +356,14 @@
 			"Type": "SymbolFile"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Experimental/PlanarCutPlugin/Binaries/Win64/UE4Editor-PlanarCut.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Experimental/PlanarCutPlugin/Binaries/Win64/UE4Editor-PlanarCut.pdb",
+			"Type": "SymbolFile"
+		},
+		{
 			"Path": "$(ProjectDir)/Plugins/ToyoTool/Binaries/Win64/UE4Editor-ToyoToolRuntime.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -529,6 +537,14 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Developer/PropertyAccessNode/Binaries/Win64/UE4Editor-PropertyAccessNode.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Runtime/PropertyAccess/Binaries/Win64/UE4Editor-PropertyAccessEditor.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Runtime/PropertyAccess/Binaries/Win64/UE4Editor-PropertyAccessEditor.pdb",
 			"Type": "SymbolFile"
 		},
 		{
@@ -4628,14 +4644,6 @@
 			"Type": "SymbolFile"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Runtime/PropertyAccess/Binaries/Win64/UE4Editor-PropertyAccessEditor.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Runtime/PropertyAccess/Binaries/Win64/UE4Editor-PropertyAccessEditor.pdb",
-			"Type": "SymbolFile"
-		},
-		{
 			"Path": "$(EngineDir)/Binaries/Win64/UE4Editor-TreeMap.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -4804,6 +4812,10 @@
 			"Type": "RequiredResource"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Experimental/PlanarCutPlugin/Binaries/Win64/UE4Editor.modules",
+			"Type": "RequiredResource"
+		},
+		{
 			"Path": "$(ProjectDir)/Plugins/ToyoTool/Binaries/Win64/UE4Editor.modules",
 			"Type": "RequiredResource"
 		},
@@ -4877,6 +4889,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Developer/PropertyAccessNode/Binaries/Win64/UE4Editor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Runtime/PropertyAccess/Binaries/Win64/UE4Editor.modules",
 			"Type": "RequiredResource"
 		},
 		{
@@ -5218,10 +5234,6 @@
 		{
 			"Path": "$(EngineDir)/Binaries/Win64/Lumin/UE4Editor.modules",
 			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Runtime/PropertyAccess/Binaries/Win64/UE4Editor.modules",
-			"Type": "RequiredResource"
 		}
 	],
 	"RuntimeDependencies": [
@@ -5338,7 +5350,7 @@
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(ProjectDir)/Plugins/EnginePlugins/Runtime/PropertyAccess/PropertyAccessEditor.uplugin",
+			"Path": "$(EngineDir)/Plugins/Experimental/PlanarCutPlugin/PlanarCut.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -5415,6 +5427,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Developer/PropertyAccessNode/PropertyAccessNode.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Runtime/PropertyAccess/PropertyAccessEditor.uplugin",
 			"Type": "UFS"
 		},
 		{
