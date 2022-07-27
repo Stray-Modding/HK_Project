@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
 #include "Components/BoxComponent.h"
+#include "UObject/NoExportTypes.h"
 #include "NoisableComponent.generated.h"
 
 class UNoisableComponent;
@@ -13,7 +13,7 @@ class HK_PROJECT_API UNoisableComponent : public UBoxComponent {
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FNoiseDelegate, UNoisableComponent*, _noisableComponent, FVector, _location, AActor*, _emitter);
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FNoiseDelegate OnNoised;
     
     UNoisableComponent();
@@ -21,11 +21,11 @@ public:
     void SetEnabled(bool _enable);
     
 protected:
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool OnNoise(FVector _location, AActor* _emitter);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsEnabled() const;
     
 };

@@ -1,7 +1,7 @@
 #include "ZurgAttackPointComponent.h"
 
-class AZurgPawnSlave;
 class UPrimitiveComponent;
+class AZurgPawnSlave;
 class AActor;
 
 AZurgPawnSlave* UZurgAttackPointComponent::GetAttachedZurg() const {

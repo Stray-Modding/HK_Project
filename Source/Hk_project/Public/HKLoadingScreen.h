@@ -3,7 +3,7 @@
 #include "Components/Widget.h"
 #include "HKLoadingScreen.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class HK_PROJECT_API UHKLoadingScreen : public UWidget {
     GENERATED_BODY()
 public:

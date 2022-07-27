@@ -2,38 +2,37 @@
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
 #include "GameFramework/Actor.h"
-#include "UObject/NoExportTypes.h"
 #include "Engine/EngineTypes.h"
 #include "BackpackScreenEntry.h"
+#include "UObject/NoExportTypes.h"
 #include "EDialogMovementMode.h"
 #include "UObject/NoExportTypes.h"
 #include "Engine/EngineTypes.h"
-#include "LootableComponent.h"
 #include "DialogLine.h"
 #include "Backpack.generated.h"
 
-class AIEM;
-class UWidgetComponent;
-class ADrone;
 class ABackpack;
-class ADialog;
 class UBackpackUsableComponent;
+class ADrone;
+class ADialog;
 class ULootableComponent;
-class UHierarchicalStateMachine;
+class UPhoto;
+class USceneComponent;
 class USkeletalMeshComponent;
+class UWidgetComponent;
 class UTalkableComponent;
-class UPrimitiveComponent;
 class ACatPawn;
 class ABackpackGUI;
-class USceneComponent;
-class UPhoto;
+class UPrimitiveComponent;
+class UHierarchicalStateMachine;
+class AIEM;
 class AHKHUD;
 class UBackpackScreenUserWidget;
 class USoundBase;
 class UUserWidget;
 class AHKPlayerController;
 
-UCLASS()
+UCLASS(Blueprintable)
 class HK_PROJECT_API ABackpack : public AActor {
     GENERATED_BODY()
 public:
@@ -43,129 +42,129 @@ public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FBackpackDroneAction, ABackpack*, _backpack, ADrone*, _drone);
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FBackpackAction, ABackpack*, _backpack);
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBackpackAction PendingDialogBegan;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBackpackAction PendingDialogEnded;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDialogAction DialogBegan;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDialogAction DialogLineBegan;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDialogAction DialogEnded;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FLootAction AddedObjectToInventory;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FLootAction RemovedObjectFromInventory;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBackpackAction EmptyInteractionTriggered;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FUseAction UseStarted;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FUseAction UseEnded;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBackpackDroneAction DroneSet;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FBackpackDroneAction DroneUnset;
     
 protected:
-    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     USkeletalMeshComponent* m_mesh;
     
-    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     UWidgetComponent* m_screenWidgetComponent;
     
-    UPROPERTY(BlueprintReadWrite, Export, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     UTalkableComponent* m_talkable;
     
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ACatPawn* m_catPawn;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ADrone* M_Drone;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ABackpackGUI* m_GUI;
     
-    UPROPERTY(Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     UPrimitiveComponent* m_interactionCollider;
     
-    UPROPERTY(SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     bool m_isBackpackMeshVisible;
     
-    UPROPERTY(Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UHierarchicalStateMachine* m_stateMachine;
     
     UPROPERTY(EditAnywhere)
     TEnumAsByte<ECollisionChannel> m_interactCollisionChannel;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<AIEM> m_IEMClass;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ADialog* m_currentDialog;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_pendingDialogRingTime;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_interactionDetectionLossTime;
     
-    UPROPERTY(SaveGame)
+    UPROPERTY(EditAnywhere, SaveGame)
     uint8 m_B12HelpDisabledCount;
     
-    UPROPERTY(SaveGame)
+    UPROPERTY(EditAnywhere, SaveGame)
     uint8 m_showItemToB12DisabledCount;
     
-    UPROPERTY(SaveGame)
+    UPROPERTY(EditAnywhere, SaveGame)
     uint8 m_exitDialogDisabledCount;
     
-    UPROPERTY(Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     TArray<ULootableComponent*> m_inventory;
     
-    UPROPERTY(SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     TArray<TSubclassOf<AActor>> m_savedInventory;
     
-    UPROPERTY(SaveGame)
+    UPROPERTY(EditAnywhere, SaveGame)
     uint16 m_disableInventoryMenu;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UPhoto*> m_photos;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     AHKHUD* m_HUD;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FBackpackScreenEntry> m_backpackScreenStack;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UBackpackScreenUserWidget> m_defaultBackpackScreenWidgetClass;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UBackpackScreenUserWidget> m_IEMBackpackScreenWidgetClass;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UBackpackScreenUserWidget> m_notificationScreenWidgetClass;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UBackpackScreenUserWidget> m_usableBackpackScreenWidgetClass;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UBackpackScreenUserWidget> m_talkableBackpackScreenWidgetClass;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USoundBase* m_defaultStartInteractionSound;
     
 public:
@@ -221,58 +220,58 @@ public:
     UFUNCTION(BlueprintCallable)
     void OpenGUI(TSubclassOf<UUserWidget> _widgetClass);
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnUnequipped();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnToggleLight();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnHelpWanted();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnEquipped();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnBackpackMeshVisible();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnBackpackMeshInvisible();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnB12NotificationPushed();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnB12NotificationCleared();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsWithinHelpDialog() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsWithinDialog() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsShowItemToB12Enabled() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsInventoryMenuEnabled() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsInteractionEnabled() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsInteracting() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsGUIOpen() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsExitDialogEnabled() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsBackpackMeshVisible() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsB12HelpEnabled() const;
     
     UFUNCTION(BlueprintCallable)
@@ -281,52 +280,52 @@ public:
     UFUNCTION(BlueprintCallable)
     void IEM();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasIEM() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTalkableComponent* GetTalkableComponent() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetRemainingIEMTime() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<UPhoto*> GetPhotoCatalog() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     USkeletalMeshComponent* GetMesh() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<ULootableComponent*> GetInventory() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetIEMDuration() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ABackpackGUI* GetGUI() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ADrone* GetDrone() const;
     
-    UFUNCTION(BlueprintNativeEvent, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent, BlueprintPure)
     USceneComponent* GetDialogDroneSocket(FName& _socketName) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     USoundBase* GetDefaultStartInteractionSound() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UBackpackUsableComponent* GetCurrentInteraction() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ADialog* GetCurrentDialog() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UBackpackUsableComponent* GetCurrentClosestInteraction() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ACatPawn* GetCatPawn() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ULootableComponent* FindItemInInventory(FName ID) const;
     
     UFUNCTION(BlueprintCallable)
@@ -347,10 +346,10 @@ public:
     UFUNCTION(BlueprintCallable)
     void ChargeIEM(float _duration);
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void BeforeSaved();
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void AfterLoaded();
     
     UFUNCTION(BlueprintCallable)
@@ -360,34 +359,34 @@ private:
     UFUNCTION()
     void _OnInventoryActorEndPlay(AActor* _actor, TEnumAsByte<EEndPlayReason::Type> _endPlayReason);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void _OnIEMPressed();
     
     UFUNCTION()
     void _OnHUDEndPlay(AActor* _actor, TEnumAsByte<EEndPlayReason::Type> _endPlayReason);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void _OnHelpPressed();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void _OnDroneGUIOpened(ADrone* _drone);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void _OnDroneGUIClosed(ADrone* _drone);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void _OnDialogLineBegan(UTalkableComponent* _talkable, const FDialogLine& _line);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void _OnDialogEnded(UTalkableComponent* _talkable);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void _OnDialogBegan(UTalkableComponent* _talkable);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void _OnCatUnpossessed(ACatPawn* _cat, AHKPlayerController* _playerController);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void _OnCatPossessed(ACatPawn* _cat, AHKPlayerController* _playerController);
     
 };

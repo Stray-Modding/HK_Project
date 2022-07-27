@@ -1,10 +1,10 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "BackpackUserWidget.h"
 #include "EDroneMenuCategory.h"
+#include "BackpackUserWidget.h"
 #include "DroneMenuWidget.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class HK_PROJECT_API UDroneMenuWidget : public UBackpackUserWidget {
     GENERATED_BODY()
 public:

@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct FSlaveSpawnRequest {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     AZurgPawnLeader* leader;
     
     HK_PROJECT_API FSlaveSpawnRequest();

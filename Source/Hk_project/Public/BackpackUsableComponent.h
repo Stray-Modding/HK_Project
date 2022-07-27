@@ -1,30 +1,30 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Templates/SubclassOf.h"
-#include "CatUsableComponentBase.h"
 #include "UObject/NoExportTypes.h"
+#include "CatUsableComponentBase.h"
 #include "BackpackUsableComponent.generated.h"
 
 class UBackpackScreenUserWidget;
 class UBoxComponent;
 class ABackpack;
 
-UCLASS(EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class HK_PROJECT_API UBackpackUsableComponent : public UCatUsableComponentBase {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_usageCooldownTime;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_deactivateCatInteractions;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UBackpackScreenUserWidget> m_backpackScreenWidgetClass;
     
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_blockCatDuringUse;
     
 public:
@@ -32,13 +32,13 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetVisualBox(UBoxComponent* _visualBox);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UBoxComponent* GetVisualBox() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ABackpack* GetUsingBackpack() const;
     
-    UFUNCTION(BlueprintNativeEvent, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent, BlueprintPure)
     FTransform GetSelectionBoxTransform() const;
     
 };

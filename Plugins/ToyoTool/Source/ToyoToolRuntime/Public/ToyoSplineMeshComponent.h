@@ -3,11 +3,11 @@
 #include "Components/SplineMeshComponent.h"
 #include "ToyoSplineMeshComponent.generated.h"
 
-UCLASS(EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class TOYOTOOLRUNTIME_API UToyoSplineMeshComponent : public USplineMeshComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 MeshIndex;
     
     UToyoSplineMeshComponent();

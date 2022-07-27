@@ -3,7 +3,7 @@
 #include "Blueprint/UserWidget.h"
 #include "HKUserWidget.generated.h"
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class HK_PROJECT_API UHKUserWidget : public UUserWidget {
     GENERATED_BODY()
 public:

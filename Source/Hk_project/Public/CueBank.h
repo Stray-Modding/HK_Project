@@ -5,11 +5,11 @@
 
 class USoundCue;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class HK_PROJECT_API UCueBank : public UDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<USoundCue*> SoundCues;
     
     UCueBank();

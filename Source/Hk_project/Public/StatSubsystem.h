@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EStatEvent.h"
 #include "HKGameSubsystem.h"
+#include "EStatEvent.h"
 #include "StatSubsystem.generated.h"
 
 class UHKSaveInstance;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class HK_PROJECT_API UStatSubsystem : public UHKGameSubsystem {
     GENERATED_BODY()
 public:
@@ -17,14 +17,14 @@ public:
     UFUNCTION(BlueprintCallable)
     void OnEvent(EStatEvent _id, int32 _increment);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetDeltaMilliseconds() const;
     
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void _OnGameSaved(UHKSaveInstance* _saveInstance);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void _OnGameLoaded(UHKSaveInstance* _saveInstance);
     
 };

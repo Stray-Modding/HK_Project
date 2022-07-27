@@ -4,7 +4,7 @@
 #include "StatGroupBudget.h"
 #include "BudgetManager.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class HK_PROJECT_API ABudgetManager : public AManager {
     GENERATED_BODY()
 public:
@@ -12,16 +12,16 @@ public:
     uint64 PhysicalMemoryBudget;
     
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FStatGroupBudget> m_statGroupBudgets;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_isProfilingEnabled;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_samplesCount;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_warningPercentage;
     
 public:
@@ -29,7 +29,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetProfilingEnabled(bool _enabled);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsProfilingEnabled() const;
     
     UFUNCTION(BlueprintCallable)

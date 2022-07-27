@@ -3,42 +3,42 @@
 #include "HKUserWidget.h"
 #include "SettingsMenuWidget.generated.h"
 
-class UInputSettingsWidget;
-class UGraphicsSettingsWidget;
 class UTabButtonWidget;
 class UAudioSettingsWidget;
+class UInputSettingsWidget;
+class UGraphicsSettingsWidget;
 class UGameplaySettingsWidget;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class HK_PROJECT_API USettingsMenuWidget : public UHKUserWidget {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     UTabButtonWidget* AudioButton;
     
-    UPROPERTY(Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     UTabButtonWidget* GraphicsButton;
     
-    UPROPERTY(Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     UTabButtonWidget* InputButton;
     
-    UPROPERTY(Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     UTabButtonWidget* GameplayButton;
     
-    UPROPERTY(Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     UAudioSettingsWidget* AudioSettings;
     
-    UPROPERTY(Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     UGraphicsSettingsWidget* GraphicsSettings;
     
-    UPROPERTY(Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     UInputSettingsWidget* InputSettings;
     
-    UPROPERTY(Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     UGameplaySettingsWidget* GameplaySettings;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText m_applySettingsDialogText;
     
 public:

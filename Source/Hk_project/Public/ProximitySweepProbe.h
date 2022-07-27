@@ -3,7 +3,7 @@
 #include "UObject/Object.h"
 #include "ProximitySweepProbe.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class UProximitySweepProbe : public UObject {
     GENERATED_BODY()
 public:

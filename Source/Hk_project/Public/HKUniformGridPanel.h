@@ -3,7 +3,7 @@
 #include "Components/UniformGridPanel.h"
 #include "HKUniformGridPanel.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class HK_PROJECT_API UHKUniformGridPanel : public UUniformGridPanel {
     GENERATED_BODY()
 public:

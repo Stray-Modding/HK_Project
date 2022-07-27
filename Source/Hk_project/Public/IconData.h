@@ -5,11 +5,11 @@
 
 class UTexture2D;
 
-UCLASS()
+UCLASS(Blueprintable)
 class HK_PROJECT_API UIconData : public UPrimaryDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UTexture2D* Texture;
     
     UIconData();

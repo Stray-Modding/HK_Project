@@ -1,7 +1,7 @@
 #include "BackpackUserWidget.h"
 
-class ABackpackGUI;
 class ADrone;
+class ABackpackGUI;
 
 void UBackpackUserWidget::SetBackpackGUI(ABackpackGUI* _GUI) {
 }

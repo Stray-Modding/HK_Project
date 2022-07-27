@@ -3,7 +3,7 @@
 #include "Navigation/CrowdManager.h"
 #include "HKCrowdManager.generated.h"
 
-UCLASS(NonTransient)
+UCLASS(Blueprintable, NonTransient)
 class HK_PROJECT_API UHKCrowdManager : public UCrowdManager {
     GENERATED_BODY()
 public:

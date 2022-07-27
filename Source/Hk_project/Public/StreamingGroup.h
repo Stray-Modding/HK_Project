@@ -5,18 +5,18 @@
 
 class UStreamingComponent;
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class UStreamingGroup : public UObject {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     TArray<UStreamingComponent*> m_streamingComponents;
     
-    UPROPERTY(Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     TArray<UStreamingComponent*> m_pendingRegisterComponents;
     
-    UPROPERTY(Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     TArray<UStreamingComponent*> m_pendingUnregisterComponents;
     
 public:

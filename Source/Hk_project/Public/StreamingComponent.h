@@ -1,12 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/EngineTypes.h"
 #include "Components/ActorComponent.h"
 #include "ComponentPhysicsSettings.h"
+#include "Engine/EngineTypes.h"
 #include "StreamingComponent.generated.h"
 
-class UStreamingComponent;
 class UPrimitiveComponent;
+class UStreamingComponent;
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class HK_PROJECT_API UStreamingComponent : public UActorComponent {
@@ -14,20 +14,20 @@ class HK_PROJECT_API UStreamingComponent : public UActorComponent {
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FStreamingComponentDelegate, UStreamingComponent*, _component);
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bDoNotTickUntilStreamedIn;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bDisablePhysicsUntilStreamedIn;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FStreamingComponentDelegate StreamedIn;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FStreamingComponentDelegate StreamedOut;
     
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FName, FComponentPhysicsSettings> m_componentsPhysicsSettings;
     
 public:
@@ -38,13 +38,13 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetComponentCollisionEnabled(UPrimitiveComponent* _component, TEnumAsByte<ECollisionEnabled::Type> _collisionEnabled);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsStreamedIn() const;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BlueprintOnStreamOut();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BlueprintOnStreamIn();
     
 };

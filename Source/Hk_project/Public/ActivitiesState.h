@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct FActivitiesState {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<EActivity, FActivityState> Activities;
     
     HK_PROJECT_API FActivitiesState();

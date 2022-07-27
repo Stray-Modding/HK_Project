@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "MoveToFrameOrder.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FMoveToFrameOrder {
     GENERATED_BODY()
 public:

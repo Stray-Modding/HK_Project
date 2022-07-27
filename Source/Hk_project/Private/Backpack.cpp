@@ -5,8 +5,8 @@
 
 class UBackpackUsableComponent;
 class UBackpackScreenUserWidget;
-class ADialog;
 class ULootableComponent;
+class ADialog;
 class UUserWidget;
 class AActor;
 class UPhoto;

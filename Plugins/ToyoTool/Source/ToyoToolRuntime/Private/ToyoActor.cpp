@@ -1,6 +1,6 @@
 #include "ToyoActor.h"
-#include "Components/SceneComponent.h"
 #include "ToyoSplineComponent.h"
+#include "Components/SceneComponent.h"
 
 void AToyoActor::CreateToyoMesh() {
 }

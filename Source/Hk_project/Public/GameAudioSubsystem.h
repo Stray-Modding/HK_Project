@@ -1,25 +1,25 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameplayNoise.h"
 #include "HKGameSubsystem.h"
+#include "GameplayNoise.h"
 #include "NoiseEvent.h"
 #include "GameAudioSubsystem.generated.h"
 
 class UNoisableComponent;
 class AActor;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class HK_PROJECT_API UGameAudioSubsystem : public UHKGameSubsystem {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     TArray<UNoisableComponent*> m_noisableList;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FGameplayNoise> m_gameplayNoiseList;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FNoiseEvent> m_noiseEventQueue;
     
 public:

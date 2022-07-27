@@ -3,7 +3,6 @@
 #include "Engine/EngineBaseTypes.h"
 #include "HKPlayerControllerPostUpdateTickFunction.generated.h"
 
-
 USTRUCT(BlueprintType)
 struct FHKPlayerControllerPostUpdateTickFunction : public FTickFunction {
     GENERATED_BODY()
@@ -19,3 +18,4 @@ struct TStructOpsTypeTraits<FHKPlayerControllerPostUpdateTickFunction> : public 
         WithCopy = false
     };
 };
+

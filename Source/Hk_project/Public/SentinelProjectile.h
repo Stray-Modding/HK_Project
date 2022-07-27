@@ -1,40 +1,40 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Engine/EngineTypes.h"
 #include "GameFramework/Actor.h"
 #include "ESentinelProjectileState.h"
+#include "Engine/EngineTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "SentinelProjectile.generated.h"
 
 class USphereComponent;
-class UProjectileMovementComponent;
 class UHierarchicalStateMachine;
+class UProjectileMovementComponent;
 
-UCLASS()
+UCLASS(Blueprintable)
 class HK_PROJECT_API ASentinelProjectile : public AActor {
     GENERATED_BODY()
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSentinelProjectileStateChangedDelegate, ESentinelProjectileState, _newState);
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSentinelProjectileOnHitDelegate, const FHitResult&, _hitResult);
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSentinelProjectileStateChangedDelegate FSentinelProjectileStateChanged;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSentinelProjectileOnHitDelegate FOnProjectileHit;
     
 protected:
-    UPROPERTY(BlueprintReadOnly, EditAnywhere, Export)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     USphereComponent* m_projectileSphereColliderComponent;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere, Export)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     UProjectileMovementComponent* m_projectileMovementComponent;
     
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UHierarchicalStateMachine* m_projectileStateMachine;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ESentinelProjectileState m_currentSentinelProjectileState;
     
 public:
@@ -46,60 +46,60 @@ public:
     void SetMode(ESentinelProjectileState _newMode);
     
 protected:
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void Projectile_WaitingDestroy_Tick(float _dt);
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void Projectile_WaitingDestroy_Exit();
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void Projectile_WaitingDestroy_Enter();
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void Projectile_Snapped_Tick(float _dt);
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void Projectile_Snapped_Exit();
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void Projectile_Snapped_Enter();
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void Projectile_Shooted_Exit();
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void Projectile_Shooted_Enter();
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void Projectile_None_Tick(float _dt);
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void Projectile_None_Exit();
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void Projectile_None_Enter();
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void Projectile_InAir_Tick(float _dt);
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void Projectile_InAir_Exit();
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void Projectile_InAir_Enter();
     
 public:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnProjectileHit(FHitResult _hitResult);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FHitResult GetHitResult();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ESentinelProjectileState GetCurrentMode();
     
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void _OnProjectileHit(const FHitResult& _hitResult);
     
 };

@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct HK_PROJECT_API FGroundProbeSegmentData {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector Normal;
     
-    UPROPERTY(BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 Type;
     
     FGroundProbeSegmentData();

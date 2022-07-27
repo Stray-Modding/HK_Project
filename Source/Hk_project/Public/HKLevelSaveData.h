@@ -7,10 +7,10 @@ USTRUCT(BlueprintType)
 struct FHKLevelSaveData {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName Name;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FName, FHKActorSaveData> Actors;
     
     HK_PROJECT_API FHKLevelSaveData();

@@ -2,8 +2,8 @@
 
 class UUserWidget;
 class ADialog;
-class ABackpack;
 class UHUDDebugWidget;
+class ABackpack;
 
 
 void AHKHUD::StopScreenFade(TEnumAsByte<EScreenFadeType> _type) {
@@ -78,12 +78,12 @@ void AHKHUD::_OnBackpackDialogBegan(ABackpack* _backpack, ADialog* _dialog) {
 }
 
 AHKHUD::AHKHUD() {
-    m_HUDWidgetClass = NULL;
-    m_HUDDebugWidgetClass = NULL;
-    m_HUDWidget = NULL;
-    m_HUDDebugWidget = NULL;
-    m_saveIcon = NULL;
-    m_reticule = NULL;
-    m_enableSaveIcon = true;
+    this->m_HUDWidgetClass = NULL;
+    this->m_HUDDebugWidgetClass = NULL;
+    this->m_HUDWidget = NULL;
+    this->m_HUDDebugWidget = NULL;
+    this->m_saveIcon = NULL;
+    this->m_reticule = NULL;
+    this->m_enableSaveIcon = true;
 }
 

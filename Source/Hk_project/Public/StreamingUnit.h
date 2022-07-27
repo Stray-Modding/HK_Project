@@ -6,24 +6,24 @@
 class UStreamingGroupDynamic;
 class ULevelStreaming;
 
-UCLASS()
+UCLASS(Blueprintable)
 class UStreamingUnit : public UObject {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UStreamingGroupDynamic* m_streamingGroup;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ULevelStreaming* m_levelStreaming;
     
 public:
     UStreamingUnit();
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void _OnLevelStreamingUnloaded();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void _OnLevelStreamingLoaded();
     
 };

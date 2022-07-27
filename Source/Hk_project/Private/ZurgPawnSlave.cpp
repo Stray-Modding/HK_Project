@@ -2,17 +2,17 @@
 #include "LifeComponent.h"
 
 class UZurgNewSettings;
+class UCanvas;
+class AZurgPawnLeader;
 class AZurgPawnSlave;
 class UAntiZurgSpotlightComponent;
-class UCanvas;
 class AActor;
-class AZurgPawnLeader;
 class ULightableComponent;
-class UPrimitiveComponent;
 class ACatPawn;
 class USkeletalMeshComponent;
 class UZurgAttackPointComponent;
 class ARecastNavMesh;
+class UPrimitiveComponent;
 
 void AZurgPawnSlave::StopMovement() {
 }

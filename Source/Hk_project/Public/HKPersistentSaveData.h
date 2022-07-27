@@ -9,19 +9,19 @@ class HK_PROJECT_API UHKPersistentSaveData : public UObject {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     TSet<FName> UnlockedMemories;
     
-    UPROPERTY(SaveGame)
+    UPROPERTY(EditAnywhere, SaveGame)
     TMap<FName, uint64> StatCounts;
     
-    UPROPERTY(SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     TSet<FName> ScratchedChapters;
     
-    UPROPERTY(SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FName MaxUnlockedChapterName;
     
-    UPROPERTY(SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FActivitiesState ActivitiesState;
     
 public:
@@ -35,16 +35,16 @@ public:
     UFUNCTION(BlueprintCallable)
     void LockMemory(FName _memoryId);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsMemoryUnlocked(FName _memoryId) const;
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void Init();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TSet<FName> GetUnlockedMemories() const;
     
-    UFUNCTION(BlueprintNativeEvent, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent, BlueprintPure)
     FString BlueprintToString() const;
     
 };

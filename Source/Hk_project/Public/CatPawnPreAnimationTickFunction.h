@@ -18,3 +18,4 @@ struct TStructOpsTypeTraits<FCatPawnPreAnimationTickFunction> : public TStructOp
         WithCopy = false
     };
 };
+

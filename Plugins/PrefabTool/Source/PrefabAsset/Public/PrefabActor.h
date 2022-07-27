@@ -7,12 +7,12 @@
 class UPrefabComponent;
 class UPrefabAsset;
 
-UCLASS()
+UCLASS(Blueprintable)
 class PREFABASSET_API APrefabActor : public AActor {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadOnly, Export, VisibleAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     UPrefabComponent* PrefabComponent;
     
 public:
@@ -23,7 +23,7 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetMobility(TEnumAsByte<EComponentMobility::Type> InMobility);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UPrefabAsset* GetPrefab() const;
     
     UFUNCTION(BlueprintCallable)

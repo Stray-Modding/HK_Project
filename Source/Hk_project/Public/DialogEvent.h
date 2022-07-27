@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "DialogEvent.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FDialogEvent {
     GENERATED_BODY()
 public:

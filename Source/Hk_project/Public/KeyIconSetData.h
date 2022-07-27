@@ -1,22 +1,22 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Engine/DataAsset.h"
-#include "InputCoreTypes.h"
 #include "EGameControllerType.h"
+#include "InputCoreTypes.h"
 #include "KeyIconSetData.generated.h"
 
 class UKeyIconData;
 class UTexture2D;
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class HK_PROJECT_API UKeyIconSetData : public UPrimaryDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UKeyIconData*> Keys;
     
     UKeyIconSetData();
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTexture2D* FindIconForKey(const FKey& _key, EGameControllerType _controller) const;
     
 };

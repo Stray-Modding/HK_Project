@@ -5,17 +5,17 @@
 #include "Engine/EngineTypes.h"
 #include "AntiZurgZoneComponent.generated.h"
 
-class UNavAreaBase;
-class UAntiZurgSpotlightComponent;
-class UPrimitiveComponent;
 class AActor;
+class UNavAreaBase;
+class UPrimitiveComponent;
+class UAntiZurgSpotlightComponent;
 
-UCLASS(EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class HK_PROJECT_API UAntiZurgZoneComponent : public USphereComponent {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UNavAreaBase> m_navArea;
     
 public:
@@ -23,14 +23,14 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetSpotlightOwner(UAntiZurgSpotlightComponent* _newSpotlight);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UAntiZurgSpotlightComponent* GetSpotLightOwner() const;
     
 protected:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void _OnSphereEndOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void _OnSphereBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
     
 };

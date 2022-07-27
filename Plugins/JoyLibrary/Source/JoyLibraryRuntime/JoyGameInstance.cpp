@@ -12,7 +12,7 @@
 #include "Draw.h"
 #include "Log.h"
 #include "MacroUtils.h"
-#include "Manager.h"
+#include "JoyLibraryRuntime/Manager.h"
 
 
 void UJoyGameInstance::OnStart()

@@ -3,7 +3,7 @@
 #include "NoisableComponent.h"
 #include "MeowableComponent.generated.h"
 
-UCLASS(EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class HK_PROJECT_API UMeowableComponent : public UNoisableComponent {
     GENERATED_BODY()
 public:

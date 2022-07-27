@@ -7,16 +7,16 @@ USTRUCT(BlueprintType)
 struct FHKActorSaveData {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName Name;
     
-    UPROPERTY()
+    UPROPERTY(EditAnywhere)
     TArray<uint8> Data;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FHKComponentSaveData> ComponentsData;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool Destroyed;
     
     HK_PROJECT_API FHKActorSaveData();

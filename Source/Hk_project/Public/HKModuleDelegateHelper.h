@@ -5,12 +5,12 @@
 
 class ANavigationData;
 
-UCLASS(Transient)
+UCLASS(Blueprintable, Transient)
 class HK_PROJECT_API UHKModuleDelegateHelper : public UObject {
     GENERATED_BODY()
 public:
     UHKModuleDelegateHelper();
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void _OnNavDataRegisteredEvent(ANavigationData* NavData);
     
 };

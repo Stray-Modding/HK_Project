@@ -1,23 +1,23 @@
 #include "CharacterDroid.h"
-#include "Components/SplineComponent.h"
+#include "Components/ArrowComponent.h"
+#include "Components/CapsuleComponent.h"
 #include "TalkableComponent.h"
+#include "Components/SplineComponent.h"
 #include "StreamingComponent.h"
 #include "SaveComponent.h"
 #include "GridSnappingComponent.h"
-#include "Components/CapsuleComponent.h"
-#include "Components/ArrowComponent.h"
 
 class UAnimSequence;
 class AActor;
 class UDroidMovementAnimationSettings;
 class ADialog;
 class UMaterialInstance;
-class UPrimitiveComponent;
 class ACatPawn;
 class ARecastNavMesh;
-class USceneComponent;
 class UDroidUsableComponent;
+class USceneComponent;
 class ACharacterDroid;
+class UPrimitiveComponent;
 
 void ACharacterDroid::ThrowObjectTo_Implementation(UAnimSequence* _throwAnimation, AActor* _throwToThisActor, float _trajectoryArc, bool _blendWithIdle) {
 }

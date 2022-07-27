@@ -5,8 +5,8 @@ UHKGameUserSettings::UHKGameUserSettings() {
     this->MasterVolume = 1.00f;
     this->MusicVolume = 1.00f;
     this->EffectsVolume = 1.00f;
-    this->Gamma = 2.20f;
-    this->MotionBlurAmount = 0.50f;
+    this->Gamma = 1.98f;
+    this->MotionBlurAmount = 0.05f;
     this->LookSensitivity = 0.70f;
     this->Sharpness = 1.00f;
     this->PadVibrationEnabled = true;
@@ -17,12 +17,12 @@ UHKGameUserSettings::UHKGameUserSettings() {
     this->JumpPromptEnabled = true;
     this->HUDEnabled = true;
     this->AutoCameraEnabled = true;
-    this->FirstLaunch = true;
+    this->FirstLaunch = false;
     this->ScreenPercentage = 100;
-    this->SteamDeckScreenPercentage = 80;
-    this->SteamDeckEffectsQuality = 1;
+    this->SteamDeckScreenPercentage = 100;
+    this->SteamDeckEffectsQuality = 2;
     this->SteamDeckMeshQuality = 2;
     this->SteamDeckTextureQuality = 2;
-    this->SteamDeckShadowQuality = 1;
+    this->SteamDeckShadowQuality = 2;
 }
 

@@ -4,12 +4,12 @@
 #include "UObject/NoExportTypes.h"
 #include "HKTextBlock.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class HK_PROJECT_API UHKTextBlock : public UTextBlock {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FLinearColor m_selectedColor;
     
 public:

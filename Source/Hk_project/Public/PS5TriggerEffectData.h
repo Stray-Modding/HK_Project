@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FPS5TriggerEffectData {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EPS5TriggerEffectMode Mode;
     
     UPROPERTY(EditAnywhere)

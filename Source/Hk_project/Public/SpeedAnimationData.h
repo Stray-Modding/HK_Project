@@ -9,10 +9,10 @@ USTRUCT(BlueprintType)
 struct FSpeedAnimationData {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAnimSequence* MoveAnimation;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FJumpAnimationData> JumpAnimations;
     
     HK_PROJECT_API FSpeedAnimationData();

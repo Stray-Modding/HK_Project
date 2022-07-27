@@ -4,7 +4,7 @@
 #include "UObject/NoExportTypes.h"
 #include "Hideout.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class HK_PROJECT_API AHideout : public AActor {
     GENERATED_BODY()
 public:
@@ -12,16 +12,16 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetClosed(bool _value);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsClosed() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsAvailableForHiding() const;
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     FVector GetHiddenLocation() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     AActor* GetHiddenActor() const;
     
 };

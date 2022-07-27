@@ -6,7 +6,7 @@
 
 class USaveComponent;
 
-UCLASS(BlueprintType, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class HK_PROJECT_API UMovingActorComponent : public UActorComponent {
     GENERATED_BODY()
 public:
@@ -14,11 +14,11 @@ public:
     UFUNCTION(BlueprintCallable)
     void Reset();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FTransform PredictTransform(const FTransform& _transform, float _dt) const;
     
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void _OnAfterLoaded(USaveComponent* _saveComponent);
     
 };

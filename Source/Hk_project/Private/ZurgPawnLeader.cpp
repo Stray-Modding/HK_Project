@@ -4,12 +4,12 @@
 #include "NoisableComponent.h"
 #include "SaveComponent.h"
 
+class UBoxComponent;
+class UPrimitiveComponent;
 class UAntiZurgSpotlightComponent;
 class AZurgPawnSlave;
-class UPrimitiveComponent;
 class AActor;
 class UCanvas;
-class UBoxComponent;
 class AZurgManager;
 class ARecastNavMesh;
 class UNavigationQueryFilter;

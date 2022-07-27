@@ -7,7 +7,7 @@ USTRUCT(BlueprintType)
 struct FCatLookAtEntry {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FLookAtData Data;
     
     HK_PROJECT_API FCatLookAtEntry();

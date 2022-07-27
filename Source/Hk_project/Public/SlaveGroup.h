@@ -8,10 +8,10 @@ USTRUCT(BlueprintType)
 struct FSlaveGroup {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<AZurgPawnSlave*> Slaves;
     
-    UPROPERTY(BlueprintReadOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 groupId;
     
     HK_PROJECT_API FSlaveGroup();

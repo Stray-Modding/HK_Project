@@ -4,17 +4,17 @@
 #include "UObject/NoExportTypes.h"
 #include "ZurgAttackPointManagerComponent.generated.h"
 
-class AActor;
 class UZurgAttackPointComponent;
-class ULifeComponent;
 class AZurgPawnSlave;
+class ULifeComponent;
+class AActor;
 
-UCLASS(BlueprintType, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class HK_PROJECT_API UZurgAttackPointManagerComponent : public UActorComponent {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FInt32Range m_zurgCountDamageMultiplicator;
     
 public:
@@ -22,17 +22,17 @@ public:
     UFUNCTION(BlueprintCallable)
     void SetAttackPointsActive(bool _active);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnZurgDetached(UZurgAttackPointComponent* _zurgAttackPoint, AZurgPawnSlave* _zurg);
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void OnZurgAttached(UZurgAttackPointComponent* _zurgAttackPoint, AZurgPawnSlave* _zurg);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsAttackPointsActive();
     
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void _OnLifeComponentKilled(ULifeComponent* _lifeComponent, AActor* _killer);
     
 };

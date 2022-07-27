@@ -1,36 +1,36 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "Components/PrimitiveComponent.h"
 #include "PrefabVariantRule.h"
+#include "Components/PrimitiveComponent.h"
 #include "PrefabComponent.generated.h"
 
 class UPrefabAsset;
-class AActor;
 class UBlueprint;
+class AActor;
 
-UCLASS(ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class PREFABASSET_API UPrefabComponent : public UPrimitiveComponent {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bConnected: 1;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bLockSelection: 1;
     
-    UPROPERTY(BlueprintReadWrite, EditInstanceOnly)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UPrefabAsset* Prefab;
     
-    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditInstanceOnly)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UBlueprint* GeneratedBlueprint;
     
-    UPROPERTY(AdvancedDisplay, BlueprintReadOnly, VisibleInstanceOnly)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FName, AActor*> PrefabInstancesMap;
     
-    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FPrefabVariantRule> VariantRulesOverwrite;
     
-    UPROPERTY(AdvancedDisplay, BlueprintReadOnly, EditInstanceOnly)
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     uint8 bTransient: 1;
     
     UPrefabComponent();

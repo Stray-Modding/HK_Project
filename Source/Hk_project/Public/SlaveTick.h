@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct FSlaveTick {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     AZurgPawnSlave* slave;
     
     HK_PROJECT_API FSlaveTick();

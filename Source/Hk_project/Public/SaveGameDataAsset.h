@@ -5,18 +5,18 @@
 
 class UHKSaveGame;
 
-UCLASS()
+UCLASS(Blueprintable)
 class HK_PROJECT_API USaveGameDataAsset : public UPrimaryDataAsset {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString saveName;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UHKSaveGame* SaveGame;
     
     USaveGameDataAsset();
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void ImportSave();
     
 };

@@ -4,6 +4,7 @@ UGraphicsSettingsWidget::UGraphicsSettingsWidget() {
     this->ScrollBox = NULL;
     this->MotionBlurSliderBox = NULL;
     this->SharpnessSliderBox = NULL;
+    this->FullscreenModeListBox = NULL;
     this->ResolutionListBox = NULL;
     this->FrameRateListBox = NULL;
     this->GraphicsMemoryBox = NULL;
@@ -13,7 +14,6 @@ UGraphicsSettingsWidget::UGraphicsSettingsWidget() {
     this->ShadowQualityListBox = NULL;
     this->TextureQualityListBox = NULL;
     this->MeshQualityListBox = NULL;
-    this->FullscreenCheckBox = NULL;
     this->VSyncCheckBox = NULL;
     this->GammaButton = NULL;
     this->BackButton = NULL;

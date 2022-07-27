@@ -8,15 +8,15 @@ class HK_PROJECT_API UHKSessionSaveData : public UObject {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     bool IsInSentinelPattern;
     
-    UPROPERTY(SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     bool IsInZurgPursuit;
     
 public:
     UHKSessionSaveData();
-    UFUNCTION(BlueprintNativeEvent, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent, BlueprintPure)
     FString BlueprintToString() const;
     
 };

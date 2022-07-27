@@ -19,32 +19,32 @@ public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FHKSaveInstanceDelegate, UHKSaveInstance*, _saveInstance);
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FHKPersistentSaveDelegate, UHKPersistentSaveData*, _persistentSaveData);
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FHKPersistentSaveDelegate UnlockedMemoriesChanged;
     
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UHKPersistentSaveData> m_persistentDataClass;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UHKSessionSaveData> m_sessionDataClass;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UHKSaveGame* m_saveData;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UHKPersistentSaveData* m_persistentSaveData;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UHKGlobalSaveGame* m_globalSaveData;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UHKSessionSaveData* m_sessionSaveData;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FSaveSlotCache> m_fixedSlotsCache;
     
-    UPROPERTY(EditDefaultsOnly)
+    UPROPERTY(EditAnywhere)
     uint8 m_fixedSlotsCount;
     
 public:
@@ -52,16 +52,16 @@ public:
     UFUNCTION(BlueprintCallable)
     void SavePersistentDataToDisk();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsSaving() const;
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool IsSaveEnabled() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UHKSessionSaveData* GetSessionSaveData() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UHKPersistentSaveData* GetPersistentSaveData() const;
     
     UFUNCTION(BlueprintCallable)

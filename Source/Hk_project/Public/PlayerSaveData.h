@@ -8,19 +8,19 @@ USTRUCT(BlueprintType)
 struct FPlayerSaveData {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FTransform PlayerTransform;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FRotator CameraRelativeRotation;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool HasBackpack;
     
-    UPROPERTY()
+    UPROPERTY(EditAnywhere)
     TArray<uint8> BackpackData;
     
-    UPROPERTY()
+    UPROPERTY(EditAnywhere)
     TArray<uint8> DroneData;
     
     HK_PROJECT_API FPlayerSaveData();

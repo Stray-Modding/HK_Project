@@ -4,10 +4,10 @@
 #include "Components/SkeletalMeshComponent.h"
 #include "Components/WidgetComponent.h"
 
+class UAnimSequence;
 class USceneComponent;
 class UUserWidget;
 class AActor;
-class UAnimSequence;
 class ACatPawn;
 class UScannableComponent;
 class ABackpack;

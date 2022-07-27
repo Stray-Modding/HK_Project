@@ -8,35 +8,35 @@
 class ABackpack;
 class UBackpackUsableComponent;
 
-UCLASS()
+UCLASS(Blueprintable)
 class HK_PROJECT_API AItemSelector : public AActor {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ABackpack* M_BackPack;
     
-    UPROPERTY(Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     UBackpackUsableComponent* m_usable;
     
 public:
     AItemSelector();
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void OnSelectionExit();
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void OnSelectionEnter(UBackpackUsableComponent* _usable);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FTransform GetSelectionBoxTransform() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void GetSelectionBox(FVector& _outOrigin, FVector& _outExtent) const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UBackpackUsableComponent* GetSelectedUsable() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ABackpack* GetBackpack() const;
     
 };

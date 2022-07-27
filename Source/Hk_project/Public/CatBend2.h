@@ -1,27 +1,27 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "GameFramework/Pawn.h"
 #include "UObject/NoExportTypes.h"
+#include "GameFramework/Pawn.h"
 #include "CatBend2.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class HK_PROJECT_API ACatBend2 : public APawn {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_boneRotationSmoothTime;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_isRelaxEnabled;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 m_relaxIterationCount;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_relaxCenterWeight;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_relaxSideWeight;
     
 public:
@@ -29,16 +29,16 @@ public:
     UFUNCTION(BlueprintCallable)
     void ProcessSpine();
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool IsDebugEnabled() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FRotator GetSpineBoneRotation(int32 _boneIndex) const;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     TArray<FName> GetSpineBoneChain() const;
     
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void BugTrigger();
     
 };

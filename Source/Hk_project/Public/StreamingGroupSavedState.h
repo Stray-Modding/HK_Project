@@ -6,10 +6,10 @@ USTRUCT(BlueprintType)
 struct FStreamingGroupSavedState {
     GENERATED_BODY()
 public:
-    UPROPERTY(SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FName Name;
     
-    UPROPERTY(SaveGame)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     bool IsActive;
     
     HK_PROJECT_API FStreamingGroupSavedState();

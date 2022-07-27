@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct FDroneMovementTarget {
     GENERATED_BODY()
 public:
-    UPROPERTY(Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     USceneComponent* Component;
     
     HK_PROJECT_API FDroneMovementTarget();

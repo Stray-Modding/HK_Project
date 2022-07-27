@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "GroundProbeOrthoDistanceField.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FGroundProbeOrthoDistanceField {
     GENERATED_BODY()
 public:

@@ -3,7 +3,6 @@
 #include "Engine/EngineBaseTypes.h"
 #include "CatPawnTickFunction.generated.h"
 
-
 USTRUCT(BlueprintType)
 struct FCatPawnTickFunction : public FTickFunction {
     GENERATED_BODY()
@@ -19,3 +18,4 @@ struct TStructOpsTypeTraits<FCatPawnTickFunction> : public TStructOpsTypeTraitsB
         WithCopy = false
     };
 };
+

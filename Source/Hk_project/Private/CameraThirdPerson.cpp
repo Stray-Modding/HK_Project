@@ -1,6 +1,6 @@
 #include "CameraThirdPerson.h"
-#include "Components/SceneComponent.h"
 #include "Camera/CameraComponent.h"
+#include "Components/SceneComponent.h"
 #include "Components/SplineComponent.h"
 
 class UCameraTargetComponent;

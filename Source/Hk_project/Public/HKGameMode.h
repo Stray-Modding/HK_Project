@@ -3,7 +3,7 @@
 #include "GameFramework/GameMode.h"
 #include "HKGameMode.generated.h"
 
-UCLASS(NonTransient)
+UCLASS(Blueprintable, NonTransient)
 class HK_PROJECT_API AHKGameMode : public AGameMode {
     GENERATED_BODY()
 public:

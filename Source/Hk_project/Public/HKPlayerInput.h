@@ -3,7 +3,7 @@
 #include "GameFramework/PlayerInput.h"
 #include "HKPlayerInput.generated.h"
 
-UCLASS(NonTransient)
+UCLASS(Blueprintable, NonTransient)
 class HK_PROJECT_API UHKPlayerInput : public UPlayerInput {
     GENERATED_BODY()
 public:

@@ -3,17 +3,17 @@
 #include "GameFramework/Actor.h"
 #include "EditorTickingActor.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class HK_PROJECT_API AEditorTickingActor : public AActor {
     GENERATED_BODY()
 public:
     AEditorTickingActor();
 protected:
-    UFUNCTION(BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnEditorTick(float DeltaSeconds);
     
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void _OnEditorTick(float _deltaTime);
     
 };

@@ -1,9 +1,9 @@
 #include "ZurgAttackPointManagerComponent.h"
 
-class AActor;
 class UZurgAttackPointComponent;
-class ULifeComponent;
 class AZurgPawnSlave;
+class ULifeComponent;
+class AActor;
 
 void UZurgAttackPointManagerComponent::SetAttackPointsActive(bool _active) {
 }

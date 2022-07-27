@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct FDroidTick {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ACharacterDroid* Droid;
     
     HK_PROJECT_API FDroidTick();

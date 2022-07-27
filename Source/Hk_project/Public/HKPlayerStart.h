@@ -6,21 +6,21 @@
 
 class ACatPawn;
 
-UCLASS()
+UCLASS(Blueprintable)
 class HK_PROJECT_API AHKPlayerStart : public APlayerStart {
     GENERATED_BODY()
 public:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool UseData;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FStartData StartData;
     
     AHKPlayerStart();
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void BeforeCatSpawned();
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void AfterCatSpawned(ACatPawn* _cat);
     
 };

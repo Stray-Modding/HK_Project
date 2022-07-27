@@ -6,7 +6,7 @@
 #include "UObject/NoExportTypes.h"
 #include "GroundProbeTools.generated.h"
 
-UCLASS(BlueprintType)
+UCLASS(Blueprintable)
 class HK_PROJECT_API UGroundProbeTools : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:

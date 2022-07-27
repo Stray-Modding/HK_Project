@@ -3,7 +3,7 @@
 #include "Engine/GameEngine.h"
 #include "HKGameEngine.generated.h"
 
-UCLASS(NonTransient)
+UCLASS(Blueprintable, NonTransient)
 class UHKGameEngine : public UGameEngine {
     GENERATED_BODY()
 public:

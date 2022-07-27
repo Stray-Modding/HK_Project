@@ -6,14 +6,14 @@
 class USplineRailComponent;
 class USphereComponent;
 
-UCLASS()
+UCLASS(Blueprintable)
 class USplineRailConnection : public UObject {
     GENERATED_BODY()
 public:
-    UPROPERTY(Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     USplineRailComponent* Rail;
     
-    UPROPERTY(Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     USphereComponent* Collider;
     
     USplineRailConnection();

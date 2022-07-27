@@ -8,10 +8,10 @@ USTRUCT(BlueprintType)
 struct FObjectiveState {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EObjective ID;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EObjectiveStatus status;
     
     HK_PROJECT_API FObjectiveState();

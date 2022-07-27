@@ -6,15 +6,15 @@
 
 class UBindingIconWidget;
 
-UCLASS(Abstract)
+UCLASS(Abstract, Blueprintable)
 class HK_PROJECT_API URichTextBlockKeyIconDecorator : public URichTextBlockDecorator {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UBindingIconWidget> m_widgetClass;
     
-    UPROPERTY(Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     UBindingIconWidget* m_widget;
     
 public:

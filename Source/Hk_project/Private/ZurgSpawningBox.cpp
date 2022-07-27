@@ -1,7 +1,7 @@
 #include "ZurgSpawningBox.h"
 #include "EditorTickComponent.h"
-#include "Components/BoxComponent.h"
 #include "Components/SceneComponent.h"
+#include "Components/BoxComponent.h"
 #include "Components/ArrowComponent.h"
 
 FVector AZurgSpawningBox::GetSuggestedSpawnVelocity() const {

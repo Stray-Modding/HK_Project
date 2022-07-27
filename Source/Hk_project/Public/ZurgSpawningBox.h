@@ -4,44 +4,44 @@
 #include "UObject/NoExportTypes.h"
 #include "ZurgSpawningBox.generated.h"
 
-class UEditorTickComponent;
-class UBoxComponent;
 class USceneComponent;
+class UBoxComponent;
 class UArrowComponent;
+class UEditorTickComponent;
 
-UCLASS()
+UCLASS(Blueprintable)
 class HK_PROJECT_API AZurgSpawningBox : public AActor {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_spawnVelocity;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_drawDebug;
     
-    UPROPERTY(EditDefaultsOnly, Export)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     USceneComponent* m_rootComponent;
     
-    UPROPERTY(EditDefaultsOnly, Export)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     UBoxComponent* m_spawningBoxComponent;
     
-    UPROPERTY(EditDefaultsOnly, Export)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     UArrowComponent* m_spawningVelocityDirectionArrowComponent;
     
-    UPROPERTY(Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     UEditorTickComponent* m_editorTickComponent;
     
 public:
     AZurgSpawningBox();
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector GetSuggestedSpawnVelocity() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector GetRandomPointInBox() const;
     
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void _EditorTick(float _deltaTime);
     
 };

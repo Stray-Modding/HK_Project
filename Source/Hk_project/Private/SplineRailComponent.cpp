@@ -1,7 +1,7 @@
 #include "SplineRailComponent.h"
 
-class UPrimitiveComponent;
 class ACatPawn;
+class UPrimitiveComponent;
 class UStreamingComponent;
 class AActor;
 

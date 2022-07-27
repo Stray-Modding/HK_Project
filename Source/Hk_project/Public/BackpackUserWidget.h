@@ -3,10 +3,10 @@
 #include "Blueprint/UserWidget.h"
 #include "BackpackUserWidget.generated.h"
 
-class ABackpackGUI;
 class ADrone;
+class ABackpackGUI;
 
-UCLASS(EditInlineNew)
+UCLASS(Blueprintable, EditInlineNew)
 class HK_PROJECT_API UBackpackUserWidget : public UUserWidget {
     GENERATED_BODY()
 public:
@@ -92,10 +92,10 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void OnCancelPressed(bool& _handled);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ABackpackGUI* GetGUI() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ADrone* GetDrone() const;
     
 };

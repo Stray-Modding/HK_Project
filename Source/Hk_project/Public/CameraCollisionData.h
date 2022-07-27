@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "CameraCollisionData.generated.h"
 
-USTRUCT()
+USTRUCT(BlueprintType)
 struct FCameraCollisionData {
     GENERATED_BODY()
 public:

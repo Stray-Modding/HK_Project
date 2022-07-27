@@ -6,39 +6,39 @@
 
 class USoundBase;
 
-UCLASS()
+UCLASS(Blueprintable)
 class HK_PROJECT_API UHKButton : public UButton {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USoundBase* m_onSelectedSound;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USoundBase* m_onPressedSound;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FLinearColor SelectedTextColor;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_onHoveredAlpha;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_changeAlphaOnHovered;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_changeTextColorOnSelected;
     
 public:
     UHKButton();
 private:
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void _OnUnHovered();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void _OnHovered();
     
-    UFUNCTION()
+    UFUNCTION(BlueprintCallable)
     void _OnClicked();
     
 };

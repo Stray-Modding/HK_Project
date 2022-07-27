@@ -4,35 +4,35 @@
 #include "DialogLine.h"
 #include "Dialog.generated.h"
 
-class USaveComponent;
+class ULootableComponent;
 class ADialog;
 class UAnimSequence;
 class UBillboardComponent;
-class ULootableComponent;
+class USaveComponent;
 class UTalkableComponent;
 class ACatPawn;
 
-UCLASS()
+UCLASS(Blueprintable)
 class HK_PROJECT_API ADialog : public AActor {
     GENERATED_BODY()
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDialogDelegate, ADialog*, _dialog);
     
 protected:
-    UPROPERTY(Export, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     UBillboardComponent* m_billboard;
     
-    UPROPERTY(Export, VisibleAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     USaveComponent* m_save;
     
 private:
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_canBeShownItems;
     
-    UPROPERTY(EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool m_autoResetCameraActivated;
     
-    UPROPERTY(Transient)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     UAnimSequence* m_currentSynchronizedAnimation;
     
 public:
@@ -58,49 +58,49 @@ public:
     UFUNCTION(BlueprintCallable)
     bool PollNextDialogLineRequested();
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void OnRequestDialog();
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void OnMeetupBegan();
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void OnItemShown(ULootableComponent* _lootable);
     
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void OnDialogBegan();
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void OnBeforeDialogEnded();
     
     UFUNCTION(BlueprintCallable)
     void NotifyLineTextDisplayed();
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsUnrollRequested() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IslineTextDisplayed() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsDialogRunning() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsBeingShownItem() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsAutoResetCameraActivated() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UAnimSequence* GetCurrentSynchronizedAnimation() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UTalkableComponent* GetCurrentSpeaker() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FDialogLine GetCurrentLine() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ACatPawn* GetCat() const;
     
     UFUNCTION(BlueprintCallable)
@@ -112,7 +112,7 @@ public:
     UFUNCTION(BlueprintCallable)
     bool CheckDialogEvent(FName _eventName);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool CanBeShownItems() const;
     
     UFUNCTION(BlueprintCallable)

@@ -1,8 +1,8 @@
 #include "TalkableComponent.h"
 
 class ADialog;
-class ADrone;
 class ULootableComponent;
+class ADrone;
 
 void UTalkableComponent::StopDialogInternal(ADrone* _drone) {
 }

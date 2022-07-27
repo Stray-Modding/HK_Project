@@ -6,22 +6,22 @@
 
 class UCatUsableComponentBase;
 
-UCLASS()
+UCLASS(Blueprintable)
 class HK_PROJECT_API AInteractionFeedback : public AActor {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(Instanced)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
     UCatUsableComponentBase* m_usable;
     
 public:
     AInteractionFeedback();
 protected:
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void OnUsableChanged(UCatUsableComponentBase* _previousUsable, UCatUsableComponentBase* _currentUsable);
     
 public:
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UCatUsableComponentBase* GetUsable() const;
     
     UFUNCTION(BlueprintPure)

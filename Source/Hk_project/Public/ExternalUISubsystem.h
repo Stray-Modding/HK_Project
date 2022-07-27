@@ -3,7 +3,7 @@
 #include "HKGameSubsystem.h"
 #include "ExternalUISubsystem.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class HK_PROJECT_API UExternalUISubsystem : public UHKGameSubsystem {
     GENERATED_BODY()
 public:

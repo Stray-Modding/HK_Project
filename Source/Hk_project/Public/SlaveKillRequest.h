@@ -9,10 +9,10 @@ USTRUCT(BlueprintType)
 struct FSlaveKillRequest {
     GENERATED_BODY()
 public:
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     AActor* damageApplier;
     
-    UPROPERTY()
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     AZurgPawnSlave* slave;
     
     HK_PROJECT_API FSlaveKillRequest();

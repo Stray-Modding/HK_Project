@@ -3,7 +3,7 @@
 #include "Exporters/Exporter.h"
 #include "PrefabExporter.generated.h"
 
-UCLASS(NonTransient)
+UCLASS(Blueprintable, NonTransient)
 class PREFABASSET_API UPrefabExporter : public UExporter {
     GENERATED_BODY()
 public:

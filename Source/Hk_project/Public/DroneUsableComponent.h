@@ -3,52 +3,52 @@
 #include "BackpackUsableComponent.h"
 #include "DroneUsableComponent.generated.h"
 
-class UDroneUsableComponent;
 class USceneComponent;
+class UDroneUsableComponent;
 class ADrone;
 
-UCLASS(EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class HK_PROJECT_API UDroneUsableComponent : public UBackpackUsableComponent {
     GENERATED_BODY()
 public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDroneUseDelegate, UDroneUsableComponent*, Usable);
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDroneUseDelegate DroneUseStarted;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDroneUseDelegate DroneUseEnded;
     
     UDroneUsableComponent();
     UFUNCTION(BlueprintCallable)
     void SetUsePosition(USceneComponent* _usePosition, FName _socket);
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsDroneUsing() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     ADrone* GetUserDrone() const;
     
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     USceneComponent* GetUsePosition(FName& _outSocket) const;
     
-    UFUNCTION(BlueprintNativeEvent, BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent, BlueprintPure)
     USceneComponent* GetFinalUseSocket(FName& _outSocket) const;
     
     UFUNCTION(BlueprintCallable)
     void EndDroneUse();
     
 protected:
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void _OnDroneUseStarted(ADrone* _drone);
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void _OnDroneUseEnded(ADrone* _drone);
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool _IsDroneReadyToUnfold() const;
     
-    UFUNCTION(BlueprintNativeEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool _CanStartUse() const;
     
 };

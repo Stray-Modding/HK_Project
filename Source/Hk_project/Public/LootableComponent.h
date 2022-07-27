@@ -3,10 +3,10 @@
 #include "DroneUsableComponent.h"
 #include "LootableComponent.generated.h"
 
-class ULootableComponent;
 class UTexture;
+class ULootableComponent;
 
-UCLASS(EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
+UCLASS(Blueprintable, EditInlineNew, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class HK_PROJECT_API ULootableComponent : public UDroneUsableComponent {
     GENERATED_BODY()
 public:
@@ -15,20 +15,20 @@ public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE(FLootableInteractionEndSignature);
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FLootableDropedSignature, ULootableComponent*, _lootable);
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FLootableLootedSignature OnLooted;
     
-    UPROPERTY(BlueprintAssignable)
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FLootableDropedSignature OnDroped;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UTexture* Icon;
     
-    UPROPERTY(BlueprintReadOnly, EditAnywhere)
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName ID;
     
     ULootableComponent();
-    UFUNCTION(BlueprintPure)
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasID(FName _id) const;
     
 };
