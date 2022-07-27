@@ -17,7 +17,7 @@ public:
     FOnControllerTypeChangedEvent OnControllerTypeChanged;
     
 private:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UInputComponent* m_inputComponent;
     
 public:

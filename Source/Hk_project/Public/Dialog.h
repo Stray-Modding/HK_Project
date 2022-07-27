@@ -19,10 +19,10 @@ public:
     DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FDialogDelegate, ADialog*, _dialog);
     
 protected:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UBillboardComponent* m_billboard;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USaveComponent* m_save;
     
 private:

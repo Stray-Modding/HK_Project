@@ -4,9 +4,6 @@
 #include "Components/SpotLightComponent.h"
 #include "UObject/NoExportTypes.h"
 #include "Engine/EngineTypes.h"
-#include "UObject/NoExportTypes.h"
-#include "Engine/EngineTypes.h"
-#include "Engine/EngineTypes.h"
 #include "AntiZurgSpotlightComponent.generated.h"
 
 class UNavAreaBase;
@@ -53,7 +50,7 @@ private:
     UPROPERTY(EditAnywhere)
     TEnumAsByte<ECollisionChannel> m_obstacleSphereOverlappChannel;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     USphereComponent* m_obstacleSphereComponent;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

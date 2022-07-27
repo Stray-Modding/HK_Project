@@ -11,7 +11,7 @@ class HK_PROJECT_API AInteractionFeedback : public AActor {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UCatUsableComponentBase* m_usable;
     
 public:

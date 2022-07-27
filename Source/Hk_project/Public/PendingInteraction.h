@@ -8,7 +8,7 @@ USTRUCT(BlueprintType)
 struct FPendingInteraction {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UBackpackUsableComponent* Usable;
     
     HK_PROJECT_API FPendingInteraction();

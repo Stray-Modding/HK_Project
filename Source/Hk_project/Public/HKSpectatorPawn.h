@@ -10,7 +10,7 @@ class HK_PROJECT_API AHKSpectatorPawn : public ASpectatorPawn {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UCameraComponent* m_camera;
     
 private:

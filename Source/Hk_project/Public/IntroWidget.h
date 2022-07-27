@@ -25,7 +25,7 @@ protected:
     UWidgetAnimation* FadeAnimation;
     
 private:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UImage* SavingIconImage;
     
 public:

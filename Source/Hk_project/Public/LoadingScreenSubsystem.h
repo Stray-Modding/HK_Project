@@ -10,7 +10,7 @@ class HK_PROJECT_API ULoadingScreenSubsystem : public UHKGameSubsystem {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UAudioComponent* m_loadingAudio;
     
 public:

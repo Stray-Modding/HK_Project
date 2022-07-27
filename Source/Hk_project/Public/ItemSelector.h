@@ -2,7 +2,6 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "UObject/NoExportTypes.h"
-#include "UObject/NoExportTypes.h"
 #include "ItemSelector.generated.h"
 
 class ABackpack;
@@ -16,7 +15,7 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     ABackpack* M_BackPack;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UBackpackUsableComponent* m_usable;
     
 public:

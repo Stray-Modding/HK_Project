@@ -67,7 +67,7 @@ public:
     FImpactDelegate Impact;
     
 private:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Export, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UMeshComponent* m_meshToObserve;
     
 public:
