@@ -6,18 +6,14 @@ public class VictoryBPLibrary : ModuleRules
 {
 	public VictoryBPLibrary(ReadOnlyTargetRules Target) : base(Target)
 	{ 
-		//Get rid of debug commandline length compile error
-		//https://developercommunity.visualstudio.com/content/problem/668411/command-line-error-d8049-still-happening.html
-		bLegacyPublicIncludePaths = false;
-		
 		PrivatePCHHeaderFile = "Private/VictoryBPLibraryPrivatePCH.h";
-		
-		//4.15 Include What You Use
+		bLegacyPublicIncludePaths = false;
 		bEnforceIWYU = false;
-		
+
+
 		PublicIncludePaths.AddRange(
 			new string[] {
-				"VictoryBPLibrary/Public"
+				//"VictoryBPLibrary/Public"
 				
 				// ... add public include paths required here ...
 			}

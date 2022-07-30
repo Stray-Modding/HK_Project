@@ -1,22 +1,25 @@
 // Copyright 1998-2018 Epic Games, Inc. All Rights Reserved.
 
 using UnrealBuildTool;
-
+using System.IO;
 public class JoyLibraryRuntime : ModuleRules
 {
 	public JoyLibraryRuntime(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
 
+		var EngineDir = Path.GetFullPath(Target.RelativeEnginePath);
 		PublicIncludePaths.AddRange(
 			new string[] {
+				Path.Combine(EngineDir, "Source/Developer/Settings/Public"),
 				// ... add public include paths required here ...
 			}
 			);
 
-
+		
 		PrivateIncludePaths.AddRange(
 			new string[] {
+				Path.Combine(EngineDir, "Source/Developer/Settings/Private"),
 				// ... add other private include paths required here ...
 			}
 			);
@@ -42,7 +45,7 @@ public class JoyLibraryRuntime : ModuleRules
                 "UMG",
                 "AIModule",
                 "NavigationSystem",
-                "Settings",/*
+                /*
                 "AnimationModifiers"*/
 				// ... add private dependencies that you statically link with here ...
 			}

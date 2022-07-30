@@ -273,10 +273,12 @@ public class HoudiniEngine : ModuleRules
                 //"HoudiniEngineRuntime/Public/HAPI"
             }
         );
-
+        var EngineDir = Path.GetFullPath(Target.RelativeEnginePath);
         PrivateIncludePaths.AddRange(
             new string[]
             {
+                
+                Path.Combine(EngineDir, "Source/Developer/Settings/Private"),
                 "HoudiniEngineRuntime/Private"
             }
         );
@@ -325,7 +327,6 @@ public class HoudiniEngine : ModuleRules
                     "Projects",
                     "PropertyEditor",
                     "RawMesh",
-                    "Settings",
                     "Slate",
                     "SlateCore",
                     "TargetPlatform",

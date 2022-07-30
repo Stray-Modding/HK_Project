@@ -1,6 +1,7 @@
 // Copyright 1998-2018 Epic Games, Inc. All Rights Reserved.
 
 using UnrealBuildTool;
+using System.IO;
 
 public class ScreenLogger : ModuleRules
 {
@@ -8,8 +9,10 @@ public class ScreenLogger : ModuleRules
 	{
 		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
 		
+		var EngineDir = Path.GetFullPath(Target.RelativeEnginePath);
 		PublicIncludePaths.AddRange(
 			new string[] {
+				Path.Combine(EngineDir, "Source/Developer/Settings/Public"),
 				// ... add public include paths required here ...
 			}
 			);
@@ -17,6 +20,7 @@ public class ScreenLogger : ModuleRules
 		
 		PrivateIncludePaths.AddRange(
 			new string[] {
+				Path.Combine(EngineDir, "Source/Developer/Settings/Private"),
 				// ... add other private include paths required here ...
 			}
 			);
@@ -37,8 +41,7 @@ public class ScreenLogger : ModuleRules
 				"CoreUObject",
 				"Engine",
 				"Slate",
-				"SlateCore",
-                "Settings"
+				"SlateCore"
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);
