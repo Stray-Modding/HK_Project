@@ -1,4 +1,6 @@
-# Stray uProject - Join the Stray Modding discord to discuss! https://discord.gg/v2e7SbsJTW
+# Stray uProject - Join the Stray Modding discord to discuss! 
+## https://discord.gg/v2e7SbsJTW
+
  HK_Project WIP uProject for modding the game.  Note that some fixes and edits are still in progress, so updates will be frequent and not everything will work.
  
  STRAY and any other trademarks used throughout this project are the property of their respective owners.
