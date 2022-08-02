@@ -1,6 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "JoyBlueprintFunctionLibrary.h"
+#include "JoyUtilities.h"
 
 #include <CoreGlobals.h>
 #include <Kismet/GameplayStatics.h>
@@ -27,17 +27,17 @@
 #include "StringTools.h"
 
 
-int UJoyBlueprintFunctionLibrary::GetCurrentFrameNumber()
+int UJoyUtilities::GetCurrentFrameNumber()
 {
 	return GFrameNumber;
 }
 
-void UJoyBlueprintFunctionLibrary::SetWidgetComponentWidgetClass(UWidgetComponent* _component, TSubclassOf<UUserWidget> _class)
+void UJoyUtilities::SetWidgetComponentWidgetClass(UWidgetComponent* _component, TSubclassOf<UUserWidget> _class)
 {
 	_component->SetWidgetClass(_class);
 }
 
-bool UJoyBlueprintFunctionLibrary::IsWithEditorBuild()
+bool UJoyUtilities::IsWithEditorBuild()
 {
 #if WITH_EDITOR
 	return true;
@@ -46,7 +46,7 @@ bool UJoyBlueprintFunctionLibrary::IsWithEditorBuild()
 #endif
 }
 
-bool UJoyBlueprintFunctionLibrary::IsAssertEnabled()
+bool UJoyUtilities::IsAssertEnabled()
 {
 #if JOY_ASSERT_ENABLED
 	return true;
@@ -55,7 +55,7 @@ bool UJoyBlueprintFunctionLibrary::IsAssertEnabled()
 #endif
 }
 
-bool UJoyBlueprintFunctionLibrary::IsPlayInEditor(UObject* _worldContextObject)
+bool UJoyUtilities::IsPlayInEditor(UObject* _worldContextObject)
 {
 	if (_worldContextObject)
 	{
@@ -65,7 +65,7 @@ bool UJoyBlueprintFunctionLibrary::IsPlayInEditor(UObject* _worldContextObject)
 	return false;
 }
 
-bool UJoyBlueprintFunctionLibrary::IsSimulatingInEditor()
+bool UJoyUtilities::IsSimulatingInEditor()
 {
 #if WITH_EDITOR
 	if (GEditor)
@@ -76,31 +76,31 @@ bool UJoyBlueprintFunctionLibrary::IsSimulatingInEditor()
 	return false;
 }
 
-void UJoyBlueprintFunctionLibrary::Assert(bool _condition, FString _message)
+void UJoyUtilities::Assert(bool _condition, FString _message)
 {
 	JOY_ASSERT_MSGF(_condition, TEXT("%s"), *_message);
 }
 
-int UJoyBlueprintFunctionLibrary::HashString(const FString& _string)
+int UJoyUtilities::HashString(const FString& _string)
 {
 	return ::HashString(_string);
 }
 
-void UJoyBlueprintFunctionLibrary::SetShapeNavigationRelevancy(UShapeComponent* _shapeComponent, bool _relevancy)
+void UJoyUtilities::SetShapeNavigationRelevancy(UShapeComponent* _shapeComponent, bool _relevancy)
 {
 	JOY_EXITCONDITION(!_shapeComponent, TEXT("Undefined ShapeComponent."));
 
 	_shapeComponent->SetCanEverAffectNavigation(_relevancy);
 }
 
-bool UJoyBlueprintFunctionLibrary::GetShapeNavigationRelevancy(UShapeComponent* _shapeComponent)
+bool UJoyUtilities::GetShapeNavigationRelevancy(UShapeComponent* _shapeComponent)
 {
 	JOY_EXITCONDITION_RET(!_shapeComponent, false, TEXT("Undefined ShapeComponent."));
 
 	return _shapeComponent->CanEverAffectNavigation();
 }
 
-void UJoyBlueprintFunctionLibrary::GetPathComponentCurrentPath(const UPathFollowingComponent* _pathFollowingComponent, UNavigationPath* _outPath)
+void UJoyUtilities::GetPathComponentCurrentPath(const UPathFollowingComponent* _pathFollowingComponent, UNavigationPath* _outPath)
 {
 	JOY_EXITCONDITION(!_pathFollowingComponent, TEXT("Undefined PathFollowingComponent."));
 
@@ -108,7 +108,7 @@ void UJoyBlueprintFunctionLibrary::GetPathComponentCurrentPath(const UPathFollow
 	_outPath->SetPath(Path);
 }
 
-float UJoyBlueprintFunctionLibrary::GetPathComponentRemainingLength(const UPathFollowingComponent* _pathFollowingComponent)
+float UJoyUtilities::GetPathComponentRemainingLength(const UPathFollowingComponent* _pathFollowingComponent)
 {
 	JOY_EXITCONDITION_RET(!_pathFollowingComponent, 0.f, TEXT("Undefined PathFollowingComponent."));
 
@@ -119,14 +119,14 @@ float UJoyBlueprintFunctionLibrary::GetPathComponentRemainingLength(const UPathF
 	return _pathFollowingComponent->GetPath()->GetLengthFromPosition(AIController->GetPawn()->GetActorLocation(), _pathFollowingComponent->GetNextPathIndex());
 }
 
-bool UJoyBlueprintFunctionLibrary::HasActorBegunPlay(const AActor* _actor)
+bool UJoyUtilities::HasActorBegunPlay(const AActor* _actor)
 {
 	JOY_EXITCONDITION_RET(!_actor, false, TEXT("Unspecified Actor."));
 
 	return _actor->HasActorBegunPlay();
 }
 
-FBox UJoyBlueprintFunctionLibrary::GetActorVisualBounds(const AActor* _actor)
+FBox UJoyUtilities::GetActorVisualBounds(const AActor* _actor)
 {
 	JOY_EXITCONDITION_RET(!_actor, FBox(), TEXT("Unspecified Actor."));
 
@@ -142,7 +142,7 @@ FBox UJoyBlueprintFunctionLibrary::GetActorVisualBounds(const AActor* _actor)
 	return result;
 }
 
-FBox UJoyBlueprintFunctionLibrary::CombineBoxes(const FBox& _A, const FBox& _B)
+FBox UJoyUtilities::CombineBoxes(const FBox& _A, const FBox& _B)
 {
 	return FBox
 	(
@@ -161,44 +161,44 @@ FBox UJoyBlueprintFunctionLibrary::CombineBoxes(const FBox& _A, const FBox& _B)
 	);
 }
 
-FVector UJoyBlueprintFunctionLibrary::GetBoxCenter(const FBox& _box)
+FVector UJoyUtilities::GetBoxCenter(const FBox& _box)
 {
 	return _box.GetCenter();
 }
 
-FVector UJoyBlueprintFunctionLibrary::GetBoxExtent(const FBox& _box)
+FVector UJoyUtilities::GetBoxExtent(const FBox& _box)
 {
 	return _box.GetExtent();
 }
 
-float UJoyBlueprintFunctionLibrary::GetBoxRadius(const FBox& _box)
+float UJoyUtilities::GetBoxRadius(const FBox& _box)
 {
 	return _box.GetExtent().Size();
 }
 
-FName UJoyBlueprintFunctionLibrary::CollisionProfileNameToName(const FCollisionProfileName& _collisionProfileName)
+FName UJoyUtilities::CollisionProfileNameToName(const FCollisionProfileName& _collisionProfileName)
 {
 	return _collisionProfileName.Name;
 }
 
-FName UJoyBlueprintFunctionLibrary::GetLevelAssetName(const ULevel* _level)
+FName UJoyUtilities::GetLevelAssetName(const ULevel* _level)
 {
 	return _level->GetOuter()->GetFName();
 }
 
-FName UJoyBlueprintFunctionLibrary::GetLevelStreamingAssetName(const ULevelStreaming* _levelStreaming)
+FName UJoyUtilities::GetLevelStreamingAssetName(const ULevelStreaming* _levelStreaming)
 {
 	FString baseFileName = FPaths::GetBaseFilename(_levelStreaming->GetWorldAssetPackageName());
 	baseFileName.RemoveFromStart(_levelStreaming->GetWorld()->StreamingLevelsPrefix);
 	return FName(*baseFileName);
 }
 
-bool UJoyBlueprintFunctionLibrary::IsWorldTearingDown(UObject* _worldContextObject)
+bool UJoyUtilities::IsWorldTearingDown(UObject* _worldContextObject)
 {
 	return _worldContextObject->GetWorld()->bIsTearingDown;
 }
 
-void UJoyBlueprintFunctionLibrary::DrawDebugCurve(UObject* _worldContextObject, UCurveFloat* _curve, ECoordinatesOrigin _coordinatesOrigin, FVector2D _position, FVector2D _size, float _curveXMin, float _curveXMax, float _curveValue, const FString& _curveName, FColor _curveColor , FColor _valueColor , int _samplesCount)
+void UJoyUtilities::DrawDebugCurve(UObject* _worldContextObject, UCurveFloat* _curve, ECoordinatesOrigin _coordinatesOrigin, FVector2D _position, FVector2D _size, float _curveXMin, float _curveXMax, float _curveValue, const FString& _curveName, FColor _curveColor , FColor _valueColor , int _samplesCount)
 {
 	if (!_curve)
 		return;
@@ -214,17 +214,17 @@ void UJoyBlueprintFunctionLibrary::DrawDebugCurve(UObject* _worldContextObject, 
 	}
 }
 
-void UJoyBlueprintFunctionLibrary::LogError(UObject* WorldContextObject, const FString _errorMessage)
+void UJoyUtilities::LogError(UObject* WorldContextObject, const FString _errorMessage)
 {
 	LOG_ERROR(*FString(WorldContextObject->GetName() + " : ").Append(_errorMessage));
 }
 
-void UJoyBlueprintFunctionLibrary::LogWarning(UObject* WorldContextObject, const FString _warningMessage)
+void UJoyUtilities::LogWarning(UObject* WorldContextObject, const FString _warningMessage)
 {
 	LOG_WARNING(*FString(WorldContextObject->GetName() + " : ").Append(_warningMessage));
 }
 
-void UJoyBlueprintFunctionLibrary::DebugBreak()
+void UJoyUtilities::DebugBreak()
 {
 	if (FGenericPlatformMisc::IsDebuggerPresent())
 	{
@@ -232,12 +232,12 @@ void UJoyBlueprintFunctionLibrary::DebugBreak()
 	}
 }
 
-AActor* UJoyBlueprintFunctionLibrary::BeginDeferredActorSpawnFromClass(const UObject* WorldContextObject, TSubclassOf<AActor> ActorClass, const FTransform& SpawnTransform, ESpawnActorCollisionHandlingMethod CollisionHandlingOverride /*= ESpawnActorCollisionHandlingMethod::Undefined*/, AActor* Owner /*= nullptr*/)
+AActor* UJoyUtilities::BeginDeferredActorSpawnFromClass(const UObject* WorldContextObject, TSubclassOf<AActor> ActorClass, const FTransform& SpawnTransform, ESpawnActorCollisionHandlingMethod CollisionHandlingOverride /*= ESpawnActorCollisionHandlingMethod::Undefined*/, AActor* Owner /*= nullptr*/)
 {
 	return UGameplayStatics::BeginDeferredActorSpawnFromClass(WorldContextObject, ActorClass, SpawnTransform, CollisionHandlingOverride, Owner);
 }
 
-AActor* UJoyBlueprintFunctionLibrary::FinishSpawningActor(AActor* Actor, const FTransform& SpawnTransform)
+AActor* UJoyUtilities::FinishSpawningActor(AActor* Actor, const FTransform& SpawnTransform)
 {
 	return UGameplayStatics::FinishSpawningActor(Actor, SpawnTransform);
 }

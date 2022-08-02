@@ -20,14 +20,14 @@ class ULevelStreaming;
 #include <Components/SplineComponent.h>
 
 
-#include "JoyBlueprintFunctionLibrary.generated.h"
+#include "JoyUtilities.generated.h"
 
 
 /**
  * 
  */
 UCLASS()
-class JOYLIBRARYRUNTIME_API UJoyBlueprintFunctionLibrary : public UBlueprintFunctionLibrary
+class JOYLIBRARYRUNTIME_API UJoyUtilities : public UBlueprintFunctionLibrary
 {
 	GENERATED_BODY()
 	
