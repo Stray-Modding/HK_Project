@@ -308,6 +308,14 @@
 			"Type": "SymbolFile"
 		},
 		{
+			"Path": "$(ProjectDir)/Plugins/GFurPRO/Binaries/Win64/UE4Editor-GFurEditor.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/GFurPRO/Binaries/Win64/UE4Editor-GFurEditor.pdb",
+			"Type": "SymbolFile"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Experimental/GeometryProcessing/Binaries/Win64/UE4Editor-GeometricObjects.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -4674,6 +4682,10 @@
 		{
 			"Path": "$(EngineDir)/Binaries/Win64/UE4Editor-LiveLinkMessageBusFramework.pdb",
 			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/GFurPRO/Binaries/Win64/hdf5.dll",
+			"Type": "RequiredResource"
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Experimental/AlembicImporter/Binaries/Win64/hdf5.dll",
@@ -21603,6 +21615,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/ThirdParty/Python3/Win64/Tools/scripts/win_add2path.py",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/GFurPRO/Binaries/Win64/hdf5.dll",
 			"Type": "NonUFS"
 		},
 		{

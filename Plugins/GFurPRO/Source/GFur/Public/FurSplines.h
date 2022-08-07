@@ -6,32 +6,38 @@
 
 UCLASS(Blueprintable)
 class GFUR_API UFurSplines : public UObject {
-    GENERATED_BODY()
+    GENERATED_UCLASS_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     TArray<FVector> Vertices;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     TArray<int32> Index;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UPROPERTY()
     TArray<int32> Count;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+
+    UPROPERTY()
     int32 ControlPointCount;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+
+    UPROPERTY()
     FString ImportFilename;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+
+    UPROPERTY()
     int32 Version;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+
+    UPROPERTY()
     int32 ImportTransformation;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+
+    UPROPERTY()
     float Threshold;
     
-    UFurSplines();
+    int32 SplineCount() const { return Vertices.Num() / ControlPointCount; }
+    FVector GetFirstControlPoint(int32 SplineIndex) const { return Vertices[SplineIndex * ControlPointCount]; }
+    FVector GetLastControlPoint(int32 SplineIndex) const { return Vertices[SplineIndex * ControlPointCount + ControlPointCount - 1]; }
+
+    void UpdateSplines();
+
+private:
+    void ConvertToUniformControlPointCount(int32 NumControlPoints);
 };
 

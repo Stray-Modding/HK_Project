@@ -1,7 +1,7 @@
 {
 	"FileVersion": 3,
 	"Version": 3,
-	"VersionName": "3.8.3",
+	"VersionName": "3.8.5",
 	"FriendlyName": "GFur PRO",
 	"Description": "Shell based fur plugin.",
 	"Category": "Rendering",
@@ -12,8 +12,6 @@
 	"SupportURL": "gfur@gim.studio",
 	"EngineVersion": "4.27.0",
 	"CanContainContent": true,
-	"IsBetaVersion": false,
-	"IsExperimentalVersion": false,
 	"Installed": true,
 	"Modules": [
 		{
@@ -24,9 +22,17 @@
 				"Win64",
 				"Win32",
 				"PS4",
-				"PS5",
 				"XboxOne",
 				"Android"
+			]
+		},
+		{
+			"Name": "GFurEditor",
+			"Type": "Editor",
+			"LoadingPhase": "PostEngineInit",
+			"WhitelistPlatforms": [
+				"Win64",
+				"Win32"
 			]
 		}
 	]
